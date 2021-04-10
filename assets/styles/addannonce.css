@@ -1,1 +1,22 @@
-/* No CSS *//*# sourceMappingURL=addAnnonce.css.map */
+#titleAddAnnonce {
+  color: #fac31d;
+}
+
+#conteneurGeneral {
+  -webkit-box-shadow: 0 0 2px 1px #fac31d;
+          box-shadow: 0 0 2px 1px #fac31d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: auto;
+  margin-top: 2%;
+  width: 80%;
+}
+
+#inputModel, #inputPower, #inputKM, #inputBirth {
+  border: none;
+  border-bottom: 2px solid #fac31d;
+}
+/*# sourceMappingURL=addAnnonce.css.map */
