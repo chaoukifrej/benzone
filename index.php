@@ -1,1 +1,2 @@
 <?php
+$ntm = 'micka';
