@@ -24,14 +24,30 @@ class AddAnnonce
       <meta charset="utf-8">
       <title>AddAnnonce</title>
 
-      <link rel="stylesheet" type="text/css" href="assets/styles/style.css" />
+      <link rel="stylesheet"  href="assets/styles/addAnnonce.css" />
     </head>
 
     <body>
+
      <h1>AJOUTER UNE ANNONCE</h1>
+
+    <form action="">
+
+      <label for="">Modèle</label><br>
+      <input type="text"><br><br>
+
+      <label for="">Marque</label><br>
+      <select name="" id="">
+        <option value="">Abarth</option>
+      </select>
+
+    </form>
+
+
     </body>
 
     </html>
+
 <?php
   }
 }
