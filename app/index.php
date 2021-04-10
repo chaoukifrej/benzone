@@ -24,7 +24,7 @@ use App\Controllers\Perso;
 use App\Controllers\Login;
 
 
-//controller advertInfo class Advert
+//controller annonce class Annonce
 use App\Controllers\Annonce;
 
 //controller contact class Contact
