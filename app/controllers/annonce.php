@@ -1,18 +1,18 @@
 <?php
 
 /**
- * controllers/contact.php - Controleur Contact pour la page contact
+ * controllers/advertInfo.php - Controleur pour la page Annonce
  */
 
 /* Namespace */
 
 namespace App\Controllers;
 
-class Contact
+class Annonce
 {
 
   /**
-   * Affichage de la page contact
+   * Affichage de la page annonce
    */
   public function render()
   {
@@ -22,15 +22,15 @@ class Contact
 
     <head>
       <meta charset="utf-8">
-      <title>Contact</title>
+      <title>Annonce</title>
 
       <link rel="stylesheet" type="text/css" href="assets/styles/style.css" />
     </head>
 
     <body>
       <div id="mainContainer">
-        <h1>Contact</h1>
-        <p>Bienvenue sur la page contact de merde</p>
+        <h1>Annonce</h1>
+        <p>Bienvenue sur la page annonce de merde</p>
       </div>
     </body>
 
