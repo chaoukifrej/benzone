@@ -11,7 +11,6 @@ require_once __DIR__ . "/core/Router.class.php"; // Routeur
 include_once __DIR__ . "/controllers/home.php";
 include_once __DIR__ . "/controllers/default.php";
 include_once __DIR__ . "/controllers/login.php";
-include_once __DIR__ . "/View/advertInfo.php";
 include_once __DIR__ . "/controllers/annonce.php";
 include_once __DIR__ . "/controllers/contact.php";
 
