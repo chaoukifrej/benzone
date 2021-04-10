@@ -2,7 +2,8 @@
 
 namespace App\Controllers;
 
-use Menu;
+use App\Controllers\Component\Menu;
+
 
 class Annonce
 {

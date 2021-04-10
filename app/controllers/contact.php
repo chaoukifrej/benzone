@@ -8,6 +8,8 @@
 
 namespace App\Controllers;
 
+use App\Controllers\Component\Menu;
+
 class Contact
 {
 
@@ -28,6 +30,9 @@ class Contact
     </head>
 
     <body>
+      <?php include_once __DIR__ . "/Component/header.php";
+      new Menu('CONTACT');
+      ?>
       <div id="mainContainer">
         <h1>Contact</h1>
         <p>Bienvenue sur la page contact de merde</p>

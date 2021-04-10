@@ -8,6 +8,8 @@
 
 namespace App\Controllers;
 
+use App\Controllers\Component\Menu;
+
 class Home
 {
 
@@ -28,6 +30,9 @@ class Home
         </head>
 
         <body>
+            <?php include_once __DIR__ . "/Component/header.php";
+            new Menu('ACCUEIL');
+            ?>
             <div id="mainContainer">
                 <h1>Démo routeur</h1>
                 <p>Bienvenue</p>
