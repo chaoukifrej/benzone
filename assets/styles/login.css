@@ -1,11 +1,17 @@
 /* STYLE page Login */
 #connection,
 #inscription {
-  height: 30em;
-  width: 25%;
+  height: 32em;
+  width: 28.5em;
   border: solid black 1px;
   border-radius: 5px;
   text-align: center;
+  margin: auto;
+}
+
+#connection .label,
+#inscription .label {
+  margin-top: 5vh;
 }
 
 #connection #formConnection,
@@ -29,7 +35,20 @@
 #inscription #formConnection .loginInput,
 #inscription #formInscription .loginInput {
   width: 65%;
-  height: 4em;
+  height: 5vh;
+  margin-top: 5px;
+}
+
+#connection #formConnection .submitInput,
+#connection #formInscription .submitInput,
+#inscription #formConnection .submitInput,
+#inscription #formInscription .submitInput {
+  width: 23em;
+  height: 5vh;
+  margin-top: 4vh;
+  background-color: #f4bd33;
+  border: solid 1px grey;
+  border-radius: 5px;
 }
 
 #connection #btnConnectionToInscription,

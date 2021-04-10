@@ -36,44 +36,45 @@ class Login
             ?>
             <div id="mainContainer">
 
-                <div id="leftLogin">
 
 
-                    <div id="connection">
-                        <form id="formConnection" action="" method="">
 
-                            <label for="">Email</label>
-                            <input class="loginInput" type="text" name="">
+                <div id="connection">
+                    <form id="formConnection" action="" method="">
 
-                            <label for="">Mot de passe</label>
-                            <input class="loginInput" type="password" name="">
+                        <label class="label" for="">Email</label>
+                        <input class="loginInput" type="text" name="">
 
-                            <input type="submit">
+                        <label class="label" for="">Mot de passe</label>
+                        <input class="loginInput" type="password" name="">
 
-                        </form>
-                        <p>Pas de compte ? <button id="btnConnectionToInscription">inscrivez-vous</button> !</p>
-                    </div>
+                        <input class="submitInput" type="submit">
 
-                    <div id="inscription">
-                        <form id="formInscription" action="">
-                            <label for="">Nom</label>
-                            <input class="loginInput" type="text" name="">
-
-                            <label for="">Prénom</label>
-                            <input class="loginInput" type="text" name="">
-
-                            <label for="">Email</label>
-                            <input class="loginInput" type="text" name="">
-
-                            <label for="">Mot de passe</label>
-                            <input class="loginInput" type="password" name="">
-
-                            <input type="submit">
-                        </form>
-                        <p>Déja inscrit ? <button id="btnInscriptionToConnection">connectez-vous</button> !</p>
-                    </div>
-
+                    </form>
+                    <p>Pas de compte ? <button id="btnConnectionToInscription">inscrivez-vous</button> !</p>
                 </div>
+
+                <div id="inscription">
+                    <form id="formInscription" action="">
+
+                        <label class="label" for="">Nom</label>
+                        <input class="loginInput" type="text" name="">
+
+                        <label class="label" for="">Prénom</label>
+                        <input class="loginInput" type="text" name="">
+
+                        <label class="label" for="">Email</label>
+                        <input class="loginInput" type="text" name="">
+
+                        <label class="label" for="">Mot de passe</label>
+                        <input class="loginInput" type="password" name="">
+
+                        <input class="submitInput" type="submit">
+                    </form>
+                    <p>Déja inscrit ? <button id="btnInscriptionToConnection">connectez-vous</button> !</p>
+                </div>
+
+            </div>
 
 
 

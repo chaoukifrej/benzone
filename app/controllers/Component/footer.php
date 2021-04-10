@@ -12,16 +12,10 @@
 
 <body>
 
-    < <footer>
+    <footer>
 
         <div class="trait"></div>
-        <ul>
-            <h3>Pages</h3>
-            <li>Accueil</li>
-            <li>Encheres</li>
-            <li>Vendre</li>
-            <li>Connexion</li>
-        </ul>
+
 
         <ul>
             <h3>Encheres</h3>
@@ -41,13 +35,18 @@
         </ul>
 
         <ul>
-            <h3>Langue</h3>
-            <li><img src="./assets/flag_anglais.ico" height="20px" class="flag">Anglais</li>
-            <li><img src="./assets/flag_russie.ico" height="20px" class="flag">Russe</li>
-            <li><img src="./assets/flag_belge.ico" height="20px" class="flag">Flamand</li>
-            <li><img src="./assets/flag_suede.ico" height="20px" class="flag">Italien</li>
+            <h3>Langues</h3>
+            <li><img src="./assets/flag_anglais.ico" height="15px" class="flag">Anglais</li>
+            <li><img src="./assets/flag_russie.ico" height="15px" class="flag">Russe</li>
+            <li><img src="./assets/flag_belge.ico" height="15px" class="flag">Flamand</li>
+            <li><img src="./assets/flag_suede.ico" height="15px" class="flag">Suedois</li>
         </ul>
-        </footer>
+
+        <div class="social"><img class="logo" src="./assets/logoWhite.png" alt="logo"></div>
+
+
+
+    </footer>
 </body>
 
 </html>
