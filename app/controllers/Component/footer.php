@@ -5,23 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/styles/style.css" />
-    <link rel="stylesheet" href="/assets/styles/footer.css" />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="stylesheet" href="./assets/styles/footer.css" />
     <title>Document</title>
 </head>
 
 <body>
 
-    <div class="test">
-        <p>,nfmlaeknlezkflekaz</p>
-    </div>
-    <footer id="footer">
+    < <footer>
+
+        <div class="trait"></div>
         <ul>
-            <h3>pages</h3>
-            <li>accueil</li>
-            <li>encheres</li>
-            <li>vendre</li>
-            <li>connexion</li>
+            <h3>Pages</h3>
+            <li>Accueil</li>
+            <li>Encheres</li>
+            <li>Vendre</li>
+            <li>Connexion</li>
         </ul>
 
         <ul>
@@ -48,7 +47,7 @@
             <li><img src="./assets/flag_belge.ico" height="20px" class="flag">Flamand</li>
             <li><img src="./assets/flag_suede.ico" height="20px" class="flag">Italien</li>
         </ul>
-    </footer>
+        </footer>
 </body>
 
 </html>

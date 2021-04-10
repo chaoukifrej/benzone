@@ -1,4 +1,31 @@
-h3 {
-  color: red;
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 0px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  margin: 3px;
+}
+
+footer ul li .flag {
+  margin-right: 3px;
+  position: relative;
+  top: 3px;
 }
 /*# sourceMappingURL=footer.css.map */
