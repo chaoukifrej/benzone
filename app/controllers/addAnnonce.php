@@ -44,8 +44,8 @@ class AddAnnonce
         <div id="leftBox">
       <h2 id="titleAddAnnonce" >AJOUTER UNE ANNONCE</h1>
 
-      <form action="" method="POST">
-<label for="">Marque : </label>
+      <form action="/benzone/home.php/" method="POST">
+<label for="">Marque : </label><br><br>
         <select name="brand" id="">
           <option value="abarth">ABARTH</option> <!-- Select Abarth value => abarth -->
           <option value="ac">AC</option>
@@ -150,21 +150,21 @@ class AddAnnonce
           <option value="NSU">NSU</option>
           <option value="OLDSMOBIL">OLDSMOBIL</option>
         </select><br><br>
-
-        <label for="">Modèle : </label>
+        <hr><br>
+        <label for="">Modèle : </label><br><br>
         <input id="inputModel"  name="model" type="text"><br><br>
-
-        <label for="">Puissance (CV) : </label>
+<hr><br>
+        <label for="">Puissance (CV) : </label><br><br>
         <input id="inputPower" name="power" type="number"><br><br>
-
-        <label for="">Kilométrage : </label>
+        <hr><br>
+        <label for="">Kilométrage : </label><br><br>
         <input id="inputKM" type="number"><br><br>
-
-        <label for="">Année du véhicule : </label>
+        <hr><br>
+        <label for="">Année du véhicule : </label><br><br>
         <input id="inputBirth" type="date"><br><br>
 
 
-        <button>Valider</button><br><br>
+        <button id="btnValidate">Valider</button><br><br>
 
       </form>
   </div>
@@ -172,6 +172,9 @@ class AddAnnonce
     
 
       </div> 
+
+      <?php include_once __DIR__ . "/Component/footer.php";
+      ?>
 
       <script type="text/javascript" src="./assets/js/addAnnonce.js"></script>
     </body>
