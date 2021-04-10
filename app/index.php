@@ -14,7 +14,7 @@ include_once __DIR__ . "/controllers/perso.php";
 include_once __DIR__ . "/controllers/login.php";
 include_once __DIR__ . "/controllers/annonce.php";
 include_once __DIR__ . "/controllers/contact.php";
-
+include_once __DIR__."/controllers/addAnnonce.php";
 
 
 use App\Router\Router;
@@ -22,6 +22,7 @@ use App\Controllers\Home;
 use App\Controllers\DefaultPage;
 use App\Controllers\Perso;
 use App\Controllers\Login;
+use App\Controllers\AddAnnonce;
 
 
 //controller annonce class Annonce
@@ -52,6 +53,9 @@ $router = new Router($uri, $method);
 
 /* GET / - Page d'accueil */
 $router->get("/",  [new Home(), 'render']);
+
+// GET /addAnnonce - AJOUTER UNE ANNONCE 
+$router->get("/addAnnonce", [new AddAnnonce(), 'render']);
 
 /* GET Page perso*/
 $router->get("/perso", [new Perso(), 'render']);
