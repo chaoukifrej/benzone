@@ -14,7 +14,7 @@ include_once __DIR__ . "/controllers/perso.php";
 include_once __DIR__ . "/controllers/login.php";
 include_once __DIR__ . "/controllers/annonce.php";
 include_once __DIR__ . "/controllers/contact.php";
-include_once __DIR__."/controllers/addAnnonce.php";
+include_once __DIR__ . "/controllers/addAnnonce.php";
 
 
 use App\Router\Router;
@@ -52,7 +52,7 @@ $router = new Router($uri, $method);
  */
 
 /* GET / - Page d'accueil */
-$router->get("/",  [new Home(), 'render']);
+$router->get("/accueil",  [new Home(), 'render']);
 
 // GET /addAnnonce - AJOUTER UNE ANNONCE 
 $router->get("/addAnnonce", [new AddAnnonce(), 'render']);

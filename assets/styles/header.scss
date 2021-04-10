@@ -1,0 +1,35 @@
+$primaryColor: #fac31d;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  height: 60px;
+  border-bottom: 2px solid $primaryColor;
+  //LOGO
+  .headerLogo {
+    height: 50px;
+    margin: 5px 0 0 50px;
+  }
+  //LIEN
+  .headerLink {
+    margin: 0 15px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+    &:hover {
+      color: rgb(170, 170, 170);
+    }
+  }
+  //Lien Actuel
+  #actualLink {
+    color: $primaryColor;
+  }
+  //bouton connexion
+  .connexion {
+    margin: 0 50px;
+  }
+}
