@@ -15,7 +15,7 @@ class Menu
     <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="stylesheet" href="assets/styles/header.css">
     <div class="header">
-      <a href="accueil"><img class="headerLogo" src="assets/headerLogo.png" alt="logo Benzone"></a>
+      <a href="accueil"><img class="headerLogo" src="assets/img/headerLogo.png" alt="logo Benzone"></a>
       <nav>
         <?php $this->displayMenu($link) ?>
       </nav>

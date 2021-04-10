@@ -36,13 +36,13 @@
 
         <ul>
             <h3>Langues</h3>
-            <li><img src="./assets/flag_anglais.ico" height="15px" class="flag">Anglais</li>
-            <li><img src="./assets/flag_russie.ico" height="15px" class="flag">Russe</li>
-            <li><img src="./assets/flag_belge.ico" height="15px" class="flag">Flamand</li>
-            <li><img src="./assets/flag_suede.ico" height="15px" class="flag">Suedois</li>
+            <li><img src="assets/img/flag_anglais.ico" height="15px" class="flag">Anglais</li>
+            <li><img src="assets/img/flag_russie.ico" height="15px" class="flag">Russe</li>
+            <li><img src="assets/img/flag_belge.ico" height="15px" class="flag">Flamand</li>
+            <li><img src="assets/img/flag_suede.ico" height="15px" class="flag">Suedois</li>
         </ul>
 
-        <div class="social"><img class="logo" src="./assets/logoWhite.png" alt="logo"></div>
+        <div class="social"><img class="logo" src="assets/img/logoWhite.png" alt="logo"></div>
 
 
 
