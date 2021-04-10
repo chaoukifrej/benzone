@@ -19,6 +19,12 @@ class Menu
       <nav>
         <?php $this->displayMenu($link) ?>
       </nav>
+      <?php
+      /* $string = $_SERVER["REQUEST_URI"];
+      if (\str_contains($string, 'login')) {
+        echo $string;
+      } */
+      ?>
       <a class="headerLink connexion" href="login">CONNEXION</a>
     </div>
 <?php }
