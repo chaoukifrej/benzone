@@ -52,7 +52,7 @@ $router = new Router($uri, $method);
 $router->get("/",  [new Home(), 'render']);
 
 /* GET / - Page de connexion */
-$rooter->get("/login", [new Login(), 'render']);
+$router->get("/login", [new Login(), 'render']);
 
 // GET / - Page annonce
 $router->get("/annonce",  [new Annonce(), 'render']);
