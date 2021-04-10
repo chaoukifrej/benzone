@@ -1,0 +1,39 @@
+/* STYLE page Login */
+#formConnectionInscription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 18em;
+  width: 25%;
+  margin: auto;
+  border: solid black 1px;
+  border-radius: 5px;
+}
+
+#formConnectionInscription #connection,
+#formConnectionInscription #inscription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#formConnectionInscription #btnConnectionToInscription {
+  border-style: none;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+}
+/*# sourceMappingURL=login.css.map */
