@@ -8,7 +8,7 @@
 
 namespace App\Controllers;
 
-class Advert
+class Annonce
 {
 
   /**
