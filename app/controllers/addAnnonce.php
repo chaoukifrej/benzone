@@ -24,7 +24,7 @@ class AddAnnonce
       <meta charset="utf-8">
       <title>AddAnnonce</title>
 
-      <link rel="stylesheet"  href="assets/styles/addAnnonce.css" />
+      <link rel="stylesheet"  href="./assets/styles/addannonce.css" />
     </head>
 
     <body>

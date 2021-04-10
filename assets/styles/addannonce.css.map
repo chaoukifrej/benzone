@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "addannonce.scss"
+        "addAnnonce.scss"
     ],
     "names": [],
-    "file": "addannonce.css"
+    "file": "addAnnonce.css"
 }
