@@ -19,9 +19,8 @@ class Menu
       <nav>
         <?php $this->displayMenu($link) ?>
       </nav>
-      <a class="headerLink connexion" href="#">CONNEXION</a>
+      <a class="headerLink connexion" href="login">CONNEXION</a>
     </div>
-
 <?php }
 
   public function displayMenu($link)
