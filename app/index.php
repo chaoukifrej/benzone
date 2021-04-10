@@ -10,12 +10,16 @@
 require_once __DIR__ . "/core/Router.class.php"; // Routeur
 include_once __DIR__ . "/controllers/home.php";
 include_once __DIR__ . "/controllers/default.php";
-include_once __DIR__ . "/View/advertInfo.php";
+include_once __DIR__ . "/controllers/advertInfo.php";
 
 
 use App\Router\Router;
 use App\Controllers\Home;
 use App\Controllers\DefaultPage;
+
+//controller advertInfo class Advert
+use App\Controllers\Advert;
+
 
 
 /**
@@ -39,6 +43,10 @@ $router = new Router($uri, $method);
 
 /* GET / - Page d'accueil */
 $router->get("/",  [new Home(), 'render']);
+
+// GET / - Page annonce
+$router->get("/advertInfo",  [new Advert(), 'render']);
+
 
 /* Route par défaut */
 $router->default([new DefaultPage(), 'render']);
