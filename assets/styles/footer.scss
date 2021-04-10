@@ -1,0 +1,39 @@
+$primaryColor: #fac31d;
+
+footer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  justify-items: center;
+  align-content: center;
+  padding: 0;
+
+  .trait {
+    width: 70%;
+    border-bottom: 2px solid $primaryColor;
+    position: absolute;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 30px;
+    margin-left: 10px;
+
+    li {
+      margin: 3px;
+      .flag {
+        margin-right: 3px;
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+  .logo {
+    width: 240px;
+    margin-right: 10px;
+
+    position: relative;
+  }
+}

@@ -12,11 +12,22 @@
       justify-content: space-around;
   margin: auto;
   margin-top: 2%;
-  width: 80%;
+  width: 40%;
+  background-color: #181818;
+  color: white;
 }
 
 #inputModel, #inputPower, #inputKM, #inputBirth {
   border: none;
   border-bottom: 2px solid #fac31d;
+  outline: none;
+}
+
+#inputPower, #inputKM {
+  width: 80px;
+}
+
+#inputModel:focus {
+  border: 2px solid #fac31d;
 }
 /*# sourceMappingURL=addAnnonce.css.map */

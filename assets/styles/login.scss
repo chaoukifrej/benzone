@@ -1,23 +1,42 @@
 /* STYLE page Login */
 
-#formConnectionInscription {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 18em;
-  width: 25%;
-  margin: auto;
+#connection,
+#inscription {
+  height: 32em;
+  width: 28.5em;
   border: solid black 1px;
   border-radius: 5px;
+  text-align: center;
+  margin: auto;
 
-  #connection,
-  #inscription {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .label {
+    margin-top: 5vh;
   }
 
-  #btnConnectionToInscription {
+  #formConnection,
+  #formInscription {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .loginInput {
+      width: 65%;
+      height: 5vh;
+      margin-top: 5px;
+    }
+
+    .submitInput {
+      width: 23em;
+      height: 5vh;
+      margin-top: 4vh;
+      background-color: #f4bd33;
+      border: solid 1px grey;
+      border-radius: 5px;
+    }
+  }
+
+  #btnConnectionToInscription,
+  #btnInscriptionToConnection {
     border-style: none;
     background-color: transparent;
     border-bottom: 1px solid black;

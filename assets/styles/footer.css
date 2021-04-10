@@ -1,1 +1,47 @@
-/* No CSS *//*# sourceMappingURL=footer.css.map */
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 0;
+}
+
+footer .trait {
+  width: 70%;
+  border-bottom: 2px solid #fac31d;
+  position: absolute;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+footer ul li {
+  margin: 3px;
+}
+
+footer ul li .flag {
+  margin-right: 3px;
+  position: relative;
+  top: 2px;
+}
+
+footer .logo {
+  width: 240px;
+  margin-right: 10px;
+  position: relative;
+}
+/*# sourceMappingURL=footer.css.map */

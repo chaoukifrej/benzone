@@ -29,6 +29,9 @@ class AddAnnonce
      
       <link rel="stylesheet"  href="./assets/styles/style.css" />
       <link rel="stylesheet" href="./assets/styles/addannonce.css" />
+
+      <link rel="stylesheet" href="./assets/styles/addannonce.css" />
+      <link rel="stylesheet" href="assets/styles/addAnnonce.css" />
     </head>
 
     <body>
@@ -158,7 +161,7 @@ class AddAnnonce
         <input id="inputKM" type="number"><br><br>
 
         <label for="">Année du véhicule : </label>
-        <input id="inputBirth" type="number"><br><br>
+        <input id="inputBirth" type="date"><br><br>
 
 
         <button>Valider</button><br><br>
@@ -166,10 +169,7 @@ class AddAnnonce
       </form>
   </div>
 
-      <div id="rightBox">
-        <h2>Aperçus de votre annonce :</h2>
-<p id="resultat"></p>
-      </div>
+    
 
       </div> 
 

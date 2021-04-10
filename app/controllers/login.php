@@ -8,6 +8,8 @@
 
 namespace App\Controllers;
 
+use App\Controllers\Component\Menu;
+
 class Login
 {
 
@@ -29,35 +31,53 @@ class Login
         </head>
 
         <body>
+            <?php include_once __DIR__ . "/Component/header.php";
+            new Menu('login');
+            ?>
             <div id="mainContainer">
-                <h1 id="title">Page connexion</h1>
-                <form id="formConnectionInscription" action="" method="">
-                    <div id="connection">
-                        <label for="">Email</label>
-                        <input type="text" name="">
 
-                        <label for="">Mot de passe</label>
-                        <input type="password" name="">
-                    </div>
 
-                    <div id="inscription">
-                        <label for="">Nom</label>
-                        <input type="text" name="">
 
-                        <label for="">Prénom</label>
-                        <input type="text" name="">
 
-                        <label for="">Email</label>
-                        <input type="text" name="">
+                <div id="connection">
+                    <form id="formConnection" action="" method="">
 
-                        <label for="">Mot de passe</label>
-                        <input type="password" name="">
-                    </div>
+                        <label class="label" for="">Email</label>
+                        <input class="loginInput" type="text" name="">
 
-                    <input type="submit">
+                        <label class="label" for="">Mot de passe</label>
+                        <input class="loginInput" type="password" name="">
 
+                        <input class="submitInput" type="submit">
+
+                    </form>
                     <p>Pas de compte ? <button id="btnConnectionToInscription">inscrivez-vous</button> !</p>
-                </form>
+                </div>
+
+                <div id="inscription">
+                    <form id="formInscription" action="">
+
+                        <label class="label" for="">Nom</label>
+                        <input class="loginInput" type="text" name="">
+
+                        <label class="label" for="">Prénom</label>
+                        <input class="loginInput" type="text" name="">
+
+                        <label class="label" for="">Email</label>
+                        <input class="loginInput" type="text" name="">
+
+                        <label class="label" for="">Mot de passe</label>
+                        <input class="loginInput" type="password" name="">
+
+                        <input class="submitInput" type="submit">
+                    </form>
+                    <p>Déja inscrit ? <button id="btnInscriptionToConnection">connectez-vous</button> !</p>
+                </div>
+
+            </div>
+
+
+
             </div>
             <script type="text/javascript" src="./assets/js/login.js"></script>
         </body>
