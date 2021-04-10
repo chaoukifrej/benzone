@@ -23,8 +23,8 @@ class Annonce
     <head>
       <meta charset="utf-8">
       <title>Annonce</title>
-
-      <link rel="stylesheet" type="text/css" href="assets/styles/style.css" />
+      <link rel="stylesheet" href="./assets/styles/style.css" />
+      <link rel="stylesheet" href="./assets/styles/annonce.css" />
     </head>
 
     <body>
@@ -35,6 +35,7 @@ class Annonce
     </body>
 
     </html>
+
 <?php
   }
 }

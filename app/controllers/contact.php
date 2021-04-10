@@ -24,7 +24,7 @@ class Contact
       <meta charset="utf-8">
       <title>Contact</title>
 
-      <link rel="stylesheet" type="text/css" href="assets/styles/style.css" />
+      <link rel="stylesheet" type="text/css" href="./assets/styles/contact.css" />
     </head>
 
     <body>
