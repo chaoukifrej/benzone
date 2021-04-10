@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use Menu;
+
 class Annonce
 {
   //Affichage de la page annonce
@@ -19,7 +21,9 @@ class Annonce
     </head>
 
     <body>
-      <?php include_once __DIR__ . "/Component/header.php"; ?>
+      <?php include_once __DIR__ . "/Component/header.php";
+      new Menu();
+      ?>
       <div id="mainContainer">
         <h1>Annonce</h1>
         <p>Bienvenue sur la page annonce de merde</p>

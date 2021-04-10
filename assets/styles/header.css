@@ -22,7 +22,7 @@
 .header .headerLink {
   margin: 0 15px;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: white;
   text-decoration: none;
   -webkit-transition: 0.2s;
@@ -31,6 +31,10 @@
 
 .header .headerLink:hover {
   color: #aaaaaa;
+}
+
+.header #actualLink {
+  color: #fac31d;
 }
 
 .header .connexion {
