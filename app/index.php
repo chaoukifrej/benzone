@@ -10,12 +10,15 @@
 require_once __DIR__ . "/core/Router.class.php"; // Routeur
 include_once __DIR__ . "/controllers/home.php";
 include_once __DIR__ . "/controllers/default.php";
+include_once __DIR__ . "/controllers/login.php";
 include_once __DIR__ . "/View/advertInfo.php";
 
 
 use App\Router\Router;
 use App\Controllers\Home;
 use App\Controllers\DefaultPage;
+use App\Controllers\Login;
+
 
 
 /**
@@ -39,6 +42,9 @@ $router = new Router($uri, $method);
 
 /* GET / - Page d'accueil */
 $router->get("/",  [new Home(), 'render']);
+
+/* GET / - Page de connexion */
+$rooter->get("/login", [new Login(), 'render']);
 
 /* Route par défaut */
 $router->default([new DefaultPage(), 'render']);
