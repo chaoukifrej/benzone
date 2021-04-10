@@ -1,0 +1,21 @@
+footer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  justify-items: center;
+  align-content: center;
+  margin: 0px;
+  ul {
+    list-style: none;
+
+    li {
+      margin: 3px;
+      .flag {
+        margin-right: 3px;
+        position: relative;
+        top: 3px;
+      }
+    }
+  }
+}

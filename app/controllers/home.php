@@ -37,6 +37,8 @@ class Home
                 <h1>Démo routeur</h1>
                 <p>Bienvenue</p>
             </div>
+            <?php include_once __DIR__ . "/Component/footer.php";
+            ?>
         </body>
 
         </html>
