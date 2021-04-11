@@ -77,6 +77,9 @@ $router->post("/registration", [new Registration(), 'userRegistration']);
 // GET / - Page annonce
 $router->get("/annonce",  [new Annonce(), 'render']);
 
+// POST / - Page annonce
+$router->post("/annonce",  [new Annonce(), 'databaseSetActualPrice']);
+
 // GET / - Page contact
 $router->get("/contact",  [new Contact(), 'render']);
 
