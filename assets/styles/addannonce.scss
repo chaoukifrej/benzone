@@ -1,49 +1,62 @@
 $primaryColor: #fac31d;
 
 #titleAddAnnonce {
-    color : $primaryColor;
-    font-size: 30px;
-    padding: 10px;
-    border : 2px solid $primaryColor
+  color: $primaryColor;
+  font-size: 30px;
+  padding: 10px;
+  border: 2px solid $primaryColor;
+  text-align: center;
+  width: 25%;
+  margin: auto;
+  margin-top: 2%;
 }
 
-#conteneurGeneral{
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    margin: auto; 
-    margin-top: 2%;  
-    width: 40%;
-    
+#conteneurGeneral {
+  text-align: center;
+  margin: auto;
+  margin-top: 2%;
+  width: 40%;
 }
 
-#inputModel , #inputPower , #inputKM , #inputBirth {
-  
+#inputModel,
+#inputPower,
+#inputKM,
+#inputBirth,
+#inputTimeEnchere,
+#inputStartPrice {
   width: 23em;
   height: 5vh;
   border: solid 1px grey;
   border-radius: 5px;
   padding-left: 20px;
 }
-#inputModel:focus , #inputPower:focus , #inputKM:focus , #inputBirth:focus{
+
+#inputModel:focus , 
+#inputPower:focus , 
+#inputKM:focus , 
+#inputBirth:focus,
+#inputTimeEnchere:focus,
+#inputStartPrice:focus {
     outline: none; 
     border : 1px solid $primaryColor;
 }
 
-#btnValidate{
-    border-style: none;
-    background-color: transparent;
-    border-bottom: 1px solid $primaryColor;
-    font-size: 20px;
-    cursor: pointer;
+#btnValidate {
+  border-style: none;
+  background-color: transparent;
+  border-bottom: 1px solid $primaryColor;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-#btnValidate:hover{
-    border : 1px solid $primaryColor;
+#btnValidate:hover {
+  border: 1px solid $primaryColor;
 }
+
+
+
 
 hr {
     border: 1px solid $primaryColor;
     width: 200px;
-}
-
+  }

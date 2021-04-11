@@ -20,12 +20,11 @@ class Menu
         <?php $this->displayMenu($link) ?>
       </nav>
       <?php
-      /* $string = $_SERVER["REQUEST_URI"];
-      if (\str_contains($string, 'login')) {
-        echo $string;
-      } */
-      ?>
-      <a class="headerLink connexion" href="login">CONNEXION</a>
+      if (strpos($_SERVER["REQUEST_URI"], 'login')) { ?>
+        <a class="headerLink connexion" id='actualLink' href="login">CONNEXION</a>
+      <?php } else { ?>
+        <a class="headerLink connexion" href="login">CONNEXION</a>
+      <?php } ?>
     </div>
 <?php }
 

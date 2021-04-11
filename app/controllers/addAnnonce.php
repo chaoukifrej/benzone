@@ -10,12 +10,47 @@ namespace App\Controllers;
 
 use App\Controllers\Component\Menu;
 
+/* Class Name= AddAnnonce */
 class AddAnnonce
 {
 
   /**
-   * Affichage de la création annonce
+   * 
+   * FUNCTION ADD ANNONCE / INSERT BDD
+   * 
    */
+
+  public function addAnnonce(){
+   
+// Déclaration variable
+$brand = $_POST["brand"];
+$model = $_POST["model"];
+$power = $_POST["power"];
+$km = $_POST["km"];
+$vehicleYear = $_POST["vehicleYear"];
+$startPrice = $_POST["startPrice"];
+$descriptionAnnonce = $_POST["descriptionAnnonce"];
+$picture = $_POST["picture"];
+$finalDate = $_POST["finalDate"];
+  
+ //. Connexion Base de données
+ include_once  __DIR__ . "/../core/database.php";
+// Préparation de la requête
+$query = $dbh->prepare("INSERT INTO adverts (first_price, description) VALUES (?, ?)");
+$querys = $dbh->prepare("INSERT INTO car (model, brand ,power , vehicle_year,vehicle_km) VALUES (?,?,?,?,?)");
+
+/* Execution de la requête */
+$result = $query->execute([$startPrice, $descriptionAnnonce]);
+$results = $querys->execute([$model, $brand,$power, $vehicleYear, $km]);
+
+}
+
+  /**
+   * 
+   * FUNCTION AFFICHAGE FORM
+   * 
+   */
+
   public function render(){
 
     ?>
@@ -25,8 +60,7 @@ class AddAnnonce
 
     <head>
       <meta charset="utf-8">
-      <title>AddAnnonce</title>
-     
+      <title>AddAnnonce</title>   
       <link rel="stylesheet"  href="./assets/styles/style.css" />
       <link rel="stylesheet" href="./assets/styles/addannonce.css" />
     </head>
@@ -37,20 +71,85 @@ class AddAnnonce
       new Menu('VENDRE');
       ?>
 
+      
+       
+      <h2 id="titleAddAnnonce" >AJOUTER UNE ANNONCE</h2>
       <div id="conteneurGeneral">
-        <div id="leftBox">
-      <h2 id="titleAddAnnonce" >AJOUTER UNE ANNONCE</h1>
 
+      <form action="" method="POST">
       <h4>Informations du véhicule</h4>
-      <form action="/benzone/home.php/" method="POST">
+     
         <label for="">Marque : </label><br><br>
         <select name="brand" id="">
-          <option value="abarth">ABARTH</option> <!-- Select Abarth value => abarth -->
+          <option value="abarth">ABARTH</option> 
           <option value="ac">AC</option>
           <option value="aixam">AIXAM</option>
           <option value="alfa_romeo">ALFA ROMEO</option>
           <option value="alke">ALKE</option>
-          <option value="alpina">ALPINA</option>
+        </select><br><br>
+        <hr><br>
+        <label for="">Modèle : </label><br><br>
+        <input id="inputModel"  name="model" type="text"><br><br>
+<hr><br>
+
+        <label for="">Puissance (CV) : </label><br><br>
+        <input id="inputPower" name="power" type="number"><br><br>
+        <hr><br>
+
+        <label for="">Kilométrage : </label><br><br>
+        <input id="inputKM" type="number" name="km">
+
+        <br><br><hr><br>
+
+        <label for="">Année du véhicule : </label><br><br>
+        <input id="inputBirth" type="date" name="vehicleYear"><br><br>
+  
+        <h4>Informations de l'enchère</h4>
+
+        <!-- Label / Input prix de départ -->
+        <label for="">Prix de départ : </label><br><br>
+        <input id="inputStartPrice" type="text" name="startPrice">
+
+        <br><br><hr><br>
+
+        <!-- Label / Input durée de l'enchère -->
+        <label for="">Durée de l'enchère : </label><br><br>
+        <input id="inputTimeEnchere" type="date" name="finalDate">
+
+        <br><br><hr><br>
+        
+        <!-- Label / Text Area description -->
+        <label for="">Description : </label><br><br>
+        <textarea name="descriptionAnnonce" id="" cols="30" rows="10"></textarea>
+
+        <br><br><hr><br>
+
+        <!-- Label / Input photos -->
+        <label for="">Photos : </label><br><br>
+        <input type="file" name="picture">
+
+        <br><br><hr><br>
+
+        <button id="btnValidate">Valider</button><br><br>
+
+      </form>
+
+
+
+      </div> 
+
+      <?php include_once __DIR__ . "/Component/footer.php";
+      ?>
+
+      <script type="text/javascript" src="./assets/js/addAnnonce.js"></script>
+    </body>
+
+    </html>
+
+<?php
+  }}
+
+  /*          <option value="alpina">ALPINA</option>
           <option value="alpine">ALPINE</option>
           <option value="apal">APAL</option>
           <option value="ariel">ARIEL</option>
@@ -146,62 +245,4 @@ class AddAnnonce
           <option value="nissan">NISSAN</option>
           <option value="noun_electric">NOUN ELECTRIC</option>
           <option value="NSU">NSU</option>
-          <option value="OLDSMOBIL">OLDSMOBIL</option>
-        </select><br><br>
-        <hr><br>
-        <label for="">Modèle : </label><br><br>
-        <input id="inputModel"  name="model" type="text"><br><br>
-<hr><br>
-
-        <label for="">Puissance (CV) : </label><br><br>
-        <input id="inputPower" name="power" type="number"><br><br>
-        <hr><br>
-
-        <label for="">Kilométrage : </label><br><br>
-        <input id="inputKM" type="number">
-
-        <br><br><hr><br>
-
-        <label for="">Année du véhicule : </label><br><br>
-        <input id="inputBirth" type="date"><br><br>
-
-        <h4>Informations de l'enchère</h4>
-
-        <!-- Label / Input prix de départ -->
-        <label for="">Prix de départ : </label><br>
-
-        <br><br><hr><br>
-
-        <!-- Label / Input durée de l'enchère -->
-        <label for="">Durée de l'enchère : </label><br>
-
-        <br><br><hr><br>
-
-        <!-- Label / Text Area description -->
-        <label for="">Description : </label><br>
-
-        <br><br><hr><br>
-
-        <!-- Label / Input photos -->
-        <label for="">Photos : </label><br>
-
-        <br><br><hr><br>
-
-        <button id="btnValidate">Valider</button><br><br>
-
-      </form>
-  </div>
-
-
-      </div> 
-
-      <?php include_once __DIR__ . "/Component/footer.php";
-      ?>
-
-      <script type="text/javascript" src="./assets/js/addAnnonce.js"></script>
-    </body>
-
-    </html>
-
-<?php
-  }}
+          <option value="OLDSMOBIL">OLDSMOBIL</option>*/

@@ -1,4 +1,6 @@
 $primaryColor: #fac31d;
+
+//HERO de la page
 .hero {
   height: 500px;
   background: no-repeat center top / contain url(../img/hero.jpg);
@@ -19,15 +21,30 @@ $primaryColor: #fac31d;
   h2 {
     text-align: right;
     padding: 150px 0 0 0;
-    margin: 0 200px;
+    margin: 0 200px 0 0;
     color: white;
     font-size: 4rem;
   }
   p {
     text-align: right;
-    margin: 0 100px;
+    margin: 0 100px 0 0;
     font-size: 1.5rem;
     color: $primaryColor;
     font-style: italic;
+  }
+}
+
+//MAIN Contenu
+#mainContainer {
+  width: 100vw;
+  h1 {
+    text-align: center;
+    margin: 50px;
+  }
+  .cards {
+    margin: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

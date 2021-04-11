@@ -1,1 +1,62 @@
-/* No CSS *//*# sourceMappingURL=card.css.map */
+.annonceCard {
+  padding: 0 5px 5px;
+  height: 360px;
+  width: 380px;
+  border-radius: 5px;
+  border: 1px solid #fac31d;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: white;
+}
+
+.annonceCard h3 {
+  text-align: left;
+  margin: 5px 5px 0;
+  font-size: 1.2rem;
+}
+
+.annonceCard .pContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 0.9rem;
+}
+
+.annonceCard .pContainer p {
+  text-align: left;
+}
+
+.annonceCard .pContainer span {
+  font-size: 0.7rem;
+  font-weight: bolder;
+  color: #bbbbbb;
+}
+
+.annonceCard img {
+  margin: 5px;
+  width: 370px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+
+.annonceCard:hover {
+  opacity: 0.9;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+#btnSubmitAnnonce {
+  margin: 30px;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: unset;
+  outline: none;
+}
+/*# sourceMappingURL=card.css.map */

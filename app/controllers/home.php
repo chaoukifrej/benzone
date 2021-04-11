@@ -12,12 +12,31 @@ use App\Controllers\Component\Menu;
 use App\Controllers\Component\AnnonceCard;
 
 
+
 class Home
 {
+    protected $adverts;
 
-    /**
-     * Affichage de la page d'accueil
-     */
+    public function databaseGetAdverts()
+    {
+        //. Connexion Base de données
+        include  __DIR__ . "/../core/database.php";
+        $this->adverts = $dbh->query("SELECT
+        a.id,
+        a.actual_price,
+        a.final_date,
+        a.description,
+        a.picture,
+        c.brand,
+        c.model
+    FROM
+        adverts a
+    INNER JOIN 
+        car c
+    ON c.id = a.car_id")->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    //Affichage de la page d'accueil
     public function render()
     {
 ?>
@@ -30,6 +49,7 @@ class Home
             <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
             <link rel="stylesheet" type="text/css" href="assets/styles/style.css" />
             <link rel="stylesheet" type="text/css" href="assets/styles/home.css">
+            <link rel="stylesheet" type="text/css" href="assets/styles/card.css">
         </head>
 
         <body>
@@ -47,8 +67,17 @@ class Home
                 </div>
             </div>
             <div id="mainContainer">
-                <h1>Enchères (nb à inserer)</h1>
-                <p>Card à inserer</p>
+                <?php
+                $this->databaseGetAdverts();
+                ?>
+                <h1>Enchères (<?= count($this->adverts) ?>)</h1>
+                <div class="cards">
+                    <?php include_once __DIR__ . "/Component/annonceCard.php";
+                    foreach ($this->adverts as $value) {
+                        new AnnonceCard($value);
+                    }
+                    ?>
+                </div>
             </div>
             <?php include_once __DIR__ . "/Component/footer.php";
             ?>

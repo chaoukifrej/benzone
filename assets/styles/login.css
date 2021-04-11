@@ -1,23 +1,48 @@
 /* STYLE page Login */
+#background {
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  height: 92vh;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+#background #heroBackground {
+  height: 92vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
 #connection,
-#inscription {
+#registration {
   height: 32em;
   width: 28.5em;
   border: solid black 1px;
   border-radius: 5px;
   text-align: center;
   margin: auto;
+  background-color: white;
+  -webkit-box-shadow: grey 0 0 24px;
+          box-shadow: grey 0 0 24px;
+  position: relative;
+  top: 8.5vh;
 }
 
-#connection .label,
-#inscription .label {
+#connection .conLabel,
+#registration .conLabel {
   margin-top: 5vh;
 }
 
+#connection .inscLabel,
+#registration .inscLabel {
+  margin-top: 3vh;
+}
+
 #connection #formConnection,
-#connection #formInscription,
-#inscription #formConnection,
-#inscription #formInscription {
+#connection #formRegistration,
+#registration #formConnection,
+#registration #formRegistration {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,18 +56,20 @@
 }
 
 #connection #formConnection .loginInput,
-#connection #formInscription .loginInput,
-#inscription #formConnection .loginInput,
-#inscription #formInscription .loginInput {
+#connection #formRegistration .loginInput,
+#registration #formConnection .loginInput,
+#registration #formRegistration .loginInput {
   width: 65%;
   height: 5vh;
   margin-top: 5px;
+  border-radius: 5px;
+  border: solid 1px grey;
 }
 
 #connection #formConnection .submitInput,
-#connection #formInscription .submitInput,
-#inscription #formConnection .submitInput,
-#inscription #formInscription .submitInput {
+#connection #formRegistration .submitInput,
+#registration #formConnection .submitInput,
+#registration #formRegistration .submitInput {
   width: 23em;
   height: 5vh;
   margin-top: 4vh;
@@ -51,12 +78,27 @@
   border-radius: 5px;
 }
 
-#connection #btnConnectionToInscription,
-#connection #btnInscriptionToConnection,
-#inscription #btnConnectionToInscription,
-#inscription #btnInscriptionToConnection {
+#connection #formConnection .conSubmit,
+#connection #formRegistration .conSubmit,
+#registration #formConnection .conSubmit,
+#registration #formRegistration .conSubmit {
+  margin-top: 146px;
+}
+
+#connection #formConnection .submitInput:hover,
+#connection #formRegistration .submitInput:hover,
+#registration #formConnection .submitInput:hover,
+#registration #formRegistration .submitInput:hover {
+  background-color: #e9b634;
+}
+
+#connection #btnConnectionToRegistration,
+#connection #btnRegistrationToConnection,
+#registration #btnConnectionToRegistration,
+#registration #btnRegistrationToConnection {
   border-style: none;
   background-color: transparent;
-  border-bottom: 1px solid black;
+  color: #f4bd33;
+  font-size: 2.5vh;
 }
 /*# sourceMappingURL=login.css.map */

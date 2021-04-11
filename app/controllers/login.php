@@ -10,6 +10,7 @@ namespace App\Controllers;
 
 use App\Controllers\Component\Menu;
 
+
 class Login
 {
 
@@ -17,8 +18,7 @@ class Login
      * Affichage de la page de connexion
      */
     public function render()
-    {
-?>
+    { ?>
         <!DOCTYPE html>
         <html>
 
@@ -35,44 +35,50 @@ class Login
             new Menu('login');
             ?>
             <div id="mainContainer">
+                <div id="background">
+                    <div id="heroBackground">
+                        <div id="connection">
 
+                            <h2>CONNEXION</h2>
+                            <form id="formConnection" action="" method="POST">
 
+                                <label class="conLabel" for="">Email</label>
+                                <input class="loginInput" type="text" name="">
 
+                                <label class="conLabel" for="">Mot de passe</label>
+                                <input class="loginInput" type="password" name="">
 
-                <div id="connection">
-                    <form id="formConnection" action="" method="">
+                                <input class="submitInput conSubmit" type="submit">
 
-                        <label class="label" for="">Email</label>
-                        <input class="loginInput" type="text" name="">
+                            </form>
+                            <p>Pas de compte ? <button id="btnConnectionToRegistration">inscrivez-vous</button> !</p>
+                        </div>
 
-                        <label class="label" for="">Mot de passe</label>
-                        <input class="loginInput" type="password" name="">
+                        <div id="registration">
 
-                        <input class="submitInput" type="submit">
+                            <h2>INSCRIPTION</h2>
+                            <form id="formRegistration" action="registration" method="POST">
 
-                    </form>
-                    <p>Pas de compte ? <button id="btnConnectionToInscription">inscrivez-vous</button> !</p>
+                                <label for="lastname">Nom</label>
+                                <input class="loginInput" type="text" name="lastname">
+
+                                <label class="inscLabel" for="firstname">Prénom</label>
+                                <input class="loginInput" type="text" name="firstname">
+
+                                <label class="inscLabel" for="email">Email</label>
+                                <input class="loginInput" type="mail" name="email">
+
+                                <label class="inscLabel" for="password">Mot de passe</label>
+                                <input class="loginInput" type="password" name="password">
+
+                                <input class="submitInput" type="submit">
+                            </form>
+                            <p>Déja inscrit ? <button id="btnRegistrationToConnection">connectez-vous</button> !</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div id="inscription">
-                    <form id="formInscription" action="">
 
-                        <label class="label" for="">Nom</label>
-                        <input class="loginInput" type="text" name="">
-
-                        <label class="label" for="">Prénom</label>
-                        <input class="loginInput" type="text" name="">
-
-                        <label class="label" for="">Email</label>
-                        <input class="loginInput" type="text" name="">
-
-                        <label class="label" for="">Mot de passe</label>
-                        <input class="loginInput" type="password" name="">
-
-                        <input class="submitInput" type="submit">
-                    </form>
-                    <p>Déja inscrit ? <button id="btnInscriptionToConnection">connectez-vous</button> !</p>
-                </div>
 
             </div>
 

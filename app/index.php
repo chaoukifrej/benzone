@@ -15,6 +15,7 @@ include_once __DIR__ . "/controllers/login.php";
 include_once __DIR__ . "/controllers/annonce.php";
 include_once __DIR__ . "/controllers/contact.php";
 include_once __DIR__ . "/controllers/addAnnonce.php";
+include_once __DIR__ . "/controllers/registration.php";
 
 
 use App\Router\Router;
@@ -23,6 +24,7 @@ use App\Controllers\DefaultPage;
 use App\Controllers\Perso;
 use App\Controllers\Login;
 use App\Controllers\AddAnnonce;
+use App\Controllers\Registration;
 
 
 //controller annonce class Annonce
@@ -62,8 +64,15 @@ $router->get("/addAnnonce", [new AddAnnonce(), 'render']);
 
 /* GET Page perso*/
 $router->get("/perso", [new Perso(), 'render']);
+
 /* GET / - Page de connexion */
 $router->get("/login", [new Login(), 'render']);
+
+/* POST / - Page de connexion */
+$router->post("/registration", [new Registration(), 'userRegistration']);
+
+
+
 
 // GET / - Page annonce
 $router->get("/annonce",  [new Annonce(), 'render']);
