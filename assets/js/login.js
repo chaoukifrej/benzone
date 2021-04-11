@@ -1,25 +1,25 @@
-let btnConnectionToInscription = document.getElementById("btnConnectionToInscription")
-let btnInscriptionToConnection = document.getElementById("btnInscriptionToConnection")
+let btnConnectionToRegistration = document.getElementById("btnConnectionToRegistration")
+let btnRegistrationToConnection = document.getElementById("btnRegistrationToConnection")
 let formConnection = document.getElementById("formConnection")
-let formInscription = document.getElementById("formInscription")
+let formRegistration = document.getElementById("formRegistration")
 let connection = document.getElementById("connection")
-let inscription = document.getElementById("inscription")
+let registration = document.getElementById("registration")
 
-inscription.style.display = "none"
-formInscription.style.display = "none"
+registration.style.display = "none"
+formRegistration.style.display = "none"
 
 
-btnConnectionToInscription.addEventListener('click', function(e){
+btnConnectionToRegistration.addEventListener('click', function(e){
     formConnection.style.display = "none"
     connection.style.display = "none"
-    inscription.style.display = "block"
-    formInscription.style.display = "flex"
+    registration.style.display = "block"
+    formRegistration.style.display = "flex"
 })
 
-btnInscriptionToConnection.addEventListener('click', function(e){
+btnRegistrationToConnection.addEventListener('click', function(e){
     formConnection.style.display = "flex"
     connection.style.display = "block"
-    inscription.style.display = "none"
-    formInscription.style.display = "none"
+    registration.style.display = "none"
+    formRegistration.style.display = "none"
 })
 
