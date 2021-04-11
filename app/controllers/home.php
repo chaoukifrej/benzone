@@ -49,10 +49,10 @@ class Home
             </div>
             <div id="mainContainer">
                 <h1>Enchères (nb à inserer)</h1>
-                <p>Card à inserer</p>
                 <div class="cards">
                     <?php include_once __DIR__ . "/Component/annonceCard.php";
                     new AnnonceCard();
+
                     ?>
                 </div>
             </div>

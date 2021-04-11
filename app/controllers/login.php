@@ -40,13 +40,9 @@ class Login
             }
 
 
-            //. CONFIGURATION CONNEXION
-            $db_address = "mysql:dbname=benzone;host=localhost";
-            $db_user = "root";
-            $db_password = "root";
+            //. Connexion Base de données
+            include_once  __DIR__ . "/../core/database.php"; // Routeur
 
-            //. CONNEXION
-            $dbh = new PDO($db_address, $db_user, $db_password);
 
             //. INSCRIPTION UTILISATEURS
             if ($data_validated === true) {
