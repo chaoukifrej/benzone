@@ -1,5 +1,19 @@
 /* STYLE page Login */
 
+$primaryColor: #f4bd33;
+
+#background {
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  height: 91vh;
+  backdrop-filter: blur(5px);
+  #heroBackground {
+    height: 91vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+  }
+}
+
 #connection,
 #inscription {
   height: 32em;
@@ -8,9 +22,17 @@
   border-radius: 5px;
   text-align: center;
   margin: auto;
+  background-color: white;
+  box-shadow: grey 0 0 24px;
+  position: relative;
+  top: 8.5vh;
 
-  .label {
+  .conLabel {
     margin-top: 5vh;
+  }
+
+  .inscLabel {
+    margin-top: 3vh;
   }
 
   #formConnection,
@@ -23,15 +45,25 @@
       width: 65%;
       height: 5vh;
       margin-top: 5px;
+      border-radius: 5px;
+      border: solid 1px grey;
     }
 
     .submitInput {
       width: 23em;
       height: 5vh;
       margin-top: 4vh;
-      background-color: #f4bd33;
+      background-color: $primaryColor;
       border: solid 1px grey;
       border-radius: 5px;
+    }
+
+    .conSubmit {
+      margin-top: 146px;
+    }
+
+    .submitInput:hover {
+      background-color: #e9b634;
     }
   }
 
@@ -39,6 +71,7 @@
   #btnInscriptionToConnection {
     border-style: none;
     background-color: transparent;
-    border-bottom: 1px solid black;
+    color: #f4bd33;
+    font-size: 2.5vh;
   }
 }

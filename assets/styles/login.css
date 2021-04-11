@@ -1,4 +1,19 @@
 /* STYLE page Login */
+#background {
+  background-image: url(../img/hero.jpg);
+  background-size: cover;
+  height: 91vh;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+#background #heroBackground {
+  height: 91vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
 #connection,
 #inscription {
   height: 32em;
@@ -7,11 +22,21 @@
   border-radius: 5px;
   text-align: center;
   margin: auto;
+  background-color: white;
+  -webkit-box-shadow: grey 0 0 24px;
+          box-shadow: grey 0 0 24px;
+  position: relative;
+  top: 8.5vh;
 }
 
-#connection .label,
-#inscription .label {
+#connection .conLabel,
+#inscription .conLabel {
   margin-top: 5vh;
+}
+
+#connection .inscLabel,
+#inscription .inscLabel {
+  margin-top: 3vh;
 }
 
 #connection #formConnection,
@@ -37,6 +62,8 @@
   width: 65%;
   height: 5vh;
   margin-top: 5px;
+  border-radius: 5px;
+  border: solid 1px grey;
 }
 
 #connection #formConnection .submitInput,
@@ -51,12 +78,27 @@
   border-radius: 5px;
 }
 
+#connection #formConnection .conSubmit,
+#connection #formInscription .conSubmit,
+#inscription #formConnection .conSubmit,
+#inscription #formInscription .conSubmit {
+  margin-top: 146px;
+}
+
+#connection #formConnection .submitInput:hover,
+#connection #formInscription .submitInput:hover,
+#inscription #formConnection .submitInput:hover,
+#inscription #formInscription .submitInput:hover {
+  background-color: #e9b634;
+}
+
 #connection #btnConnectionToInscription,
 #connection #btnInscriptionToConnection,
 #inscription #btnConnectionToInscription,
 #inscription #btnInscriptionToConnection {
   border-style: none;
   background-color: transparent;
-  border-bottom: 1px solid black;
+  color: #f4bd33;
+  font-size: 2.5vh;
 }
 /*# sourceMappingURL=login.css.map */

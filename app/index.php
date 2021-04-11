@@ -62,8 +62,12 @@ $router->get("/addAnnonce", [new AddAnnonce(), 'render']);
 
 /* GET Page perso*/
 $router->get("/perso", [new Perso(), 'render']);
+
 /* GET / - Page de connexion */
 $router->get("/login", [new Login(), 'render']);
+
+/* POST / - Page de connexion */
+$router->post("/login", [new Login(), 'render']);
 
 // GET / - Page annonce
 $router->get("/annonce",  [new Annonce(), 'render']);
