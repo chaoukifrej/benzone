@@ -1,13 +1,14 @@
 .annonceCard {
   margin: 30px;
-  padding: 0 20px 20px;
+  padding: 0 5px 5px;
   height: 360px;
   width: 380px;
   border-radius: 5px;
   border: 1px solid #fac31d;
   cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: white;
 }
 
 .annonceCard .pContainer {
@@ -17,7 +18,12 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  font-size: 0.9rem;
+}
+
+.annonceCard .pContainer span {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #aaaaaa;
 }
 
 .annonceCard h3 {
@@ -25,13 +31,14 @@
 }
 
 .annonceCard img {
-  margin: 10px;
-  width: 360px;
+  margin: 5px;
+  width: 370px;
   height: auto;
   border-radius: 5px;
 }
 
 .annonceCard:hover {
+  opacity: 0.9;
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
 }

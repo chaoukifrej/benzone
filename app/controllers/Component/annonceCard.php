@@ -27,8 +27,8 @@ class AnnonceCard
     <div class="annonceCard">
       <h3>{$this->annonce['brand']} {$this->annonce['model']}</h3>
       <div class="pContainer">
-        <p><span>Meilleure enchère : </span><br/>{$this->annonce['actual_price']} €</p>
-        <p><span>Termine le : </span><br/>{$this->annonce['final_date']}</p>
+        <p><span>MEILLEURE ENCHERE : </span><br/>{$this->annonce['actual_price']} €</p>
+        <p><span>TERMINE LE : </span><br/>{$this->annonce['final_date']}</p>
       </div>
       <img src="{$this->annonce['picture']}" alt="image véhicule">
     </div>

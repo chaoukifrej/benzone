@@ -2,28 +2,35 @@ $primaryColor: #fac31d;
 
 .annonceCard {
   margin: 30px;
-  padding: 0 20px 20px;
+  padding: 0 5px 5px;
   height: 360px;
   width: 380px;
   border-radius: 5px;
   border: 1px solid $primaryColor;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.5s;
+  background-color: rgb(255, 255, 255);
+  //box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   .pContainer {
     display: flex;
     justify-content: space-evenly;
-    font-size: 0.9rem;
+    span {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: rgb(170, 170, 170);
+    }
   }
   h3 {
     margin: 10px 0 0 10px;
   }
   img {
-    margin: 10px;
-    width: 360px;
+    margin: 5px;
+    width: 370px;
     height: auto;
     border-radius: 5px;
   }
   &:hover {
+    opacity: 0.9;
     transform: scale(1.01);
   }
 }
