@@ -16,16 +16,35 @@ class Annonce
     $this->advert = $dbh->query("SELECT
       a.id,
       a.actual_price,
+      a.start_date,
       a.final_date,
       a.description,
       a.picture,
+      a.owner_id,
+      a.bidder_id,
+      c.id,
       c.brand,
-      c.model
+      c.model,
+      c.power,
+      c.vehicle_year,
+      c.vehicle_km,
+      u.lastname as ownerln,
+      u.firstname as ownerfn,
+      b.lastname as bidderln,
+      b.firstname as bidderfn
   FROM
       adverts a
   INNER JOIN 
       car c
-  ON c.id = a.car_id")->fetchAll(\PDO::FETCH_ASSOC);
+  ON c.id = a.car_id
+  INNER JOIN
+      users u
+  ON a.owner_id = u.id
+  INNER JOIN
+      users b
+  ON a.bidder_id = b.id
+  WHERE a.id = $_GET[id]
+  ")->fetchAll(\PDO::FETCH_ASSOC);
   }
 
   //Affichage de la page annonce
@@ -51,7 +70,6 @@ class Annonce
         <?php
         $this->databaseGetAdverts();
         var_dump($this->advert);
-        var_dump($_GET);
         ?>
       </div>
     </body>
