@@ -25,8 +25,9 @@ $primaryColor: #fac31d;
   border-radius: 5px;
   padding-left: 20px;
 }
-#inputModel:focus{
+#inputModel:focus , #inputPower:focus , #inputKM:focus , #inputBirth:focus{
     outline: none; 
+    border : 1px solid $primaryColor;
 }
 
 #btnValidate{

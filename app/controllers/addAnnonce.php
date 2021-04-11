@@ -29,9 +29,6 @@ class AddAnnonce
      
       <link rel="stylesheet"  href="./assets/styles/style.css" />
       <link rel="stylesheet" href="./assets/styles/addannonce.css" />
-
-      <link rel="stylesheet" href="./assets/styles/addannonce.css" />
-      <link rel="stylesheet" href="assets/styles/addAnnonce.css" />
     </head>
 
     <body>
@@ -44,8 +41,9 @@ class AddAnnonce
         <div id="leftBox">
       <h2 id="titleAddAnnonce" >AJOUTER UNE ANNONCE</h1>
 
+      <h4>Informations du véhicule</h4>
       <form action="/benzone/home.php/" method="POST">
-<label for="">Marque : </label><br><br>
+        <label for="">Marque : </label><br><br>
         <select name="brand" id="">
           <option value="abarth">ABARTH</option> <!-- Select Abarth value => abarth -->
           <option value="ac">AC</option>
@@ -154,22 +152,46 @@ class AddAnnonce
         <label for="">Modèle : </label><br><br>
         <input id="inputModel"  name="model" type="text"><br><br>
 <hr><br>
+
         <label for="">Puissance (CV) : </label><br><br>
         <input id="inputPower" name="power" type="number"><br><br>
         <hr><br>
+
         <label for="">Kilométrage : </label><br><br>
-        <input id="inputKM" type="number"><br><br>
-        <hr><br>
+        <input id="inputKM" type="number">
+
+        <br><br><hr><br>
+
         <label for="">Année du véhicule : </label><br><br>
         <input id="inputBirth" type="date"><br><br>
 
+        <h4>Informations de l'enchère</h4>
+
+        <!-- Label / Input prix de départ -->
+        <label for="">Prix de départ : </label><br>
+
+        <br><br><hr><br>
+
+        <!-- Label / Input durée de l'enchère -->
+        <label for="">Durée de l'enchère : </label><br>
+
+        <br><br><hr><br>
+
+        <!-- Label / Text Area description -->
+        <label for="">Description : </label><br>
+
+        <br><br><hr><br>
+
+        <!-- Label / Input photos -->
+        <label for="">Photos : </label><br>
+
+        <br><br><hr><br>
 
         <button id="btnValidate">Valider</button><br><br>
 
       </form>
   </div>
 
-    
 
       </div> 
 
