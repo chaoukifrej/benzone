@@ -1,3 +1,29 @@
+#mainContainer .btnRetour {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-left: 50px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#mainContainer .btnRetour img {
+  height: 22px;
+  margin-right: 5px;
+}
+
+#mainContainer .btnRetour:hover {
+  -webkit-transform: translateX(-5%);
+          transform: translateX(-5%);
+}
+
 #mainContainer h1 {
   text-align: center;
   margin: 50px;

@@ -67,6 +67,7 @@ class Annonce
       ?>
       <div id="mainContainer">
         <h1>Annonce</h1>
+        <a class="btnRetour" href="accueil"> <img src="assets/img/arrow.svg" alt=""> Retour</a>
         <?php
         $this->databaseGetAdverts();
         var_dump($this->advert);

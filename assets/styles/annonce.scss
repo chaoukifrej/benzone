@@ -1,6 +1,23 @@
 $primaryColor: #fac31d;
 
 #mainContainer {
+  .btnRetour {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-left: 50px;
+    transition: 0.2s;
+    width: fit-content;
+    img {
+      height: 22px;
+      margin-right: 5px;
+    }
+    &:hover {
+      transform: translateX(-5%);
+    }
+  }
   h1 {
     text-align: center;
     margin: 50px;
