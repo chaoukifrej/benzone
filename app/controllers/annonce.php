@@ -66,7 +66,9 @@ class Annonce
       WHERE
       id = ?');
       $query->execute([$price, $_POST['id']]);
-      header('location: accueil');
+      header('location: annonce?id=' . $_POST["id"]);
+    } else {
+      header('location: annonce?id=' . $_POST["id"]);
     }
   }
 
