@@ -141,16 +141,19 @@ class Annonce
           </div>
 
           <!-- Encher DIV -->
-          <div class="descriptionContainer">
-
+          <div class="descriptionContainer encherirContainer">
+            <h3 class="titreE">Enchérir</h3>
+            <form action="annonce" method="post">
+              <label for="price">Montant</label>
+              <input type="number" name="actual_price" id="price">
+              <button type="submit">Valider</button>
+            </form>
           </div>
         </div>
 
-
-
       </div>
       <?php
-      var_dump($this->advert);
+      //var_dump($this->advert);
       ?>
       <?php include_once __DIR__ . "/Component/footer.php"; ?>
     </body>

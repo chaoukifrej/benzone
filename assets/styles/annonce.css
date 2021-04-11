@@ -1,5 +1,5 @@
 #mainContainer {
-  margin: 50px 150px;
+  margin: 50px 150px 100px;
 }
 
 #mainContainer .btnRetour {
@@ -57,6 +57,14 @@
      object-fit: cover;
   margin: 30px 0;
   border-radius: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#mainContainer .imgVehicle:hover {
+  opacity: 0.9;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
 }
 
 #mainContainer .description {
@@ -98,5 +106,57 @@
 
 #mainContainer .divContainerDescription .descriptionContainer .secondD {
   font-size: 0.9rem;
+}
+
+#mainContainer .divContainerDescription .encherirContainer h3 {
+  text-align: center;
+  margin: 0;
+}
+
+#mainContainer .divContainerDescription .encherirContainer form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#mainContainer .divContainerDescription .encherirContainer form label {
+  font-size: 1.1rem;
+  margin: 10px 0 5px 50px;
+}
+
+#mainContainer .divContainerDescription .encherirContainer form input {
+  padding: 5px;
+  margin: 0 50px;
+  width: 300px;
+  height: 25px;
+  font-size: 1.1rem;
+  outline: none;
+  border-radius: 5px;
+  border: solid 1px grey;
+}
+
+#mainContainer .divContainerDescription .encherirContainer form button {
+  font-size: 1rem;
+  height: 35px;
+  width: 313px;
+  margin: 15px 50px;
+  background-color: #fac31d;
+  border: solid 1px grey;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#mainContainer .divContainerDescription .encherirContainer form button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 /*# sourceMappingURL=annonce.css.map */

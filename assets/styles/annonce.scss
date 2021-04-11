@@ -1,7 +1,7 @@
 $primaryColor: #fac31d;
 
 #mainContainer {
-  margin: 50px 150px;
+  margin: 50px 150px 100px;
   .btnRetour {
     display: flex;
     text-decoration: none;
@@ -44,6 +44,11 @@ $primaryColor: #fac31d;
     object-fit: cover;
     margin: 30px 0;
     border-radius: 5px;
+    transition: 0.3s;
+    &:hover {
+      opacity: 0.9;
+      transform: scale(1.01);
+    }
   }
 
   //Description
@@ -72,6 +77,46 @@ $primaryColor: #fac31d;
       }
       .secondD {
         font-size: 0.9rem;
+      }
+    }
+    .encherirContainer {
+      h3 {
+        text-align: center;
+        margin: 0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        label {
+          font-size: 1.1rem;
+          margin: 10px 0 5px 50px;
+        }
+        input {
+          padding: 5px;
+          margin: 0 50px;
+          width: 300px;
+          height: 25px;
+          font-size: 1.1rem;
+          outline: none;
+          border-radius: 5px;
+          border: solid 1px grey;
+        }
+        button {
+          font-size: 1rem;
+          height: 35px;
+          width: 313px;
+          margin: 15px 50px;
+          background-color: $primaryColor;
+          border: solid 1px grey;
+          border-radius: 5px;
+          outline: none;
+          cursor: pointer;
+          transition: 0.3s;
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
       }
     }
   }
