@@ -1,13 +1,13 @@
 $primaryColor: #fac31d;
 
 #mainContainer {
+  margin: 50px 150px;
   .btnRetour {
     display: flex;
     text-decoration: none;
     color: black;
     font-size: 1.3rem;
     font-weight: bold;
-    margin-left: 50px;
     transition: 0.2s;
     width: fit-content;
     img {
@@ -19,7 +19,60 @@ $primaryColor: #fac31d;
     }
   }
   h1 {
-    text-align: center;
-    margin: 50px;
+    margin-top: 50px;
+    font-size: 2rem;
+  }
+  //premier p (termine le...)
+  .termineAndEnchere {
+    color: rgb(97, 97, 97);
+    .termineDate {
+      color: black;
+    }
+    .enchere {
+      margin-left: 25px;
+    }
+    .enchereNB {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: black;
+    }
+  }
+  //Image véhicule
+  .imgVehicle {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin: 30px 0;
+    border-radius: 5px;
+  }
+
+  //Description
+  .description {
+    font-size: 1.1rem;
+  }
+  .divContainerDescription {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    .descriptionContainer {
+      margin: 10px;
+      border-radius: 5px;
+      border: 1px solid $primaryColor;
+      padding: 10px;
+      width: 400px;
+      height: 150px;
+      p {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .firstD {
+        color: gray;
+        font-weight: 500;
+        font-size: 0.8rem;
+      }
+      .secondD {
+        font-size: 0.9rem;
+      }
+    }
   }
 }

@@ -45,6 +45,13 @@ class Annonce
   ON a.bidder_id = b.id
   WHERE a.id = $_GET[id]
   ")->fetchAll(\PDO::FETCH_ASSOC);
+    $this->advert = $this->advert[0];
+  }
+
+  // function de transformation date
+  public function createDateFrom($date)
+  {
+    return new \DateTime($date);
   }
 
   //Affichage de la page annonce
@@ -62,17 +69,90 @@ class Annonce
     </head>
 
     <body>
-      <?php include_once __DIR__ . "/Component/header.php";
+      <?php
+      //Ajout Header
+      include_once __DIR__ . "/Component/header.php";
       new Menu();
+
+      //Récup infos from Database
+      $this->databaseGetAdverts();
       ?>
       <div id="mainContainer">
-        <h1>Annonce</h1>
         <a class="btnRetour" href="accueil"> <img src="assets/img/arrow.svg" alt=""> Retour</a>
-        <?php
-        $this->databaseGetAdverts();
-        var_dump($this->advert);
-        ?>
+        <!-- Titre -->
+        <h1>
+          <?= $this->advert['brand']; ?>
+          <?= $this->advert['model']; ?> -
+          <?= $this->createDateFrom($this->advert['vehicle_year'])->format('Y'); ?>
+        </h1>
+
+        <!-- Premier paragraphe -->
+        <p class="termineAndEnchere">
+          <span class="terminele">Termine le</span> <span class="termineDate"> <?= $this->createDateFrom($this->advert['final_date'])->format('d/m/Y'); ?></span>
+          <span class="enchere">Meilleure enchère : </span><span class="enchereNB"><?= (int)$this->advert['actual_price']; ?> €</span>
+        </p>
+
+        <!-- Image Véhicule -->
+        <img class="imgVehicle" src="<?= $this->advert['picture']; ?>" alt="">
+
+        <!-- Description -->
+        <p class="description"><?= $this->advert['description']; ?></p>
+
+        <!-- DIV container -->
+        <div class="divContainerDescription">
+          <!-- Description ++ DIV -->
+          <div class="descriptionContainer">
+            <p>
+              <span class="firstD">PUISSANCE :</span>
+              <span class="secondD"><?= $this->advert['power']; ?>cv</span>
+            </p>
+            <p>
+              <span class="firstD">NOMBRE DE KILOMETRE :</span>
+              <span class="secondD"><?= $this->advert['vehicle_km']; ?>km</span>
+            </p>
+            <p>
+              <span class="firstD">DATE D'IMMATRICULATION :</span>
+              <span class="secondD"><?= $this->createDateFrom($this->advert['vehicle_year'])->format('d/m/Y'); ?></span>
+            </p>
+            <p>
+              <span class="firstD">PROPRIETAIRE :</span>
+              <span class="secondD"><?= ucfirst($this->advert['ownerfn']); ?> <?= ucfirst($this->advert['ownerln']); ?></span>
+            </p>
+          </div>
+
+          <!-- Description -- DIV -->
+          <div class="descriptionContainer">
+            <p>
+              <span class="firstD">CONTROLE TECHNIQUE :</span>
+              <span class="secondD">Oui</span>
+            </p>
+            <p>
+              <span class="firstD">CARTE GRISE :</span>
+              <span class="secondD">Française</span>
+            </p>
+            <p>
+              <span class="firstD">VENDEUR :</span>
+              <span class="secondD">Particulier</span>
+            </p>
+            <p>
+              <span class="firstD">PRIX DE RESERVE :</span>
+              <span class="secondD">Oui</span>
+            </p>
+          </div>
+
+          <!-- Encher DIV -->
+          <div class="descriptionContainer">
+
+          </div>
+        </div>
+
+
+
       </div>
+      <?php
+      var_dump($this->advert);
+      ?>
+      <?php include_once __DIR__ . "/Component/footer.php"; ?>
     </body>
 
     </html>
