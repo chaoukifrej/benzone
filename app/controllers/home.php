@@ -22,6 +22,7 @@ class Home
         //. Connexion Base de données
         include  __DIR__ . "/../core/database.php";
         $this->adverts = $dbh->query("SELECT
+        a.id,
         a.actual_price,
         a.final_date,
         a.description,
@@ -34,6 +35,7 @@ class Home
         car c
     ON c.id = a.car_id")->fetchAll(\PDO::FETCH_ASSOC);
     }
+
     //Affichage de la page d'accueil
     public function render()
     {

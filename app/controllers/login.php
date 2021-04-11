@@ -9,7 +9,7 @@
 namespace App\Controllers;
 
 use App\Controllers\Component\Menu;
-use PDO;
+
 
 class Login
 {
@@ -18,40 +18,7 @@ class Login
      * Affichage de la page de connexion
      */
     public function render()
-    {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            //. NETTOYAGE 
-            $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
-            $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
-            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-            $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
-
-            $data_validated = true;
-
-            //. VERIFICATION
-            if (filter_var($_POST["lastname"], FILTER_SANITIZE_STRING) === false) {
-                $data_validated = false;
-            } elseif (filter_var($_POST["firstname"], FILTER_SANITIZE_STRING) === false) {
-                $data_validated = false;
-            } elseif (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) === false) {
-                $data_validated = false;
-            } elseif (filter_var($_POST["password"], FILTER_SANITIZE_STRING) === false) {
-                $data_validated = false;
-            }
-
-
-            //. Connexion Base de données
-            include_once  __DIR__ . "/../core/database.php";
-
-
-            //. INSCRIPTION UTILISATEURS
-            if ($data_validated === true) {
-                $query = $dbh->prepare('INSERT INTO users(lastname, firstname, email, password) VALUES (?, ?, ?, ?)');
-                $result = $query->execute([ucfirst($lastname), $firstname, $email, $password]);
-            }
-        }
-
-?>
+    { ?>
         <!DOCTYPE html>
         <html>
 
@@ -84,13 +51,13 @@ class Login
                                 <input class="submitInput conSubmit" type="submit">
 
                             </form>
-                            <p>Pas de compte ? <button id="btnConnectionToInscription">inscrivez-vous</button> !</p>
+                            <p>Pas de compte ? <button id="btnConnectionToRegistration">inscrivez-vous</button> !</p>
                         </div>
 
-                        <div id="inscription">
+                        <div id="registration">
 
                             <h2>INSCRIPTION</h2>
-                            <form id="formInscription" action="login" method="POST">
+                            <form id="formRegistration" action="registration" method="POST">
 
                                 <label for="lastname">Nom</label>
                                 <input class="loginInput" type="text" name="lastname">
@@ -106,7 +73,7 @@ class Login
 
                                 <input class="submitInput" type="submit">
                             </form>
-                            <p>Déja inscrit ? <button id="btnInscriptionToConnection">connectez-vous</button> !</p>
+                            <p>Déja inscrit ? <button id="btnRegistrationToConnection">connectez-vous</button> !</p>
                         </div>
                     </div>
                 </div>

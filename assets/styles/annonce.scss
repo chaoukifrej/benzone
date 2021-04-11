@@ -1,0 +1,123 @@
+$primaryColor: #fac31d;
+
+#mainContainer {
+  margin: 50px 150px 100px;
+  .btnRetour {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: 0.2s;
+    width: fit-content;
+    img {
+      height: 22px;
+      margin-right: 5px;
+    }
+    &:hover {
+      transform: translateX(-5%);
+    }
+  }
+  h1 {
+    margin-top: 50px;
+    font-size: 2rem;
+  }
+  //premier p (termine le...)
+  .termineAndEnchere {
+    color: rgb(97, 97, 97);
+    .termineDate {
+      color: black;
+    }
+    .enchere {
+      margin-left: 25px;
+    }
+    .enchereNB {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: black;
+    }
+  }
+  //Image véhicule
+  .imgVehicle {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin: 30px 0;
+    border-radius: 5px;
+    transition: 0.3s;
+    &:hover {
+      opacity: 0.9;
+      transform: scale(1.01);
+    }
+  }
+
+  //Description
+  .description {
+    font-size: 1.1rem;
+  }
+  .divContainerDescription {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    .descriptionContainer {
+      margin: 10px;
+      border-radius: 5px;
+      border: 1px solid $primaryColor;
+      padding: 10px;
+      width: 400px;
+      height: 150px;
+      p {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .firstD {
+        color: gray;
+        font-weight: 500;
+        font-size: 0.8rem;
+      }
+      .secondD {
+        font-size: 0.9rem;
+      }
+    }
+    .encherirContainer {
+      h3 {
+        text-align: center;
+        margin: 0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        label {
+          font-size: 1.1rem;
+          margin: 10px 0 5px 50px;
+        }
+        input {
+          padding: 5px;
+          margin: 0 50px;
+          width: 300px;
+          height: 25px;
+          font-size: 1.1rem;
+          outline: none;
+          border-radius: 5px;
+          border: solid 1px grey;
+        }
+        button {
+          font-size: 1rem;
+          height: 35px;
+          width: 313px;
+          margin: 15px 50px;
+          background-color: $primaryColor;
+          border: solid 1px grey;
+          border-radius: 5px;
+          outline: none;
+          cursor: pointer;
+          transition: 0.3s;
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}
