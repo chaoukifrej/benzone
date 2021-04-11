@@ -51,7 +51,10 @@ $router = new Router($uri, $method);
  * Routes
  */
 
-/* GET / - Page d'accueil */
+/* GET / - Page d'accueil accés direct*/
+$router->get("/",  [new Home(), 'render']);
+
+/* GET / - Page d'accueil accés par clic*/
 $router->get("/accueil",  [new Home(), 'render']);
 
 // GET /addAnnonce - AJOUTER UNE ANNONCE 

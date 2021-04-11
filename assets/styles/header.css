@@ -12,6 +12,10 @@
   color: white;
   height: 60px;
   border-bottom: 2px solid #fac31d;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header .headerLogo {
