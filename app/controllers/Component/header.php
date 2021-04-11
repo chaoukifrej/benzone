@@ -5,7 +5,7 @@ namespace App\Controllers\Component;
 class Menu
 {
   protected $menu = [
-    "ACCUEIL" => "accueil",
+    "ENCHÈRES" => "accueil",
     "VENDRE" => "addAnnonce",
     "CONTACT" => "contact",
   ];

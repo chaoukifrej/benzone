@@ -34,7 +34,7 @@ class Home
 
         <body>
             <?php include_once __DIR__ . "/Component/header.php";
-            new Menu('ACCUEIL');
+            new Menu('ENCHÈRES');
             ?>
             <div class="hero">
                 <div class="heroImg">
