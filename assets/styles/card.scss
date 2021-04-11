@@ -1,7 +1,6 @@
 $primaryColor: #fac31d;
 
 .annonceCard {
-  margin: 30px;
   padding: 0 5px 5px;
   height: 360px;
   width: 380px;
@@ -35,4 +34,12 @@ $primaryColor: #fac31d;
     opacity: 0.9;
     transform: scale(1.01);
   }
+}
+#btnSubmitAnnonce {
+  margin: 30px;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: unset;
+  outline: none;
 }

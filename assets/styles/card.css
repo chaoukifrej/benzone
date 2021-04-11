@@ -1,5 +1,4 @@
 .annonceCard {
-  margin: 30px;
   padding: 0 5px 5px;
   height: 360px;
   width: 380px;
@@ -43,5 +42,14 @@
   opacity: 0.9;
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
+}
+
+#btnSubmitAnnonce {
+  margin: 30px;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: unset;
+  outline: none;
 }
 /*# sourceMappingURL=card.css.map */

@@ -7,6 +7,27 @@ use App\Controllers\Component\Menu;
 
 class Annonce
 {
+  protected $advert;
+
+  public function databaseGetAdverts()
+  {
+    //. Connexion Base de données
+    include  __DIR__ . "/../core/database.php";
+    $this->advert = $dbh->query("SELECT
+      a.id,
+      a.actual_price,
+      a.final_date,
+      a.description,
+      a.picture,
+      c.brand,
+      c.model
+  FROM
+      adverts a
+  INNER JOIN 
+      car c
+  ON c.id = a.car_id")->fetchAll(\PDO::FETCH_ASSOC);
+  }
+
   //Affichage de la page annonce
   public function render()
   {
@@ -27,7 +48,11 @@ class Annonce
       ?>
       <div id="mainContainer">
         <h1>Annonce</h1>
-        <p>Bienvenue sur la page annonce de merde</p>
+        <?php
+        $this->databaseGetAdverts();
+        var_dump($this->advert);
+        var_dump($_GET);
+        ?>
       </div>
     </body>
 
