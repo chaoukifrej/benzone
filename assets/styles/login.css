@@ -15,7 +15,7 @@
 }
 
 #connection,
-#inscription {
+#registration {
   height: 32em;
   width: 28.5em;
   border: solid black 1px;
@@ -30,19 +30,19 @@
 }
 
 #connection .conLabel,
-#inscription .conLabel {
+#registration .conLabel {
   margin-top: 5vh;
 }
 
 #connection .inscLabel,
-#inscription .inscLabel {
+#registration .inscLabel {
   margin-top: 3vh;
 }
 
 #connection #formConnection,
-#connection #formInscription,
-#inscription #formConnection,
-#inscription #formInscription {
+#connection #formRegistration,
+#registration #formConnection,
+#registration #formRegistration {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,9 +56,9 @@
 }
 
 #connection #formConnection .loginInput,
-#connection #formInscription .loginInput,
-#inscription #formConnection .loginInput,
-#inscription #formInscription .loginInput {
+#connection #formRegistration .loginInput,
+#registration #formConnection .loginInput,
+#registration #formRegistration .loginInput {
   width: 65%;
   height: 5vh;
   margin-top: 5px;
@@ -67,9 +67,9 @@
 }
 
 #connection #formConnection .submitInput,
-#connection #formInscription .submitInput,
-#inscription #formConnection .submitInput,
-#inscription #formInscription .submitInput {
+#connection #formRegistration .submitInput,
+#registration #formConnection .submitInput,
+#registration #formRegistration .submitInput {
   width: 23em;
   height: 5vh;
   margin-top: 4vh;
@@ -79,23 +79,23 @@
 }
 
 #connection #formConnection .conSubmit,
-#connection #formInscription .conSubmit,
-#inscription #formConnection .conSubmit,
-#inscription #formInscription .conSubmit {
+#connection #formRegistration .conSubmit,
+#registration #formConnection .conSubmit,
+#registration #formRegistration .conSubmit {
   margin-top: 146px;
 }
 
 #connection #formConnection .submitInput:hover,
-#connection #formInscription .submitInput:hover,
-#inscription #formConnection .submitInput:hover,
-#inscription #formInscription .submitInput:hover {
+#connection #formRegistration .submitInput:hover,
+#registration #formConnection .submitInput:hover,
+#registration #formRegistration .submitInput:hover {
   background-color: #e9b634;
 }
 
-#connection #btnConnectionToInscription,
-#connection #btnInscriptionToConnection,
-#inscription #btnConnectionToInscription,
-#inscription #btnInscriptionToConnection {
+#connection #btnConnectionToRegistration,
+#connection #btnRegistrationToConnection,
+#registration #btnConnectionToRegistration,
+#registration #btnRegistrationToConnection {
   border-style: none;
   background-color: transparent;
   color: #f4bd33;

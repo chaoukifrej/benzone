@@ -15,7 +15,7 @@ $primaryColor: #f4bd33;
 }
 
 #connection,
-#inscription {
+#registration {
   height: 32em;
   width: 28.5em;
   border: solid black 1px;
@@ -36,7 +36,7 @@ $primaryColor: #f4bd33;
   }
 
   #formConnection,
-  #formInscription {
+  #formRegistration {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -67,8 +67,8 @@ $primaryColor: #f4bd33;
     }
   }
 
-  #btnConnectionToInscription,
-  #btnInscriptionToConnection {
+  #btnConnectionToRegistration,
+  #btnRegistrationToConnection {
     border-style: none;
     background-color: transparent;
     color: #f4bd33;
