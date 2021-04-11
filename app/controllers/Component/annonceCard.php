@@ -6,9 +6,10 @@ class AnnonceCard
 {
   protected $annonce;
 
-  public function __construct()
+  public function __construct($annonce)
   {
-    //echo $this->render();
+    $this->annonce = $annonce;
+    echo $this->render();
   }
 
   public function render()
@@ -23,12 +24,5 @@ class AnnonceCard
       <img src="{$this->annonce['picture']}" alt="image véhicule">
     </div>
 HTML;
-  }
-
-  //Set the value of annonce
-  public function setAnnonce($annonce)
-  {
-    $this->annonce = $annonce;
-    return $this; //@return  self
   }
 }

@@ -64,14 +64,15 @@ class Home
                 </div>
             </div>
             <div id="mainContainer">
-                <?php $this->databaseGetAdverts();
-                var_dump($this->adverts); ?>
-                <h1>Enchères (nb à inserer)</h1>
+                <?php
+                $this->databaseGetAdverts();
+                ?>
+                <h1>Enchères (<?= count($this->adverts) ?>)</h1>
                 <div class="cards">
                     <?php include_once __DIR__ . "/Component/annonceCard.php";
-                    $advert = new AnnonceCard();
-                    $advert->setAnnonce($this->adverts[0]);
-                    echo $advert->render();
+                    foreach ($this->adverts as $value) {
+                        new AnnonceCard($value);
+                    }
                     ?>
                 </div>
             </div>
