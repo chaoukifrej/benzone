@@ -41,7 +41,7 @@ class Login
 
 
             //. Connexion Base de données
-            include_once  __DIR__ . "/../core/database.php"; // Routeur
+            include_once  __DIR__ . "/../core/database.php";
 
 
             //. INSCRIPTION UTILISATEURS

@@ -11,6 +11,8 @@ namespace App\Controllers;
 use App\Controllers\Component\Menu;
 use App\Controllers\Component\AnnonceCard;
 
+//. Connexion Base de données
+include_once  __DIR__ . "/../core/database.php";
 
 class Home
 {
