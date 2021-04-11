@@ -11,7 +11,7 @@ namespace App\Controllers;
 use App\Controllers\Component\Menu;
 use App\Controllers\Component\AnnonceCard;
 
-//. Connexion Base de données
+
 
 class Home
 {
@@ -19,6 +19,7 @@ class Home
 
     public function databaseGetAdverts()
     {
+        //. Connexion Base de données
         include  __DIR__ . "/../core/database.php";
         $this->adverts = $dbh->query("SELECT
         a.actual_price,
