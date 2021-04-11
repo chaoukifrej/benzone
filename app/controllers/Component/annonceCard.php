@@ -9,10 +9,29 @@ class AnnonceCard
     'first_price' => 1000,
     'actual_price' => 3000,
     'start_date' => '',
-    'final_date' => '',
+    'final_date' => '15-04-2021 à minuit',
     'description' => 'blablabla',
-    'picture' => 'https://benzin.fr/auctions/show/911-type-997-carrera-s-cabriolet-2006-606341a16392d',
+    'picture' => 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.ex4dVJr7CiFugcZ58CWvxgHaE9%26pid%3DApi&f=1',
     'brand' => 'Porsche',
-    'model' => 'blabla'
+    'model' => '911 Carrera S'
   ];
+
+  public function __construct()
+  {
+    echo $this->render();
+  }
+
+  public function render()
+  {
+    return <<<HTML
+    <div class="annonceCard">
+      <h3>{$this->annonce['brand']} {$this->annonce['model']}</h3>
+      <div class="pContainer">
+        <p><span>Meilleure enchère : </span><br/>{$this->annonce['actual_price']} €</p>
+        <p><span>Termine le : </span><br/>{$this->annonce['final_date']}</p>
+      </div>
+      <img src="{$this->annonce['picture']}" alt="image véhicule">
+    </div>
+HTML;
+  }
 }

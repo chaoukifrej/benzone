@@ -30,6 +30,7 @@ class Home
             <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
             <link rel="stylesheet" type="text/css" href="assets/styles/style.css" />
             <link rel="stylesheet" type="text/css" href="assets/styles/home.css">
+            <link rel="stylesheet" type="text/css" href="assets/styles/card.css">
         </head>
 
         <body>
@@ -49,6 +50,11 @@ class Home
             <div id="mainContainer">
                 <h1>Enchères (nb à inserer)</h1>
                 <p>Card à inserer</p>
+                <div class="cards">
+                    <?php include_once __DIR__ . "/Component/annonceCard.php";
+                    new AnnonceCard();
+                    ?>
+                </div>
             </div>
             <?php include_once __DIR__ . "/Component/footer.php";
             ?>

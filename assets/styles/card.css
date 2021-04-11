@@ -1,1 +1,38 @@
-/* No CSS *//*# sourceMappingURL=card.css.map */
+.annonceCard {
+  margin: 30px;
+  padding: 0 20px 20px;
+  height: 360px;
+  width: 380px;
+  border-radius: 5px;
+  border: 1px solid #fac31d;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.annonceCard .pContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 0.9rem;
+}
+
+.annonceCard h3 {
+  margin: 10px 0 0 10px;
+}
+
+.annonceCard img {
+  margin: 10px;
+  width: 360px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.annonceCard:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+/*# sourceMappingURL=card.css.map */

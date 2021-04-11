@@ -17,7 +17,10 @@
   width: 40%;
 }
 
-#inputModel, #inputPower, #inputKM, #inputBirth {
+#inputModel,
+#inputPower,
+#inputKM,
+#inputBirth {
   width: 23em;
   height: 5vh;
   border: solid 1px grey;
