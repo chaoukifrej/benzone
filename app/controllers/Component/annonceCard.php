@@ -4,21 +4,11 @@ namespace App\Controllers\Component;
 
 class AnnonceCard
 {
-  protected $annonce = [
-    'id' => 1,
-    'first_price' => 1000,
-    'actual_price' => 3000,
-    'start_date' => '',
-    'final_date' => '15-04-2021 à minuit',
-    'description' => 'blablabla',
-    'picture' => 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.ex4dVJr7CiFugcZ58CWvxgHaE9%26pid%3DApi&f=1',
-    'brand' => 'Porsche',
-    'model' => '911 Carrera S'
-  ];
+  protected $annonce;
 
   public function __construct()
   {
-    echo $this->render();
+    //echo $this->render();
   }
 
   public function render()
@@ -33,5 +23,12 @@ class AnnonceCard
       <img src="{$this->annonce['picture']}" alt="image véhicule">
     </div>
 HTML;
+  }
+
+  //Set the value of annonce
+  public function setAnnonce($annonce)
+  {
+    $this->annonce = $annonce;
+    return $this; //@return  self
   }
 }

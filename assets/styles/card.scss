@@ -27,7 +27,8 @@ $primaryColor: #fac31d;
   img {
     margin: 5px;
     width: 370px;
-    height: auto;
+    height: 250px;
+    object-fit: cover;
     border-radius: 5px;
   }
   &:hover {

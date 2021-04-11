@@ -12,14 +12,28 @@ use App\Controllers\Component\Menu;
 use App\Controllers\Component\AnnonceCard;
 
 //. Connexion Base de données
-include_once  __DIR__ . "/../core/database.php";
 
 class Home
 {
+    protected $adverts;
 
-    /**
-     * Affichage de la page d'accueil
-     */
+    public function databaseGetAdverts()
+    {
+        include  __DIR__ . "/../core/database.php";
+        $this->adverts = $dbh->query("SELECT
+        a.actual_price,
+        a.final_date,
+        a.description,
+        a.picture,
+        c.brand,
+        c.model
+    FROM
+        adverts a
+    INNER JOIN 
+        car c
+    ON c.id = a.car_id")->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    //Affichage de la page d'accueil
     public function render()
     {
 ?>
@@ -50,11 +64,14 @@ class Home
                 </div>
             </div>
             <div id="mainContainer">
+                <?php $this->databaseGetAdverts();
+                var_dump($this->adverts); ?>
                 <h1>Enchères (nb à inserer)</h1>
                 <div class="cards">
                     <?php include_once __DIR__ . "/Component/annonceCard.php";
-                    new AnnonceCard();
-
+                    $advert = new AnnonceCard();
+                    $advert->setAnnonce($this->adverts[0]);
+                    echo $advert->render();
                     ?>
                 </div>
             </div>

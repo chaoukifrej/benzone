@@ -33,7 +33,9 @@
 .annonceCard img {
   margin: 5px;
   width: 370px;
-  height: auto;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 5px;
 }
 
