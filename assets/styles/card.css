@@ -10,6 +10,12 @@
   background-color: white;
 }
 
+.annonceCard h3 {
+  text-align: left;
+  margin: 5px 5px 0;
+  font-size: 1.2rem;
+}
+
 .annonceCard .pContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,16 +23,17 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  font-size: 0.9rem;
+}
+
+.annonceCard .pContainer p {
+  text-align: left;
 }
 
 .annonceCard .pContainer span {
   font-size: 0.7rem;
-  font-weight: 500;
-  color: #aaaaaa;
-}
-
-.annonceCard h3 {
-  margin: 5px 5px 0;
+  font-weight: bolder;
+  color: #bbbbbb;
 }
 
 .annonceCard img {
