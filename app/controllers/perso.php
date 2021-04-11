@@ -1,6 +1,15 @@
 <?php
 
+/**
+ * controllers/home.php - Controleur accueil pour la page d'accueil
+ */
+
+/* Namespace */
+
 namespace App\Controllers;
+
+use App\Controllers\Component\Menu;
+
 
 
 class Perso
@@ -19,8 +28,25 @@ class Perso
         </head>
 
         <body>
-            <div>mainContainer</div>
-            <h1>Demo Page Perso</h1>
+            <?php include_once __DIR__ . "/Component/header.php";
+            new Menu('ENCHÈRES');
+            ?>
+            <form action="">
+                <h1>modifier votre profil</h1>
+                <label for="">modifier votre Nom</label>
+                <input name="lastname" type="text">
+                <label for="">modifier votre Prenom</label>
+                <input name="firstname" type="text">
+                <label for="">modifier votre Email</label>
+                <input name="mail" type="text">
+                <label for="">modifier votre Mot de passe</label>
+                <input name="password" type="password">
+                <label for="">confirmer votre nouveau mot de passe</label>
+                <input type="password">
+            </form>
+
+
+
         </body>
 
         </html>
