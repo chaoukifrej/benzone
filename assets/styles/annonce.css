@@ -158,4 +158,42 @@
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
+
+#mainContainer .divContainerDescription .notConnected {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#mainContainer .divContainerDescription .notConnected p {
+  display: initial;
+}
+
+#mainContainer .divContainerDescription .notConnected a {
+  text-decoration: none;
+  color: black;
+  background-color: #fac31d;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#mainContainer .divContainerDescription .notConnected a:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
 /*# sourceMappingURL=annonce.css.map */
