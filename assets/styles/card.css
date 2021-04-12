@@ -10,6 +10,7 @@
   background-color: white;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  overflow: hidden;
 }
 
 .annonceCard h3 {
@@ -40,8 +41,8 @@
 
 .annonceCard img {
   margin: 0px;
-  width: 379px;
-  height: 270px;
+  width: 380px;
+  height: 280px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0 0 5px 5px;
