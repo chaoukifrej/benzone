@@ -8,6 +8,7 @@ use App\Controllers\Component\Menu;
 class Annonce
 {
   protected $advert;
+  protected $bidder;
 
   public function databaseGetAdverts()
   {
@@ -29,9 +30,7 @@ class Annonce
       c.vehicle_year,
       c.vehicle_km,
       u.lastname as ownerln,
-      u.firstname as ownerfn,
-      b.lastname as bidderln,
-      b.firstname as bidderfn
+      u.firstname as ownerfn
   FROM
       adverts a
   INNER JOIN 
@@ -40,12 +39,28 @@ class Annonce
   INNER JOIN
       users u
   ON a.owner_id = u.id
-  INNER JOIN
-      users b
-  ON a.bidder_id = b.id
   WHERE a.id = $_GET[id]
   ")->fetchAll(\PDO::FETCH_ASSOC);
     $this->advert = $this->advert[0];
+
+    if (!is_null($this->advert['bidder_id'])) {
+      $this->bidder = $dbh->query("SELECT
+      b.lastname as bidderln,
+      b.firstname as bidderfn
+      FROM
+      users b
+      WHERE b.id = {$this->advert['bidder_id']}
+    ")->fetchAll(\PDO::FETCH_ASSOC);
+      $this->bidder = $this->bidder[0];
+    } else {
+      $this->bidder = [
+        'lastname' => 'null',
+        'firstname' => 'null'
+      ];
+    };
+
+
+    //$this->advert['bidder_id'] ?? $this->advert['bidder_id'] = 1;
   }
 
   public function databaseSetActualPrice()
@@ -189,7 +204,7 @@ class Annonce
 
       </div>
       <?php
-      //var_dump($this->advert);
+      //var_dump($this->bidder);
       ?>
       <?php include_once __DIR__ . "/Component/footer.php"; ?>
     </body>
