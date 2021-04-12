@@ -16,7 +16,6 @@ body {
   height: 90vh;
   #connection,
   #registration {
-    height: 480px;
     width: 450px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -30,7 +29,7 @@ body {
     }
     p {
       text-align: center;
-      margin: 30px;
+      margin: 30px 0 50px;
     }
     .conLabel {
       margin-top: 4vh;
@@ -39,9 +38,6 @@ body {
     .inscLabel {
       margin-top: 3vh;
     }
-  }
-  #registration {
-    height: 620px;
   }
 }
 #formConnection,

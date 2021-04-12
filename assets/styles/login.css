@@ -22,7 +22,6 @@ body {
 
 .mainContainer #connection,
 .mainContainer #registration {
-  height: 480px;
   width: 450px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -43,7 +42,7 @@ body {
 .mainContainer #connection p,
 .mainContainer #registration p {
   text-align: center;
-  margin: 30px;
+  margin: 30px 0 50px;
 }
 
 .mainContainer #connection .conLabel,
@@ -54,10 +53,6 @@ body {
 .mainContainer #connection .inscLabel,
 .mainContainer #registration .inscLabel {
   margin-top: 3vh;
-}
-
-.mainContainer #registration {
-  height: 620px;
 }
 
 #formConnection,
