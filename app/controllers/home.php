@@ -39,6 +39,7 @@ class Home
     //Affichage de la page d'accueil
     public function render()
     {
+        var_dump($_SESSION);
 ?>
         <!DOCTYPE html>
         <html>
