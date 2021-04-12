@@ -21,7 +21,7 @@ class Menu
       </nav>
       <?php
       if ($_SESSION['is_connected'] ?? false) { ?>
-        <a class="headerLink connexion" href="perso/<?= $_SESSION['id']; ?>"><?= strtoupper($_SESSION['lastname']); ?> <?= strtoupper($_SESSION['firstname']); ?></a>
+        <a class="headerLink connexion" href="perso"><?= strtoupper($_SESSION['lastname']); ?> <?= strtoupper($_SESSION['firstname']); ?></a>
         <?php } else {
         if (strpos($_SERVER["REQUEST_URI"], 'login')) { ?>
           <a class="headerLink connexion" id='actualLink' href="login">CONNEXION</a>

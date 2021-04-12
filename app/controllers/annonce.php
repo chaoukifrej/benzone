@@ -165,16 +165,25 @@ class Annonce
           </div>
 
           <!-- Encher DIV -->
-          <div class="descriptionContainer encherirContainer">
-            <h3 class="titreE">Enchérir</h3>
-            <form action="annonce" method="post">
-              <label for="price">Montant</label>
-              <input type="number" name="new_price" id="price">
-              <input type="hidden" name="id" value="<?= $this->advert['id']; ?>">
-              <input type="hidden" name="actual_price" value="<?= $this->advert['actual_price']; ?>">
-              <button type="submit">Valider</button>
-            </form>
-          </div>
+          <?php if ($_SESSION['is_connected'] ?? false) { ?>
+
+            <div class="descriptionContainer encherirContainer">
+              <h3 class="titreE">Enchérir</h3>
+              <form action="annonce" method="post">
+                <label for="price">Montant</label>
+                <input type="number" name="new_price" id="price">
+                <input type="hidden" name="id" value="<?= $this->advert['id']; ?>">
+                <input type="hidden" name="actual_price" value="<?= $this->advert['actual_price']; ?>">
+                <button type="submit">Valider</button>
+              </form>
+            </div>
+          <?php } else { ?>
+            <div class="descriptionContainer encherirContainer notConnected">
+              <h3 class="titreE">Enchérir</h3>
+              <p class="notConnectedP">Connectez-vous pour enchèrir</p>
+              <br /><a class="notConnectedA" href="login">Connexion</a>
+            </div>
+          <?php }; ?>
         </div>
 
       </div>
