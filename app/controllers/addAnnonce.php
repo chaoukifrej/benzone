@@ -58,7 +58,7 @@ class AddAnnonce
     $descriptionAnnonce = $_POST["descriptionAnnonce"];
     $picture = $_POST["picture"];
     $startDate = date("Y-m-d");
-    $user_id = 1;
+    $user_id = $_SESSION['id'];
     $user_car = intval($car_id);
 
     //? Préparation de la requête
@@ -67,7 +67,6 @@ class AddAnnonce
     //? Execution de la requête 
     $result = $query->execute([$firstPrice, $actualPrice, $startDate, $finalDate, $descriptionAnnonce, $picture, $user_id, $user_car]);
 
-    var_dump([$firstPrice, $actualPrice, $startDate, $finalDate, $descriptionAnnonce, $picture, $user_id, $user_car]);
     header('location: accueil');
   }
 
@@ -170,7 +169,6 @@ class AddAnnonce
           <input type="submit"><br><br>
 
         </form>
-
 
 
       </div>

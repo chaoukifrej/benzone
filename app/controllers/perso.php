@@ -21,7 +21,8 @@ class Perso
     {
         include  __DIR__ . "/../core/database.php";
 
-        $query = $dbh->query("SELECT * FROM users WHERE id = 1")->fetchAll(\PDO::FETCH_ASSOC);
+        $query = $dbh->prepare("SELECT * FROM users WHERE id = ?");
+        $result = $query->execute($_SESSION['id']);
     }
 
 
@@ -37,7 +38,7 @@ class Perso
 
 
         $query = $dbh->prepare("UPDATE users SET `lastname`= ?, `firstname`= ?, `email`= ?, `password`= ? WHERE id = ?");
-        $result = $query->execute([$lastname, $firstname, $email, $password, 1]);
+        $result = $query->execute([$lastname, $firstname, $email, $password, $_SESSION['id']]);
     }
 
     public function disconnection()
@@ -71,9 +72,9 @@ class Perso
 
         <body>
             <?php
-            $this->displayPerso()
+            var_dump($this->displayPerso());
             ?>
-            <h1>Prénom</h1><?php echo $this->displayPerso['firstname']; ?>
+            <h1>Prénom</h1>
         </body>
 
         </html>
