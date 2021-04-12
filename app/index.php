@@ -66,6 +66,9 @@ $router->get("/addAnnonce", [new AddAnnonce(), 'render']);
 /* GET Page perso*/
 $router->get("/perso", [new Perso(), 'render']);
 
+//POST - Page Perso 
+$router->post("/perso", [new Perso(), 'render']);
+
 /* GET / - Page de connexion */
 $router->get("/login", [new Login(), 'render']);
 
@@ -88,6 +91,11 @@ $router->post("/annonce",  [new Annonce(), 'databaseSetActualPrice']);
 
 // GET / - Page contact
 $router->get("/contact",  [new Contact(), 'render']);
+
+
+
+
+
 
 /* Route par défaut */
 $router->default([new DefaultPage(), 'render']);

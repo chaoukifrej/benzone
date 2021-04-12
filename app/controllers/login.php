@@ -143,53 +143,52 @@ class Login
             <?php include_once __DIR__ . "/Component/header.php";
             new Menu('login');
             ?>
-            <div id="mainContainer">
-                <div id="background">
-                    <div id="heroBackground">
-                        <div id="connection">
+            <div class="mainContainer">
+                <div id="connection">
 
-                            <h2>CONNEXION</h2>
-                            <form id="formConnection" action="login" method="POST">
+                    <h2>CONNEXION</h2>
+                    <form id="formConnection" action="login" method="POST">
 
-                                <label class="conLabel" for="">Email</label>
-                                <input class="loginInput" type="text" name="mailConnect" required>
+                        <label class="conLabel" for="">Email</label>
+                        <input class="loginInput" type="text" name="mailConnect" required>
 
-                                <label class="conLabel" for="">Mot de passe</label>
-                                <input class="loginInput" type="password" name="passwordConnect" required>
+                        <label class="conLabel" for="">Mot de passe</label>
+                        <input class="loginInput" type="password" name="passwordConnect" required>
 
-                                <input class="submitInput conSubmit" name="formConnection" type="submit">
+                        <input class="submitInput conSubmit" name="formConnection" type="submit">
 
-                            </form>
-                            <p>Pas de compte ? <button id="btnConnectionToRegistration">inscrivez-vous</button> !</p>
-                        </div>
-
-                        <div id="registration">
-
-                            <h2>INSCRIPTION</h2>
-                            <form id="formRegistration" action="" method="POST">
-
-                                <label for="lastname">Nom</label>
-                                <input class="loginInput" type="text" name="lastname" required>
-
-                                <label class="inscLabel" for="firstname">Prénom</label>
-                                <input class="loginInput" type="text" name="firstname" required>
-
-                                <label class="inscLabel" for="email">Email</label>
-                                <input class="loginInput" type="mail" name="email" required>
-
-                                <label class="inscLabel" for="password">Mot de passe</label>
-                                <input class="loginInput" type="password" name="password" required>
-
-                                <input class="submitInput" name="formRegistration" type="submit">
-                            </form>
-                            <p>Déja inscrit ? <button id="btnRegistrationToConnection">connectez-vous</button> !</p>
-                        </div>
-                    </div>
+                    </form>
+                    <p>Pas de compte ? <button id="btnConnectionToRegistration">inscrivez-vous</button> !</p>
                 </div>
 
+                <div id="registration">
 
+<<<<<<< HEAD
+                            <h2>INSCRIPTION</h2>
+                            <form id="formRegistration" action="" method="POST">
+=======
+                    <h2>INSCRIPTION</h2>
+                    <form id="formRegistration" action="login" method="POST">
+>>>>>>> 516b0284b552f76017b0a7bf98cda8348d9b4194
 
+                        <label class="inscLabel" for="lastname">Nom</label>
+                        <input class="loginInput" type="text" name="lastname" required>
+
+                        <label class="inscLabel" for="firstname">Prénom</label>
+                        <input class="loginInput" type="text" name="firstname" required>
+
+                        <label class="inscLabel" for="email">Email</label>
+                        <input class="loginInput" type="mail" name="email" required>
+
+                        <label class="inscLabel" for="password">Mot de passe</label>
+                        <input class="loginInput" type="password" name="password" required>
+
+                        <input class="submitInput" name="formRegistration" type="submit">
+                    </form>
+                    <p>Déja inscrit ? <button id="btnRegistrationToConnection">connectez-vous</button> !</p>
+                </div>
             </div>
+
 
 
 
