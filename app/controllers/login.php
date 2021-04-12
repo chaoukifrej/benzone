@@ -163,13 +163,8 @@ class Login
 
                 <div id="registration">
 
-<<<<<<< HEAD
-                            <h2>INSCRIPTION</h2>
-                            <form id="formRegistration" action="" method="POST">
-=======
                     <h2>INSCRIPTION</h2>
                     <form id="formRegistration" action="login" method="POST">
->>>>>>> 516b0284b552f76017b0a7bf98cda8348d9b4194
 
                         <label class="inscLabel" for="lastname">Nom</label>
                         <input class="loginInput" type="text" name="lastname" required>
