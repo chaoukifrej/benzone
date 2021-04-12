@@ -70,8 +70,13 @@ $router->post("/addAnnonce", [new AddAnnonce(), 'addCar']);
 $router->get("/perso", [new Perso(), 'render']);
 
 //POST - Page Perso 
-$router->post("/perso", [new Perso(), 'updatePerso']);
-$router->post("/perso", [new Perso(), 'displayPerso']);
+if (isset($_POST['is_connected'])) {
+    $router->post("/perso", [new Perso(), 'disconnection']);
+} else {
+    $router->post("/perso", [new Perso(), 'updatePerso']);
+    $router->post("/perso", [new Perso(), 'displayPerso']);
+}
+
 
 /* GET / - Page de connexion */
 $router->get("/login", [new Login(), 'render']);
@@ -79,10 +84,12 @@ $router->get("/login", [new Login(), 'render']);
 /* POST / - Page d'inscription */
 if (isset($_POST['firstname']) and isset($_POST['lastname'])) {
     $router->post("/login", [new Login(), 'registration']);
+} else {
+    /* POST / - Page de connexion */
+    $router->post("/login", [new Login(), 'connection']);
 }
 
-/* POST / - Page de connexion */
-$router->post("/login", [new Login(), 'connection']);
+
 
 
 

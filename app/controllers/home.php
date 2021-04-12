@@ -12,6 +12,8 @@ use App\Controllers\Component\Menu;
 use App\Controllers\Component\AnnonceCard;
 
 
+session_start();
+
 
 class Home
 {
@@ -39,6 +41,7 @@ class Home
     //Affichage de la page d'accueil
     public function render()
     {
+
 ?>
         <!DOCTYPE html>
         <html>
@@ -55,6 +58,7 @@ class Home
         <body>
             <?php include_once __DIR__ . "/Component/header.php";
             new Menu('ENCHÈRES');
+
             ?>
             <div class="hero">
                 <div class="heroImg">

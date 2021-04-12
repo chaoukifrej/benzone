@@ -93,11 +93,8 @@ class Login
 
             session_start();
 
-            if (isset($_POST['mailConnect']) && isset($_POST['passwordConnect'])) {
-                $mailConnect = filter_var($_POST['mailConnect'], FILTER_SANITIZE_STRING);
-                $passwordConnect = filter_var($_POST['passwordConnect'], FILTER_SANITIZE_STRING);
-            }
-
+            $mailConnect = filter_var($_POST['mailConnect'], FILTER_SANITIZE_STRING);
+            $passwordConnect = filter_var($_POST['passwordConnect'], FILTER_SANITIZE_STRING);
 
             if (!empty($mailConnect) && !empty($passwordConnect)) {
                 $userRequest = $dbh->prepare('SELECT * FROM users WHERE email = ? AND password = ?');
@@ -112,7 +109,10 @@ class Login
                     $_SESSION['firstname'] = $userInfo['firstname'];
                     $_SESSION['email'] = $userInfo['email'];
                     $_SESSION['password'] = $userInfo['password'];
+                    $_SESSION['is_connected'] = $userInfo['is_connected'];
                     $error = "Connection réussi";
+
+
 
                     // passage isConnected a 1
                     $userRequest = $dbh->prepare('UPDATE users SET is_connected = ? WHERE id = ?');
