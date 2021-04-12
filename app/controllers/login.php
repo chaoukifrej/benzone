@@ -84,10 +84,10 @@ class Login
     public function connection()
     {
 
-
+        include_once  __DIR__ . "/../core/database.php";
         if (isset($_POST['formConnection'])) {
 
-            include_once  __DIR__ . "/../core/database.php";
+
             session_start();
 
             if (isset($_POST['mailConnect']) && isset($_POST['passwordConnect'])) {
