@@ -17,15 +17,6 @@ use App\Controllers\Component\Menu;
 class Perso
 {
 
-    public function displayPerso()
-    {
-        include  __DIR__ . "/../core/database.php";
-
-        $query = $dbh->prepare("SELECT * FROM users WHERE id = ?");
-        $result = $query->execute($_SESSION['id']);
-    }
-
-
     public function updatePerso()
     {
 
@@ -57,27 +48,6 @@ class Perso
     public function render()
     {
 ?>
-
-
-
-        <!DOCTYPE html>
-        <html lang="en">
-
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
-        </head>
-
-        <body>
-            <?php
-            var_dump($this->displayPerso());
-            ?>
-            <h1>Prénom</h1>
-        </body>
-
-        </html>
 
 
 
@@ -117,7 +87,11 @@ class Perso
                 <input class="button" name="send" type="submit">
             </form>
 
-
+            <div>
+                <h1>Prenom :</h1> <?php echo $_SESSION['firstname'] ?>
+                <h1>Nom :</h1> <?php echo $_SESSION['lastname'] ?>
+                <h1>E-mail :</h1> <?php echo $_SESSION['email'] ?>
+            </div>
 
         </body>
 
