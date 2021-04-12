@@ -17,10 +17,6 @@ use App\Controllers\Component\Menu;
 class Perso
 {
 
-
-
-
-
     public function displayPerso()
     {
         include  __DIR__ . "/../core/database.php";
@@ -42,6 +38,18 @@ class Perso
 
         $query = $dbh->prepare("UPDATE users SET `lastname`= ?, `firstname`= ?, `email`= ?, `password`= ? WHERE id = ?");
         $result = $query->execute([$lastname, $firstname, $email, $password, 1]);
+    }
+
+    public function disconnection()
+    {
+        include  __DIR__ . "/../core/database.php";
+
+        // passage isConnected a 0
+        $userRequest = $dbh->prepare('UPDATE users SET is_connected = ? WHERE id = ?');
+        $userRequest->execute([0, $_SESSION['id']]);
+
+        session_destroy();
+        header('Location: accueil');
     }
 
 
@@ -89,6 +97,10 @@ class Perso
             <?php include_once __DIR__ . "/Component/header.php";
             new Menu('ENCHÈRES');
             ?>
+            <form action="perso" method="POST">
+                <input type="hidden" value="0" name="is_connected">
+                <input type="submit" value="deconnexion">
+            </form>
             <form action="perso" method="POST">
                 <h1>modifier votre profil</h1>
                 <label for="">modifier votre Nom</label>
