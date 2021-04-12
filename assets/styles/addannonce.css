@@ -47,8 +47,22 @@
   cursor: pointer;
 }
 
-.hrAddAnnonce {
+select {
+  width: 23em;
+  height: 15vh;
+  border: solid 1px grey;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+select:focus {
+  outline: none;
   border: 1px solid #fac31d;
-  width: 200px;
+}
+
+.trait {
+  margin: auto;
+  width: 40%;
+  border-bottom: 2px solid #fac31d;
 }
 /*# sourceMappingURL=addannonce.css.map */

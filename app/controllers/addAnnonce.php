@@ -10,8 +10,6 @@ namespace App\Controllers;
 
 use App\Controllers\Component\Menu;
 
-
-
 /* Class Name= AddAnnonce */
 
 class AddAnnonce
@@ -24,10 +22,10 @@ class AddAnnonce
    */
 
   // FONCTION CREER UNE VOITURE
-  public function add_car()
+  public function addCar()
   {
     //! Connexion Base de données
-    include_once  __DIR__ . "/../core/database.php";
+    include  __DIR__ . "/../core/database.php";
 
     //. Déclaration données
     $brand = $_POST["brand"];
@@ -41,26 +39,36 @@ class AddAnnonce
 
     //? Execution de la requête 
     $result = $query->execute([$model, $brand, $power, $vehicleYear, $km]);
+
+    if ($result === true) {
+      $car_id = $dbh->lastInsertId();
+      $this->addAdverts($car_id);
+    }
   }
 
 
   // FONCTION AJOUTER UNE ANNONCE
-  public function add_adverts()
+  private function addAdverts($car_id)
   {
-    include_once  __DIR__ . "/../core/database.php";
+    include  __DIR__ . "/../core/database.php";
 
     $firstPrice = $_POST["firstPrice"];
+    $actualPrice = $firstPrice;
     $finalDate = $_POST["finalDate"];
     $descriptionAnnonce = $_POST["descriptionAnnonce"];
     $picture = $_POST["picture"];
+    $startDate = date("Y-m-d");
+    $user_id = 1;
+    $user_car = intval($car_id);
 
     //? Préparation de la requête
-    $query = $dbh->prepare("INSERT INTO adverts (first_price, final_date, description, picture) VALUES (?,?,?,?)");
+    $query = $dbh->prepare("INSERT INTO adverts (first_price,actual_Price,start_date, final_date, description, picture,owner_id,car_id) VALUES (?,?,?,?,?,?,?,?)");
 
     //? Execution de la requête 
-    $result = $query->execute([$firstPrice, $finalDate, $descriptionAnnonce, $picture]);
+    $result = $query->execute([$firstPrice, $actualPrice, $startDate, $finalDate, $descriptionAnnonce, $picture, $user_id, $user_car]);
 
-    echo $finalDate;
+    var_dump([$firstPrice, $actualPrice, $startDate, $finalDate, $descriptionAnnonce, $picture, $user_id, $user_car]);
+    header('location: accueil');
   }
 
   /**
@@ -99,7 +107,7 @@ class AddAnnonce
           <h4>Informations du véhicule</h4>
 
           <label for="">Marque : </label><br><br>
-          <select name="brand" id="selectBrand">
+          <select name="brand" id="selectBrand" multiple>
             <option value="abarth">ABARTH</option>
             <option value="ac">AC</option>
             <option value="aixam">AIXAM</option>
@@ -107,22 +115,22 @@ class AddAnnonce
             <option value="alke">ALKE</option>
           </select><br><br>
 
-          <hr class="hrAddAnnonce"><br>
+          <div class="trait"></div><br>
 
           <label for="">Modèle : </label><br><br>
           <input id="inputModel" name="model" type="text"><br><br>
 
-          <hr class="hrAddAnnonce"><br>
+          <div class="trait"></div><br>
 
           <label for="">Puissance (CV) : </label><br><br>
           <input id="inputPower" name="power" type="number"><br><br>
 
-          <hr class="hrAddAnnonce"><br>
+          <div class="trait"></div><br>
 
           <label for="">Kilométrage : </label><br><br>
           <input id="inputKM" type="number" name="km"><br><br>
 
-          <hr class="hrAddAnnonce"><br>
+          <div class="trait"></div><br>
 
           <label for="">Année du véhicule : </label><br><br>
           <input id="inputBirth" type="date" name="vehicleYear"><br><br>
@@ -134,28 +142,29 @@ class AddAnnonce
           <input id="inputStartPrice" type="text" name="firstPrice">
 
           <br><br>
-          <hr class="hrAddAnnonce"><br>
+          <div class="trait"></div><br>
 
           <!-- Label / Input durée de l'enchère -->
           <label for="">Durée de l'enchère : </label><br><br>
           <input id="inputTimeEnchere" type="date" name="finalDate">
 
           <br><br>
-          <hr class="hrAddAnnonce"><br>
+          <div class="trait"></div><br>
 
           <!-- Label / Text Area description -->
           <label for="">Description : </label><br><br>
           <textarea name="descriptionAnnonce" id="" cols="30" rows="10"></textarea>
 
           <br><br>
-          <hr class="hrAddAnnonce"><br>
+          <div class="trait"></div><br>
 
           <!-- Label / Input photos -->
           <label for="">Photos : </label><br><br>
           <input type="text" name="picture">
 
           <br><br>
-          <hr class="hrAddAnnonce"><br>
+          <div class="trait">
+          </div><br>
 
 
           <input type="submit"><br><br>

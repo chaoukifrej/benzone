@@ -64,10 +64,7 @@ $router->get("/accueil",  [new Home(), 'render']);
 $router->get("/addAnnonce", [new AddAnnonce(), 'render']);
 
 /* POST / - Add Car */
-$router->post("/addAnnonce", [new AddAnnonce(), 'add_car']);
-
-/* POST / - Add Adverts */
-$router->post("/addAnnonce", [new AddAnnonce(), 'add_adverts']);
+$router->post("/addAnnonce", [new AddAnnonce(), 'addCar']);
 
 /* GET Page perso*/
 $router->get("/perso", [new Perso(), 'render']);
