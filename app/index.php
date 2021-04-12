@@ -73,7 +73,8 @@ $router->post("/addAnnonce", [new AddAnnonce(), 'add_adverts']);
 $router->get("/perso", [new Perso(), 'render']);
 
 //POST - Page Perso 
-$router->post("/perso", [new Perso(), 'render']);
+$router->post("/perso", [new Perso(), 'updatePerso']);
+$router->post("/perso", [new Perso(), 'displayPerso']);
 
 /* GET / - Page de connexion */
 $router->get("/login", [new Login(), 'render']);

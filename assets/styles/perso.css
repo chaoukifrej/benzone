@@ -1,0 +1,42 @@
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form h1 {
+  color: #fac31d;
+  font-size: 30px;
+  padding: 10px;
+  border: 2px solid #fac31d;
+  text-align: center;
+  width: 25%;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+form input {
+  width: 23em;
+  height: 5vh;
+  border: solid 1px grey;
+  border-radius: 5px;
+  padding-left: 20px;
+}
+
+form input:focus {
+  outline: none;
+  border: 1px solid #fac31d;
+}
+
+form .button {
+  margin-top: 2%;
+}
+/*# sourceMappingURL=perso.css.map */

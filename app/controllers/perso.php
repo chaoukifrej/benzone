@@ -12,26 +12,45 @@ namespace App\Controllers;
 
 use App\Controllers\Component\Menu;
 
-include  __DIR__ . "/../core/database.php";
-
-
-/*  $lastname = filter_var($_POST["lastname"], FILTER_SANITIZE_STRING);
-$firstname = filter_var($_POST["firstname"], FILTER_SANITIZE_STRING);
-$email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-$password = filter_var($_POST["password"], FILTER_SANITIZE_STRING); 
-
-
-$query = $dbh->prepare("UPDATE users (firstname, lastname, email, password) VALUES (?, ?, ?, ?)");
-$result = $query->execute([$lastname, $firstname, $email, $password]); */
-
 
 
 class Perso
 {
 
+
+
+
+
+    public function displayPerso()
+    {
+        include  __DIR__ . "/../core/database.php";
+
+        $query = $dbh->query("SELECT * FROM users WHERE id = 1")->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+
+    public function updatePerso()
+    {
+
+        include  __DIR__ . "/../core/database.php";
+
+        $lastname = filter_var($_POST["lastname"], FILTER_SANITIZE_STRING);
+        $firstname = filter_var($_POST["firstname"], FILTER_SANITIZE_STRING);
+        $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+        $password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
+
+
+        $query = $dbh->prepare("UPDATE users SET `lastname`= ?, `firstname`= ?, `email`= ?, `password`= ? WHERE id = ?");
+        $result = $query->execute([$lastname, $firstname, $email, $password, 1]);
+    }
+
+
     public function render()
     {
 ?>
+
+
+
         <!DOCTYPE html>
         <html lang="en">
 
@@ -39,6 +58,30 @@ class Perso
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+
+        <body>
+            <?php
+            $this->displayPerso()
+            ?>
+            <h1>Prénom</h1><?php echo $this->displayPerso['firstname']; ?>
+        </body>
+
+        </html>
+
+
+
+        <!-- affichage Modif Profil -->
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="./assets/style.css">
+            <link rel="stylesheet" href="./assets/styles/perso.css">
             <title>Document</title>
         </head>
 
@@ -58,7 +101,7 @@ class Perso
                 <input name="password" type="password">
                 <label for="">confirmer votre nouveau mot de passe</label>
                 <input type="password">
-                <input name="send" type="submit">
+                <input class="button" name="send" type="submit">
             </form>
 
 
