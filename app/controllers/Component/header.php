@@ -20,11 +20,16 @@ class Menu
         <?php $this->displayMenu($link) ?>
       </nav>
       <?php
-      if (strpos($_SERVER["REQUEST_URI"], 'login')) { ?>
-        <a class="headerLink connexion" id='actualLink' href="login">CONNEXION</a>
-      <?php } else { ?>
-        <a class="headerLink connexion" href="login">CONNEXION</a>
-      <?php } ?>
+      if ($_SESSION['is_connected'] ?? false) { ?>
+        <a class="headerLink connexion" href="perso"><?= strtoupper($_SESSION['lastname']); ?> <?= strtoupper($_SESSION['firstname']); ?></a>
+        <?php } else {
+        if (strpos($_SERVER["REQUEST_URI"], 'login')) { ?>
+          <a class="headerLink connexion" id='actualLink' href="login">CONNEXION</a>
+        <?php } else { ?>
+          <a class="headerLink connexion" href="login">CONNEXION</a>
+      <?php }
+      } ?>
+
     </div>
 <?php }
 
@@ -32,7 +37,15 @@ class Menu
   {
     foreach ($this->menu as $key => $value) {
       if ($key != $link) {
-        echo "<a class='headerLink' href='$value'>$key</a> ";
+        if ($_SESSION['is_connected'] ?? false) {
+          echo "<a class='headerLink' href='$value'>$key</a> ";
+        } else {
+          if ($key == 'VENDRE') {
+            echo "<a class='headerLink' href='login'>$key</a> ";
+          } else {
+            echo "<a class='headerLink' href='$value'>$key</a> ";
+          }
+        }
       } else {
         echo "<a class='headerLink' id='actualLink' href='$value'>$key</a> ";
       }
