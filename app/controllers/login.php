@@ -77,6 +77,9 @@ class Login
     /**
      * fonction inscription verif
      */
+    public function connection()
+    {
+    }
 
 
     /**
