@@ -1,48 +1,67 @@
 /* STYLE page Login */
-#background {
-  background-image: url(../img/hero.jpg);
+body {
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23ffffff' stroke-width='0.59' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(13.55) translate(-926.2 -694.65)'%3E%3Cuse fill='%23fafafa' href='%23s' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23f5f5f5' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23f5f5f5' href='%23s'/%3E%3Cuse fill='%23f0f0f0' href='%23s' x='2'/%3E%3Cuse fill='%23f0f0f0' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(13.55) translate(-926.2 -694.65)'%3E%3Cg fill='%23ebebeb'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(13.55) translate(-926.2 -694.65)'%3E%3Cg fill='%23ebebeb'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(13.55) translate(-926.2 -694.65)'%3E%3Cg fill='%23e5e5e5'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(13.55) translate(-926.2 -694.65)'%3E%3Cg fill='%23ffffff'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23e0e0e0'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(13.55) translate(-926.2 -694.65)'%3E%3Cg fill='%23f4bd33'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(13.55) translate(-926.2 -694.65)'%3E%3Cg fill='%23f4bd33'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(13.55) translate(-926.2 -694.65)'%3E%3Cg fill='%23f4bd33'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+  background-attachment: fixed;
   background-size: cover;
-  height: 92vh;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  height: 100%;
 }
 
-#background #heroBackground {
-  height: 92vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+.mainContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90vh;
 }
 
-#connection,
-#registration {
-  height: 32em;
-  width: 28.5em;
-  border: solid black 1px;
+.mainContainer #connection,
+.mainContainer #registration {
+  height: 480px;
+  width: 450px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  text-align: center;
   margin: auto;
-  background-color: white;
-  -webkit-box-shadow: grey 0 0 24px;
-          box-shadow: grey 0 0 24px;
-  position: relative;
-  top: 8.5vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-#connection .conLabel,
-#registration .conLabel {
-  margin-top: 5vh;
+.mainContainer #connection h2,
+.mainContainer #registration h2 {
+  text-align: center;
+  margin: 50px 0 0;
 }
 
-#connection .inscLabel,
-#registration .inscLabel {
+.mainContainer #connection p,
+.mainContainer #registration p {
+  text-align: center;
+  margin: 30px;
+}
+
+.mainContainer #connection .conLabel,
+.mainContainer #registration .conLabel {
+  margin-top: 4vh;
+}
+
+.mainContainer #connection .inscLabel,
+.mainContainer #registration .inscLabel {
   margin-top: 3vh;
 }
 
-#connection #formConnection,
-#connection #formRegistration,
-#registration #formConnection,
-#registration #formRegistration {
+.mainContainer #registration {
+  height: 620px;
+}
+
+#formConnection,
+#formRegistration {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,10 +74,8 @@
           flex-direction: column;
 }
 
-#connection #formConnection .loginInput,
-#connection #formRegistration .loginInput,
-#registration #formConnection .loginInput,
-#registration #formRegistration .loginInput {
+#formConnection .loginInput,
+#formRegistration .loginInput {
   width: 65%;
   height: 5vh;
   margin-top: 5px;
@@ -66,10 +83,8 @@
   border: solid 1px grey;
 }
 
-#connection #formConnection .submitInput,
-#connection #formRegistration .submitInput,
-#registration #formConnection .submitInput,
-#registration #formRegistration .submitInput {
+#formConnection .submitInput,
+#formRegistration .submitInput {
   width: 23em;
   height: 5vh;
   margin-top: 4vh;
@@ -78,24 +93,18 @@
   border-radius: 5px;
 }
 
-#connection #formConnection .conSubmit,
-#connection #formRegistration .conSubmit,
-#registration #formConnection .conSubmit,
-#registration #formRegistration .conSubmit {
-  margin-top: 146px;
+#formConnection .conSubmit,
+#formRegistration .conSubmit {
+  margin-top: 5vh;
 }
 
-#connection #formConnection .submitInput:hover,
-#connection #formRegistration .submitInput:hover,
-#registration #formConnection .submitInput:hover,
-#registration #formRegistration .submitInput:hover {
+#formConnection .submitInput:hover,
+#formRegistration .submitInput:hover {
   background-color: #e9b634;
 }
 
-#connection #btnConnectionToRegistration,
-#connection #btnRegistrationToConnection,
-#registration #btnConnectionToRegistration,
-#registration #btnRegistrationToConnection {
+#btnConnectionToRegistration,
+#btnRegistrationToConnection {
   border-style: none;
   background-color: transparent;
   color: #f4bd33;
