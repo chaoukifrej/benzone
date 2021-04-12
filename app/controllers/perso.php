@@ -96,7 +96,7 @@ class Perso
 
         <body>
             <?php include_once __DIR__ . "/Component/header.php";
-            new Menu('ENCHÈRES');
+            new Menu();
             ?>
             <form action="perso" method="POST">
                 <input type="hidden" value="0" name="is_connected">

@@ -62,10 +62,11 @@ class Annonce
       $query = $dbh->prepare('UPDATE
       `adverts`
       SET
-      `actual_price` = ?
+      `actual_price` = ?,
+      `bidder_id` = ?
       WHERE
       id = ?');
-      $query->execute([$price, $_POST['id']]);
+      $query->execute([$price, $_SESSION['id'], $_POST['id']]);
       header('location: annonce?id=' . $_POST["id"]);
     } else {
       header('location: annonce?id=' . $_POST["id"]);
