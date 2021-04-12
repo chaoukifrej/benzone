@@ -3,15 +3,14 @@
   font-size: 30px;
   padding: 10px;
   border: 2px solid #fac31d;
+  text-align: center;
+  width: 25%;
+  margin: auto;
+  margin-top: 2%;
 }
 
 #conteneurGeneral {
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   margin: auto;
   margin-top: 2%;
   width: 40%;
@@ -20,7 +19,9 @@
 #inputModel,
 #inputPower,
 #inputKM,
-#inputBirth {
+#inputBirth,
+#inputTimeEnchere,
+#inputStartPrice {
   width: 23em;
   height: 5vh;
   border: solid 1px grey;
@@ -28,8 +29,14 @@
   padding-left: 20px;
 }
 
-#inputModel:focus {
+#inputModel:focus,
+#inputPower:focus,
+#inputKM:focus,
+#inputBirth:focus,
+#inputTimeEnchere:focus,
+#inputStartPrice:focus {
   outline: none;
+  border: 1px solid #fac31d;
 }
 
 #btnValidate {

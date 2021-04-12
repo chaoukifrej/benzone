@@ -77,9 +77,11 @@ $router->post("/registration", [new Registration(), 'userRegistration']);
 /* POST / - Page de connexion */
 $router->post("/connection", [new Connection(), 'userConnection']);
 
-
 // GET / - Page annonce
 $router->get("/annonce",  [new Annonce(), 'render']);
+
+// POST / - Page annonce
+$router->post("/annonce",  [new Annonce(), 'databaseSetActualPrice']);
 
 // GET / - Page contact
 $router->get("/contact",  [new Contact(), 'render']);

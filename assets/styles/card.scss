@@ -1,7 +1,7 @@
 $primaryColor: #fac31d;
 
 .annonceCard {
-  padding: 0 5px 5px;
+  padding: 0;
   height: 360px;
   width: 380px;
   border-radius: 5px;
@@ -9,6 +9,7 @@ $primaryColor: #fac31d;
   cursor: pointer;
   transition: 0.5s;
   background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
   //box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   h3 {
     text-align: left;
@@ -29,11 +30,12 @@ $primaryColor: #fac31d;
     }
   }
   img {
-    margin: 5px;
-    width: 370px;
-    height: 250px;
+    margin: 0px;
+    width: 379px;
+    height: 270px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
+    border: none;
   }
   &:hover {
     opacity: 0.9;

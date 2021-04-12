@@ -1,6 +1,7 @@
 let model = document.getElementById('inputModel')
 let resultat = document.getElementById('resultat')
+let test = document.getElementById('btntest')
 
-model.addEventListener("click",function(e){
-    resultat.innerText = model.value
+test.addEventListener("click",function(e){
+    alert()
 })

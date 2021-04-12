@@ -5,12 +5,14 @@ $primaryColor: #fac31d;
   font-size: 30px;
   padding: 10px;
   border: 2px solid $primaryColor;
+  text-align: center;
+  width: 25%;
+  margin: auto;
+  margin-top: 2%;
 }
 
 #conteneurGeneral {
   text-align: center;
-  display: flex;
-  justify-content: space-around;
   margin: auto;
   margin-top: 2%;
   width: 40%;
@@ -19,15 +21,24 @@ $primaryColor: #fac31d;
 #inputModel,
 #inputPower,
 #inputKM,
-#inputBirth {
+#inputBirth,
+#inputTimeEnchere,
+#inputStartPrice {
   width: 23em;
   height: 5vh;
   border: solid 1px grey;
   border-radius: 5px;
   padding-left: 20px;
 }
-#inputModel:focus {
-  outline: none;
+
+#inputModel:focus , 
+#inputPower:focus , 
+#inputKM:focus , 
+#inputBirth:focus,
+#inputTimeEnchere:focus,
+#inputStartPrice:focus {
+    outline: none; 
+    border : 1px solid $primaryColor;
 }
 
 #btnValidate {
@@ -42,7 +53,10 @@ $primaryColor: #fac31d;
   border: 1px solid $primaryColor;
 }
 
+
+
+
 hr {
-  border: 1px solid $primaryColor;
-  width: 200px;
-}
+    border: 1px solid $primaryColor;
+    width: 200px;
+  }

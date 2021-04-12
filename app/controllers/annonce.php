@@ -22,7 +22,7 @@ class Annonce
       a.picture,
       a.owner_id,
       a.bidder_id,
-      c.id,
+      c.id as car_id,
       c.brand,
       c.model,
       c.power,
@@ -46,6 +46,30 @@ class Annonce
   WHERE a.id = $_GET[id]
   ")->fetchAll(\PDO::FETCH_ASSOC);
     $this->advert = $this->advert[0];
+  }
+
+  public function databaseSetActualPrice()
+  {
+    //. Connexion Base de données
+    include  __DIR__ . "/../core/database.php";
+
+    //nettoyage et validation
+    $price = $_POST["new_price"];
+    $price = filter_var($price, FILTER_SANITIZE_NUMBER_INT);
+    $price = filter_var($price, FILTER_VALIDATE_INT);
+
+    if ($price > $_POST['actual_price']) {
+      $query = $dbh->prepare('UPDATE
+      `adverts`
+      SET
+      `actual_price` = ?
+      WHERE
+      id = ?');
+      $query->execute([$price, $_POST['id']]);
+      header('location: annonce?id=' . $_POST["id"]);
+    } else {
+      header('location: annonce?id=' . $_POST["id"]);
+    }
   }
 
   // function de transformation date
@@ -145,7 +169,9 @@ class Annonce
             <h3 class="titreE">Enchérir</h3>
             <form action="annonce" method="post">
               <label for="price">Montant</label>
-              <input type="number" name="actual_price" id="price">
+              <input type="number" name="new_price" id="price">
+              <input type="hidden" name="id" value="<?= $this->advert['id']; ?>">
+              <input type="hidden" name="actual_price" value="<?= $this->advert['actual_price']; ?>">
               <button type="submit">Valider</button>
             </form>
           </div>
