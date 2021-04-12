@@ -54,7 +54,10 @@ class AddAnnonce
     $descriptionAnnonce = $_POST["descriptionAnnonce"];
     $picture = $_POST["picture"];
 
+    //? Préparation de la requête
     $query = $dbh->prepare("INSERT INTO adverts (first_price, final_date, description, picture) VALUES (?,?,?,?)");
+
+    //? Execution de la requête 
     $result = $query->execute([$firstPrice, $finalDate, $descriptionAnnonce, $picture]);
 
     echo $finalDate;
