@@ -13,6 +13,8 @@ use App\Controllers\Component\Menu;
 
 class Login
 {
+
+
     /**
      *. fonction inscription verif
      */
@@ -49,7 +51,7 @@ class Login
                             }
 
                             //. Connexion Base de données
-                            include_once  __DIR__ . "/../core/database.php";
+                            include  __DIR__ . "/../core/database.php";
 
 
                             //. INSCRIPTION UTILISATEURS
@@ -84,10 +86,11 @@ class Login
     public function connection()
     {
 
+        include  __DIR__ . "/../core/database.php";
 
         if (isset($_POST['formConnection'])) {
 
-            include_once  __DIR__ . "/../core/database.php";
+
             session_start();
 
             if (isset($_POST['mailConnect']) && isset($_POST['passwordConnect'])) {
@@ -104,14 +107,21 @@ class Login
 
                 if ($userExist == 1) {
                     $userInfo = $userRequest->fetch();
-                    $_SESSION['id'] = $userInfo['id'];
+                    $id = $_SESSION['id'] = $userInfo['id'];
                     $_SESSION['lastname'] = $userInfo['lastname'];
                     $_SESSION['firstname'] = $userInfo['firstname'];
                     $_SESSION['email'] = $userInfo['email'];
                     $_SESSION['password'] = $userInfo['password'];
-                    header('Location: accueil?id=' . $_SESSION['id']);
+                    $error = "Connection réussi";
+
+                    // passage isConnected a 1
+                    $userRequest = $dbh->prepare('UPDATE users SET is_connected = ? WHERE id = ?');
+                    $userRequest->execute([1, $id]);
+
+                    header('Location: accueil?id=' . $id);
                 } else {
                     $error = "Utilisateurs non trouvé";
+                    header('Location: login');
                 }
             }
 
@@ -147,6 +157,10 @@ class Login
                 <div id="connection">
 
                     <h2>CONNEXION</h2>
+                    <?php
+                    if (!isset($_SESSION['id'])) { ?>
+                        <!-- <span>Email ou mot de passe incorrect</span> -->
+                    <?php } ?>
                     <form id="formConnection" action="login" method="POST">
 
                         <label class="conLabel" for="">Email</label>
@@ -159,11 +173,14 @@ class Login
 
                     </form>
                     <p>Pas de compte ? <button id="btnConnectionToRegistration">inscrivez-vous</button> !</p>
+
+
                 </div>
 
                 <div id="registration">
 
                     <h2>INSCRIPTION</h2>
+
                     <form id="formRegistration" action="login" method="POST">
 
                         <label class="inscLabel" for="lastname">Nom</label>
