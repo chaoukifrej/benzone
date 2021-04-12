@@ -15,7 +15,8 @@ include_once __DIR__ . "/controllers/login.php";
 include_once __DIR__ . "/controllers/annonce.php";
 include_once __DIR__ . "/controllers/contact.php";
 include_once __DIR__ . "/controllers/addAnnonce.php";
-include_once __DIR__ . "/controllers/registration.php";
+
+
 
 
 use App\Router\Router;
@@ -24,7 +25,7 @@ use App\Controllers\DefaultPage;
 use App\Controllers\Perso;
 use App\Controllers\Login;
 use App\Controllers\AddAnnonce;
-use App\Controllers\Registration;
+
 
 
 //controller annonce class Annonce
@@ -71,11 +72,19 @@ $router->post("/addAnnonce", [new AddAnnonce(), 'add_adverts']);
 /* GET Page perso*/
 $router->get("/perso", [new Perso(), 'render']);
 
+//POST - Page Perso 
+$router->post("/perso", [new Perso(), 'render']);
+
 /* GET / - Page de connexion */
 $router->get("/login", [new Login(), 'render']);
 
+/* POST / - Page d'inscription */
+if (isset($_POST['firstname']) and isset($_POST['lastname'])) {
+    $router->post("/login", [new Login(), 'registration']);
+}
+
 /* POST / - Page de connexion */
-$router->post("/registration", [new Registration(), 'userRegistration']);
+$router->post("/login", [new Login(), 'connection']);
 
 
 
@@ -88,6 +97,11 @@ $router->post("/annonce",  [new Annonce(), 'databaseSetActualPrice']);
 
 // GET / - Page contact
 $router->get("/contact",  [new Contact(), 'render']);
+
+
+
+
+
 
 /* Route par défaut */
 $router->default([new DefaultPage(), 'render']);
