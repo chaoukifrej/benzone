@@ -10,7 +10,10 @@ namespace App\Controllers;
 
 use App\Controllers\Component\Menu;
 
+
+
 /* Class Name= AddAnnonce */
+
 class AddAnnonce
 {
 
@@ -20,48 +23,61 @@ class AddAnnonce
    * 
    */
 
-  public function addAnnonce(){
-   
-// Déclaration variable
-$brand = $_POST["brand"];
-$model = $_POST["model"];
-$power = $_POST["power"];
-$km = $_POST["km"];
-$vehicleYear = $_POST["vehicleYear"];
-$startPrice = $_POST["startPrice"];
-$descriptionAnnonce = $_POST["descriptionAnnonce"];
-$picture = $_POST["picture"];
-$finalDate = $_POST["finalDate"];
-  
- //. Connexion Base de données
- include_once  __DIR__ . "/../core/database.php";
-// Préparation de la requête
-$query = $dbh->prepare("INSERT INTO adverts (first_price, description) VALUES (?, ?)");
-$querys = $dbh->prepare("INSERT INTO car (model, brand ,power , vehicle_year,vehicle_km) VALUES (?,?,?,?,?)");
+  // FONCTION CREER UNE VOITURE
+  public function add_car()
+  {
+    //! Connexion Base de données
+    include_once  __DIR__ . "/../core/database.php";
 
-/* Execution de la requête */
-$result = $query->execute([$startPrice, $descriptionAnnonce]);
-$results = $querys->execute([$model, $brand,$power, $vehicleYear, $km]);
+    //. Déclaration données
+    $brand = $_POST["brand"];
+    $model = $_POST["model"];
+    $power = $_POST["power"];
+    $km = $_POST["km"];
+    $vehicleYear = $_POST["vehicleYear"];
 
-}
+    //? Préparation de la requête
+    $query = $dbh->prepare("INSERT INTO car (model, brand ,power , vehicle_year, vehicle_km) VALUES (?,?,?,?,?)");
+
+    //? Execution de la requête 
+    $result = $query->execute([$model, $brand, $power, $vehicleYear, $km]);
+  }
+
+
+  // FONCTION AJOUTER UNE ANNONCE
+  public function add_adverts()
+  {
+    include_once  __DIR__ . "/../core/database.php";
+
+    $firstPrice = $_POST["firstPrice"];
+    $finalDate = $_POST["finalDate"];
+    $descriptionAnnonce = $_POST["descriptionAnnonce"];
+    $picture = $_POST["picture"];
+
+    $query = $dbh->prepare("INSERT INTO adverts (first_price, final_date, description, picture) VALUES (?,?,?,?)");
+    $result = $query->execute([$firstPrice, $finalDate, $descriptionAnnonce, $picture]);
+
+    echo $finalDate;
+  }
 
   /**
    * 
-   * FUNCTION AFFICHAGE FORM
+   * FUNCTION AFFICHAGE FORM VIEW
    * 
    */
 
-  public function render(){
+  public function render()
+  {
 
-    ?>
+?>
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <html>
 
     <head>
       <meta charset="utf-8">
-      <title>AddAnnonce</title>   
-      <link rel="stylesheet"  href="./assets/styles/style.css" />
+      <title>AddAnnonce</title>
+      <link rel="stylesheet" href="./assets/styles/style.css" />
       <link rel="stylesheet" href="./assets/styles/addannonce.css" />
     </head>
 
@@ -71,72 +87,81 @@ $results = $querys->execute([$model, $brand,$power, $vehicleYear, $km]);
       new Menu('VENDRE');
       ?>
 
-      
-       
-      <h2 id="titleAddAnnonce" >AJOUTER UNE ANNONCE</h2>
+
+
+      <h2 id="titleAddAnnonce">AJOUTER UNE ANNONCE</h2>
       <div id="conteneurGeneral">
 
-      <form action="" method="POST">
-      <h4>Informations du véhicule</h4>
-     
-        <label for="">Marque : </label><br><br>
-        <select name="brand" id="">
-          <option value="abarth">ABARTH</option> 
-          <option value="ac">AC</option>
-          <option value="aixam">AIXAM</option>
-          <option value="alfa_romeo">ALFA ROMEO</option>
-          <option value="alke">ALKE</option>
-        </select><br><br>
-        <hr><br>
-        <label for="">Modèle : </label><br><br>
-        <input id="inputModel"  name="model" type="text"><br><br>
-<hr><br>
+        <form action="addAnnonce" method="POST">
+          <h4>Informations du véhicule</h4>
 
-        <label for="">Puissance (CV) : </label><br><br>
-        <input id="inputPower" name="power" type="number"><br><br>
-        <hr><br>
+          <label for="">Marque : </label><br><br>
+          <select name="brand" id="selectBrand">
+            <option value="abarth">ABARTH</option>
+            <option value="ac">AC</option>
+            <option value="aixam">AIXAM</option>
+            <option value="alfa_romeo">ALFA ROMEO</option>
+            <option value="alke">ALKE</option>
+          </select><br><br>
 
-        <label for="">Kilométrage : </label><br><br>
-        <input id="inputKM" type="number" name="km">
+          <hr class="hrAddAnnonce"><br>
 
-        <br><br><hr><br>
+          <label for="">Modèle : </label><br><br>
+          <input id="inputModel" name="model" type="text"><br><br>
 
-        <label for="">Année du véhicule : </label><br><br>
-        <input id="inputBirth" type="date" name="vehicleYear"><br><br>
-  
-        <h4>Informations de l'enchère</h4>
+          <hr class="hrAddAnnonce"><br>
 
-        <!-- Label / Input prix de départ -->
-        <label for="">Prix de départ : </label><br><br>
-        <input id="inputStartPrice" type="text" name="startPrice">
+          <label for="">Puissance (CV) : </label><br><br>
+          <input id="inputPower" name="power" type="number"><br><br>
 
-        <br><br><hr><br>
+          <hr class="hrAddAnnonce"><br>
 
-        <!-- Label / Input durée de l'enchère -->
-        <label for="">Durée de l'enchère : </label><br><br>
-        <input id="inputTimeEnchere" type="date" name="finalDate">
+          <label for="">Kilométrage : </label><br><br>
+          <input id="inputKM" type="number" name="km"><br><br>
 
-        <br><br><hr><br>
-        
-        <!-- Label / Text Area description -->
-        <label for="">Description : </label><br><br>
-        <textarea name="descriptionAnnonce" id="" cols="30" rows="10"></textarea>
+          <hr class="hrAddAnnonce"><br>
 
-        <br><br><hr><br>
+          <label for="">Année du véhicule : </label><br><br>
+          <input id="inputBirth" type="date" name="vehicleYear"><br><br>
 
-        <!-- Label / Input photos -->
-        <label for="">Photos : </label><br><br>
-        <input type="file" name="picture">
+          <h4>Informations de l'enchère</h4>
 
-        <br><br><hr><br>
+          <!-- Label / Input prix de départ -->
+          <label for="">Prix de départ : </label><br><br>
+          <input id="inputStartPrice" type="text" name="firstPrice">
 
-        <button id="btnValidate">Valider</button><br><br>
+          <br><br>
+          <hr class="hrAddAnnonce"><br>
 
-      </form>
+          <!-- Label / Input durée de l'enchère -->
+          <label for="">Durée de l'enchère : </label><br><br>
+          <input id="inputTimeEnchere" type="date" name="finalDate">
+
+          <br><br>
+          <hr class="hrAddAnnonce"><br>
+
+          <!-- Label / Text Area description -->
+          <label for="">Description : </label><br><br>
+          <textarea name="descriptionAnnonce" id="" cols="30" rows="10"></textarea>
+
+          <br><br>
+          <hr class="hrAddAnnonce"><br>
+
+          <!-- Label / Input photos -->
+          <label for="">Photos : </label><br><br>
+          <input type="text" name="picture">
+
+          <br><br>
+          <hr class="hrAddAnnonce"><br>
+
+
+          <input type="submit"><br><br>
+
+        </form>
 
 
 
-      </div> 
+      </div>
 
       <?php include_once __DIR__ . "/Component/footer.php";
       ?>
@@ -147,7 +172,8 @@ $results = $querys->execute([$model, $brand,$power, $vehicleYear, $km]);
     </html>
 
 <?php
-  }}
+  }
+}
 
   /*          <option value="alpina">ALPINA</option>
           <option value="alpine">ALPINE</option>
@@ -245,4 +271,6 @@ $results = $querys->execute([$model, $brand,$power, $vehicleYear, $km]);
           <option value="nissan">NISSAN</option>
           <option value="noun_electric">NOUN ELECTRIC</option>
           <option value="NSU">NSU</option>
-          <option value="OLDSMOBIL">OLDSMOBIL</option>*/
+          <option value="OLDSMOBIL">OLDSMOBIL</option>
+          
+          */

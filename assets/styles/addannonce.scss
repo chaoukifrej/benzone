@@ -31,14 +31,14 @@ $primaryColor: #fac31d;
   padding-left: 20px;
 }
 
-#inputModel:focus , 
-#inputPower:focus , 
-#inputKM:focus , 
+#inputModel:focus,
+#inputPower:focus,
+#inputKM:focus,
 #inputBirth:focus,
 #inputTimeEnchere:focus,
 #inputStartPrice:focus {
-    outline: none; 
-    border : 1px solid $primaryColor;
+  outline: none;
+  border: 1px solid $primaryColor;
 }
 
 #btnValidate {
@@ -49,14 +49,7 @@ $primaryColor: #fac31d;
   cursor: pointer;
 }
 
-#btnValidate:hover {
+.hrAddAnnonce {
   border: 1px solid $primaryColor;
+  width: 200px;
 }
-
-
-
-
-hr {
-    border: 1px solid $primaryColor;
-    width: 200px;
-  }
