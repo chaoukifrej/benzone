@@ -109,10 +109,8 @@ class Login
                     $_SESSION['firstname'] = $userInfo['firstname'];
                     $_SESSION['email'] = $userInfo['email'];
                     $_SESSION['password'] = $userInfo['password'];
-                    $_SESSION['is_connected'] = $userInfo['is_connected'];
+                    $_SESSION['is_connected'] = 1;
                     $error = "Connection réussi";
-
-
 
                     // passage isConnected a 1
                     $userRequest = $dbh->prepare('UPDATE users SET is_connected = ? WHERE id = ?');
