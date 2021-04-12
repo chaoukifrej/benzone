@@ -25,7 +25,7 @@ class Contact
     <head>
       <meta charset="utf-8">
       <title>Contact</title>
-
+      <link rel="stylesheet" type="text/css" href="assets/styles/style.css" />
       <link rel="stylesheet" type="text/css" href="./assets/styles/contact.css" />
     </head>
 
@@ -35,7 +35,6 @@ class Contact
       ?>
       <div id="mainContainer">
         <h1>Contact</h1>
-        <p>Bienvenue sur la page contact de merde</p>
       </div>
     </body>
 
