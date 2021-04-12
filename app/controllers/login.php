@@ -14,7 +14,7 @@ use App\Controllers\Component\Menu;
 class Login
 {
     /**
-     * fonction inscription verif
+     *. fonction inscription verif
      */
     public function registration()
     {
@@ -56,6 +56,7 @@ class Login
                             if ($data_validated === true) {
                                 $query = $dbh->prepare('INSERT INTO users(lastname, firstname, email, password) VALUES (?, ?, ?, ?)');
                                 $result = $query->execute([ucfirst($lastname), $firstname, $email, $password]);
+                                header('location: login');
                             }
                         } else {
                             $erreur = "Mot de passe trop long";
@@ -72,13 +73,53 @@ class Login
             if (isset($erreur)) {
                 echo $erreur;
             }
+            header('location: login');
         }
     }
+
+
     /**
-     * fonction inscription verif
+     * .fonction inscription verif
      */
     public function connection()
     {
+
+
+        if (isset($_POST['formConnection'])) {
+
+            include_once  __DIR__ . "/../core/database.php";
+            session_start();
+
+            if (isset($_POST['mailConnect']) && isset($_POST['passwordConnect'])) {
+                $mailConnect = filter_var($_POST['mailConnect'], FILTER_SANITIZE_STRING);
+                $passwordConnect = filter_var($_POST['passwordConnect'], FILTER_SANITIZE_STRING);
+            }
+
+
+            if (!empty($mailConnect) && !empty($passwordConnect)) {
+                $userRequest = $dbh->prepare('SELECT * FROM users WHERE email = ? AND password = ?');
+                $userRequest->execute(array($mailConnect, $passwordConnect));
+                $userExist = $userRequest->rowCount();
+
+
+                if ($userExist == 1) {
+                    $userInfo = $userRequest->fetch();
+                    $_SESSION['id'] = $userInfo['id'];
+                    $_SESSION['lastname'] = $userInfo['lastname'];
+                    $_SESSION['firstname'] = $userInfo['firstname'];
+                    $_SESSION['email'] = $userInfo['email'];
+                    $_SESSION['password'] = $userInfo['password'];
+                    header('Location: accueil?id=' . $_SESSION['id']);
+                } else {
+                    $error = "Utilisateurs non trouvé";
+                }
+            }
+
+            //. CONNEXION UTILISATEURS
+            if (isset($error)) {
+                echo $error;
+            }
+        }
     }
 
 
@@ -122,8 +163,13 @@ class Login
 
                 <div id="registration">
 
+<<<<<<< HEAD
+                            <h2>INSCRIPTION</h2>
+                            <form id="formRegistration" action="" method="POST">
+=======
                     <h2>INSCRIPTION</h2>
                     <form id="formRegistration" action="login" method="POST">
+>>>>>>> 516b0284b552f76017b0a7bf98cda8348d9b4194
 
                         <label class="inscLabel" for="lastname">Nom</label>
                         <input class="loginInput" type="text" name="lastname" required>
