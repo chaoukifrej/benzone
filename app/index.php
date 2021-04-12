@@ -73,7 +73,6 @@ $router->post("/registration", [new Registration(), 'userRegistration']);
 
 
 
-
 // GET / - Page annonce
 $router->get("/annonce",  [new Annonce(), 'render']);
 

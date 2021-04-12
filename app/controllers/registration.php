@@ -45,5 +45,6 @@ class Registration
                 $result = $query->execute([ucfirst($lastname), $firstname, $email, $password]);
             }
         }
+        header('location: login');
     }
 }
