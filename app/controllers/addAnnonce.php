@@ -97,8 +97,6 @@ class AddAnnonce
       new Menu('VENDRE');
       ?>
 
-
-
       <h2 id="titleAddAnnonce">AJOUTER UNE ANNONCE</h2>
       <div id="conteneurGeneral">
 
