@@ -1,9 +1,13 @@
 $primaryColor: #fac31d;
 
 .mainContainer {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  .profil {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: auto;
+  }
 
   .modif {
     display: flex;
