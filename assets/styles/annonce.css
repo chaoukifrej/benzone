@@ -183,17 +183,16 @@
   text-decoration: none;
   color: black;
   background-color: #fac31d;
-  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   font-size: 1.1rem;
+  border: solid 1px grey;
   border-radius: 5px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 #mainContainer .divContainerDescription .notConnected a:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 /*# sourceMappingURL=annonce.css.map */
