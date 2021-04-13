@@ -18,6 +18,20 @@ class Perso
 
     protected $advert;
 
+    public function countTotal()
+    {
+        $stock = 0;
+        foreach ($this->advert as $key => $value) {
+            foreach ($value as $k => $v) {
+                if ($k == "actual_price") {
+                    $stock += (int)$v;
+                }
+            }
+        }
+
+        return $stock;
+    }
+
     public function winAdvert()
     {
         //. Connexion Base de données
@@ -98,15 +112,15 @@ class Perso
                     <form class="modif" action="perso" method="POST">
                         <h1>modifier votre profil</h1>
                         <label for="">modifier votre Nom</label>
-                        <input name="lastname" type="text">
+                        <input name="lastname" type="text" value="<?= $_SESSION['lastname'] ?>">
                         <label for="">modifier votre Prenom</label>
-                        <input name="firstname" type="text">
+                        <input name="firstname" type="text" value="<?= $_SESSION['firstname'] ?>">
                         <label for="">modifier votre Email</label>
-                        <input name="email" type="text">
+                        <input name="email" type="text" value="<?= $_SESSION['email'] ?>">
                         <label for="">modifier votre Mot de passe</label>
-                        <input name="password" type="password">
+                        <input name="password" type="password" value="<?= $_SESSION['password'] ?>">
                         <label for="">confirmer votre nouveau mot de passe</label>
-                        <input type="password">
+                        <input type="password" value="<?= $_SESSION['password'] ?>">
                         <input class="button" value="Modifier" name="send" type="submit">
                     </form>
 
@@ -121,12 +135,8 @@ class Perso
                         </form>
                     </div>
                 </div>
-                <h3>Encheres en cours</h3>
-                <pre>
-                    <?php
-                    var_dump($this->advert);
-                    ?>
-                </pre>
+                <h3>Encheres en cours (<?= $this->countTotal() . " €"; ?>)</h3>
+
                 <?php
 
                 foreach ($this->advert as $value) { ?>
@@ -136,9 +146,8 @@ class Perso
                             <input type="hidden" name="id" value="<?= $value['id']; ?>">
                         </button>
                     </form>
-                <?php  }
 
-                ?>
+                <?php  } ?>
 
 
 
