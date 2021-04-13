@@ -23,7 +23,7 @@ class Perso
         //. Connexion Base de données
         include  __DIR__ . "/../core/database.php";
 
-        $this->advert = $dbh->query("SELECT c.model , c.brand, a.actual_price FROM adverts a INNER JOIN car c ON c.id = a.car_id WHERE a.bidder_id = $_SESSION[id]")->fetchAll(\PDO::FETCH_ASSOC);
+        $this->advert = $dbh->query("SELECT c.model , c.brand, a.actual_price , a.id FROM adverts a INNER JOIN car c ON c.id = a.car_id WHERE a.bidder_id = $_SESSION[id]")->fetchAll(\PDO::FETCH_ASSOC);
     }
     // SELECT  a.id, a.actual_price, a.final_date, a.description, c.model, c.brand, c.power FROM adverts a INNER JOIN car c ON c.id = a.car_id WHERE a.bidder_id = 39
 
@@ -112,14 +112,13 @@ class Perso
 
                     <div class="persoInfo">
 
-                        </form>
                         <h3>Prenom : <?php echo $_SESSION['firstname'] ?></h3>
                         <h3>Nom : <?php echo $_SESSION['lastname'] ?></h3>
                         <h3>E-mail : <?php echo $_SESSION['email'] ?></h3>
                         <form action="perso" method="POST">
                             <input type="hidden" value="0" name="is_connected">
                             <input type="submit" value="deconnexion">
-
+                        </form>
                     </div>
                 </div>
                 <h3>Encheres en cours</h3>
@@ -131,9 +130,10 @@ class Perso
                 <?php
 
                 foreach ($this->advert as $value) { ?>
-                    <form action="" method="GET">
-                        <button>
+                    <form action="annonce" method="GET">
+                        <button type="submit">
                             <?php echo $value['brand'] . ' ' . $value['model'] . ' ' . $value['actual_price'] . '€<br />'; ?>
+                            <input type="hidden" name="id" value="<?= $value['id']; ?>">
                         </button>
                     </form>
                 <?php  }
