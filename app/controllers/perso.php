@@ -17,9 +17,11 @@ use App\Controllers\Component\Menu;
 class Perso
 {
 
+    /* fonction modification base de données */
+
     public function updatePerso()
     {
-
+        //connexion data base 
         include  __DIR__ . "/../core/database.php";
 
         $lastname = filter_var($_POST["lastname"], FILTER_SANITIZE_STRING);
@@ -32,6 +34,16 @@ class Perso
         $result = $query->execute([$lastname, $firstname, $email, $password, 1]);
     }
 
+
+
+    //fonction affichage annonce remporté par l'utilsateur
+    public function displayWinAdvert()
+    {
+        include  __DIR__ . "/../core/database.php";
+    }
+
+
+    /* fonction deconexion  */
     public function disconnection()
     {
         include  __DIR__ . "/../core/database.php";
@@ -44,7 +56,7 @@ class Perso
         header('Location: accueil');
     }
 
-
+    /* fonction rendu visuel */
     public function render()
     {
 ?>
@@ -52,6 +64,7 @@ class Perso
 
 
         <!-- affichage Modif Profil -->
+
         <!DOCTYPE html>
         <html lang="en">
 
@@ -65,34 +78,39 @@ class Perso
         </head>
 
         <body>
+
             <?php include_once __DIR__ . "/Component/header.php";
             new Menu();
             ?>
-            <form action="perso" method="POST">
-                <input type="hidden" value="0" name="is_connected">
-                <input type="submit" value="deconnexion">
-            </form>
-            <form action="perso" method="POST">
-                <h1>modifier votre profil</h1>
-                <label for="">modifier votre Nom</label>
-                <input name="lastname" type="text">
-                <label for="">modifier votre Prenom</label>
-                <input name="firstname" type="text">
-                <label for="">modifier votre Email</label>
-                <input name="email" type="text">
-                <label for="">modifier votre Mot de passe</label>
-                <input name="password" type="password">
-                <label for="">confirmer votre nouveau mot de passe</label>
-                <input type="password">
-                <input class="button" name="send" type="submit">
-            </form>
+            <div class="mainContainer">
 
-            <div>
-                <h1>Prenom :</h1> <?php echo $_SESSION['firstname'] ?>
-                <h1>Nom :</h1> <?php echo $_SESSION['lastname'] ?>
-                <h1>E-mail :</h1> <?php echo $_SESSION['email'] ?>
+                <form class="modif" action="perso" method="POST">
+                    <h1>modifier votre profil</h1>
+                    <label for="">modifier votre Nom</label>
+                    <input name="lastname" type="text">
+                    <label for="">modifier votre Prenom</label>
+                    <input name="firstname" type="text">
+                    <label for="">modifier votre Email</label>
+                    <input name="email" type="text">
+                    <label for="">modifier votre Mot de passe</label>
+                    <input name="password" type="password">
+                    <label for="">confirmer votre nouveau mot de passe</label>
+                    <input type="password">
+                    <input class="button" value="Modifier" name="send" type="submit">
+                </form>
+
+                <div class="persoInfo">
+
+                    </form>
+                    <h3>Prenom : <?php echo $_SESSION['firstname'] ?></h3>
+                    <h3>Nom : <?php echo $_SESSION['lastname'] ?></h3>
+                    <h3>E-mail : <?php echo $_SESSION['email'] ?></h3>
+                    <form action="perso" method="POST">
+                        <input type="hidden" value="0" name="is_connected">
+                        <input type="submit" value="deconnexion">
+
+                </div>
             </div>
-
         </body>
 
         </html>
