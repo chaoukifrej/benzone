@@ -131,10 +131,9 @@
 }
 
 #mainContainer .divContainerDescription .encherirContainer form input {
-  padding: 5px;
   margin: 0 50px;
   width: 300px;
-  height: 25px;
+  height: 30px;
   font-size: 1.1rem;
   outline: none;
   border-radius: 5px;
@@ -144,7 +143,7 @@
 #mainContainer .divContainerDescription .encherirContainer form button {
   font-size: 1rem;
   height: 35px;
-  width: 313px;
+  width: 300px;
   margin: 15px 50px;
   background-color: #fac31d;
   border: solid 1px grey;
@@ -156,6 +155,43 @@
 }
 
 #mainContainer .divContainerDescription .encherirContainer form button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+#mainContainer .divContainerDescription .notConnected {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#mainContainer .divContainerDescription .notConnected p {
+  display: initial;
+}
+
+#mainContainer .divContainerDescription .notConnected a {
+  text-decoration: none;
+  color: black;
+  background-color: #fac31d;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: solid 1px grey;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#mainContainer .divContainerDescription .notConnected a:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }

@@ -20,9 +20,13 @@ class Menu
         <?php $this->displayMenu($link) ?>
       </nav>
       <?php
-      if ($_SESSION['is_connected'] ?? false) { ?>
-        <a class="headerLink connexion" href="perso/<?= $_SESSION['id']; ?>"><?= strtoupper($_SESSION['lastname']); ?> <?= strtoupper($_SESSION['firstname']); ?></a>
-        <?php } else {
+      if ($_SESSION['is_connected'] ?? false) {
+        if (strpos($_SERVER["REQUEST_URI"], 'perso')) { ?>
+          <a class="headerLink connexion" id='actualLink' href="perso"><?= strtoupper($_SESSION['lastname']); ?> <?= strtoupper($_SESSION['firstname']); ?></a>
+        <?php } else { ?>
+          <a class="headerLink connexion" href="perso"><?= strtoupper($_SESSION['lastname']); ?> <?= strtoupper($_SESSION['firstname']); ?></a>
+        <?php };
+      } else {
         if (strpos($_SERVER["REQUEST_URI"], 'login')) { ?>
           <a class="headerLink connexion" id='actualLink' href="login">CONNEXION</a>
         <?php } else { ?>

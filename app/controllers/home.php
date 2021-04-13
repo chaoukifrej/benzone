@@ -13,7 +13,6 @@ use App\Controllers\Component\AnnonceCard;
 
 
 session_start();
-var_dump($_SESSION);
 
 class Home
 {

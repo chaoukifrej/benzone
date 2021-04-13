@@ -8,6 +8,7 @@ use App\Controllers\Component\Menu;
 class Annonce
 {
   protected $advert;
+  protected $bidder;
 
   public function databaseGetAdverts()
   {
@@ -29,9 +30,7 @@ class Annonce
       c.vehicle_year,
       c.vehicle_km,
       u.lastname as ownerln,
-      u.firstname as ownerfn,
-      b.lastname as bidderln,
-      b.firstname as bidderfn
+      u.firstname as ownerfn
   FROM
       adverts a
   INNER JOIN 
@@ -40,12 +39,28 @@ class Annonce
   INNER JOIN
       users u
   ON a.owner_id = u.id
-  INNER JOIN
-      users b
-  ON a.bidder_id = b.id
   WHERE a.id = $_GET[id]
   ")->fetchAll(\PDO::FETCH_ASSOC);
     $this->advert = $this->advert[0];
+
+    if (!is_null($this->advert['bidder_id'])) {
+      $this->bidder = $dbh->query("SELECT
+      b.lastname as bidderln,
+      b.firstname as bidderfn
+      FROM
+      users b
+      WHERE b.id = {$this->advert['bidder_id']}
+    ")->fetchAll(\PDO::FETCH_ASSOC);
+      $this->bidder = $this->bidder[0];
+    } else {
+      $this->bidder = [
+        'lastname' => 'null',
+        'firstname' => 'null'
+      ];
+    };
+
+
+    //$this->advert['bidder_id'] ?? $this->advert['bidder_id'] = 1;
   }
 
   public function databaseSetActualPrice()
@@ -62,10 +77,11 @@ class Annonce
       $query = $dbh->prepare('UPDATE
       `adverts`
       SET
-      `actual_price` = ?
+      `actual_price` = ?,
+      `bidder_id` = ?
       WHERE
       id = ?');
-      $query->execute([$price, $_POST['id']]);
+      $query->execute([$price, $_SESSION['id'], $_POST['id']]);
       header('location: annonce?id=' . $_POST["id"]);
     } else {
       header('location: annonce?id=' . $_POST["id"]);
@@ -165,21 +181,30 @@ class Annonce
           </div>
 
           <!-- Encher DIV -->
-          <div class="descriptionContainer encherirContainer">
-            <h3 class="titreE">Enchérir</h3>
-            <form action="annonce" method="post">
-              <label for="price">Montant</label>
-              <input type="number" name="new_price" id="price">
-              <input type="hidden" name="id" value="<?= $this->advert['id']; ?>">
-              <input type="hidden" name="actual_price" value="<?= $this->advert['actual_price']; ?>">
-              <button type="submit">Valider</button>
-            </form>
-          </div>
+          <?php if ($_SESSION['is_connected'] ?? false) { ?>
+
+            <div class="descriptionContainer encherirContainer">
+              <h3 class="titreE">Enchérir</h3>
+              <form action="annonce" method="post">
+                <label for="price">Montant</label>
+                <input type="number" name="new_price" id="price">
+                <input type="hidden" name="id" value="<?= $this->advert['id']; ?>">
+                <input type="hidden" name="actual_price" value="<?= $this->advert['actual_price']; ?>">
+                <button type="submit">Valider</button>
+              </form>
+            </div>
+          <?php } else { ?>
+            <div class="descriptionContainer encherirContainer notConnected">
+              <h3 class="titreE">Enchérir</h3>
+              <p class="notConnectedP">Connectez-vous pour enchèrir</p>
+              <br /><a class="notConnectedA" href="login">Connexion</a>
+            </div>
+          <?php }; ?>
         </div>
 
       </div>
       <?php
-      //var_dump($this->advert);
+      //var_dump($this->bidder);
       ?>
       <?php include_once __DIR__ . "/Component/footer.php"; ?>
     </body>

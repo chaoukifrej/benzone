@@ -17,15 +17,6 @@ use App\Controllers\Component\Menu;
 class Perso
 {
 
-
-    public function displayPerso()
-    {
-        include  __DIR__ . "/../core/database.php";
-
-        $query = $dbh->query("SELECT * FROM users WHERE id = 1")->fetchAll(\PDO::FETCH_ASSOC);
-    }
-
-
     public function updatePerso()
     {
 
@@ -60,27 +51,6 @@ class Perso
 
 
 
-        <!DOCTYPE html>
-        <html lang="en">
-
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
-        </head>
-
-        <body>
-            <?php
-            $this->displayPerso()
-            ?>
-            <h1>Prénom</h1><?php echo $this->displayPerso['firstname']; ?>
-        </body>
-
-        </html>
-
-
-
         <!-- affichage Modif Profil -->
         <!DOCTYPE html>
         <html lang="en">
@@ -96,7 +66,7 @@ class Perso
 
         <body>
             <?php include_once __DIR__ . "/Component/header.php";
-            new Menu('ENCHÈRES');
+            new Menu();
             ?>
             <form action="perso" method="POST">
                 <input type="hidden" value="0" name="is_connected">
@@ -117,7 +87,11 @@ class Perso
                 <input class="button" name="send" type="submit">
             </form>
 
-
+            <div>
+                <h1>Prenom :</h1> <?php echo $_SESSION['firstname'] ?>
+                <h1>Nom :</h1> <?php echo $_SESSION['lastname'] ?>
+                <h1>E-mail :</h1> <?php echo $_SESSION['email'] ?>
+            </div>
 
         </body>
 
