@@ -28,8 +28,8 @@ class AddAnnonce
     include  __DIR__ . "/../core/database.php";
 
     //. Déclaration données
-    $brand = $_POST["brand"];
-    $model = $_POST["model"];
+    $brand = strtoupper($_POST["brand"]);
+    $model = ucfirst($_POST["model"]);
     $power = $_POST["power"];
     $km = $_POST["km"];
     $vehicleYear = $_POST["vehicleYear"];
@@ -97,8 +97,6 @@ class AddAnnonce
       new Menu('VENDRE');
       ?>
 
-
-
       <h2 id="titleAddAnnonce">AJOUTER UNE ANNONCE</h2>
       <div id="conteneurGeneral">
 
@@ -110,15 +108,15 @@ class AddAnnonce
             <option value="abarth">ABARTH</option>
             <option value="ac">AC</option>
             <option value="aixam">AIXAM</option>
-            <option value="alfa_romeo">ALFA ROMEO</option>
+            <option value="ALFA ROMEO">ALFA ROMEO</option>
             <option value="alke">ALKE</option>
             <option value="alpina">ALPINA</option>
             <option value="alpine">ALPINE</option>
             <option value="apal">APAL</option>
             <option value="ariel">ARIEL</option>
-            <option value="aston_martin">ASTON MARTIN</option>
+            <option value="aston martin">ASTON MARTIN</option>
             <option value="austin">AUSTIN</option>
-            <option value="auto_union">AUTO UNION</option>
+            <option value="auto union">AUTO UNION</option>
             <option value="autobianchi">AUTOBIANCHI</option>
             <option value="bellier">BELLIER</option>
             <option value="bentley">BENTLEY</option>
@@ -126,7 +124,7 @@ class AddAnnonce
             <option value="bollore">BOLLORE</option>
             <option value="bugatti">BUGATTI</option>
             <option value="buik">BUIK</option>
-            <option value="burby_s">BURBY S</option>
+            <option value="burby s">BURBY S</option>
             <option value="cadillac">CADILLAC</option>
             <option value="casalini">CASALINI</option>
             <option value="caterham">CATERHAM</option>
@@ -143,8 +141,8 @@ class AddAnnonce
             <option value="dallara">DALLARA</option>
             <option value="dangel">DANGEL</option>
             <option value="datsun">DATSUN</option>
-            <option value="de_soto">DE SOTO</option>
-            <option value="de_tomaso">DE TOMASO</option>
+            <option value="de soto">DE SOTO</option>
+            <option value="de tomaso">DE TOMASO</option>
             <option value="devinci">DEVINCI</option>
             <option value="dodge">DODGE</option>
             <option value="donkervoort">DONKERVOORT</option>
@@ -177,7 +175,7 @@ class AddAnnonce
             <option value="lada">LDA</option>
             <option value="lamborghini">LAMBORGHINI</option>
             <option value="lancia">LANCIA</option>
-            <option value="land_rover">LAND ROVER</option>
+            <option value="land rover">LAND ROVER</option>
             <option value="lexus">LEXUS</option>
             <option value="ligier">LIGIER</option>
             <option value="lincoln">LINCOLN</option>
@@ -191,22 +189,22 @@ class AddAnnonce
             <option value="mazda">MAZDA</option>
             <option value="mclaren">MCLAREN</option>
             <option value="mega">MEGA</option>
-            <option value="mercedes_amg">MERCEDES AMG</option>
+            <option value="mercedes amg">MERCEDES AMG</option>
             <option value="mercedes">MERCEDES</option>
             <option value="mercury">MERCURY</option>
             <option value="mg">MG</option>
-            <option value="mia_electric">MIA ELECTRIC</option>
+            <option value="mia electric">MIA ELECTRIC</option>
             <option value="microcar">MICROCAR</option>
             <option value="minauto">MINAUTO</option>
             <option value="mini">MINI</option>
             <option value="mitsubishi">MITSUBISHI</option>
             <option value="morgan">MORGAN</option>
             <option value="morris">MORRIS</option>
-            <option value="mpm_motors">MPM MOTORS</option>
+            <option value="mpm motors">MPM MOTORS</option>
             <option value="mvs">MVS</option>
             <option value="nash">NASH</option>
             <option value="nissan">NISSAN</option>
-            <option value="noun_electric">NOUN ELECTRIC</option>
+            <option value="noun electric">NOUN ELECTRIC</option>
             <option value="NSU">NSU</option>
             <option value="OLDSMOBIL">OLDSMOBIL</option>
           </select><br><br>

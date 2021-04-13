@@ -83,7 +83,7 @@ class Home
                     ?>
                 </div>
             </div>
-            <?php include_once __DIR__ . "/Component/footer.php";
+            <?php include __DIR__ . "/Component/footer.php";
             ?>
         </body>
 

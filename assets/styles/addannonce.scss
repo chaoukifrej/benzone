@@ -5,6 +5,7 @@ $primaryColor: #fac31d;
   font-size: 30px;
   padding: 10px;
   border: 2px solid $primaryColor;
+  border-radius: 5px;
   text-align: center;
   width: 25%;
   margin: auto;
@@ -17,14 +18,18 @@ $primaryColor: #fac31d;
   margin-top: 2%;
   width: 40%;
 }
-
+label {
+  font-size: 20px;
+  font-weight: 400;
+}
 #inputModel,
 #inputPower,
 #inputKM,
 #inputBirth,
 #inputTimeEnchere,
 #inputStartPrice {
-  width: 23em;
+  font-size: 17px;
+  width: 350px;
   height: 5vh;
   border: solid 1px grey;
   border-radius: 5px;
@@ -50,9 +55,8 @@ $primaryColor: #fac31d;
 }
 
 select {
-  width: 23em;
+  width: 350px;
   height: 15vh;
-  border: solid 1px grey;
   border-radius: 5px;
   padding: 20px;
 }

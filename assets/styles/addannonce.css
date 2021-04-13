@@ -3,6 +3,7 @@
   font-size: 30px;
   padding: 10px;
   border: 2px solid #fac31d;
+  border-radius: 5px;
   text-align: center;
   width: 25%;
   margin: auto;
@@ -16,13 +17,19 @@
   width: 40%;
 }
 
+label {
+  font-size: 20px;
+  font-weight: 400;
+}
+
 #inputModel,
 #inputPower,
 #inputKM,
 #inputBirth,
 #inputTimeEnchere,
 #inputStartPrice {
-  width: 23em;
+  font-size: 17px;
+  width: 350px;
   height: 5vh;
   border: solid 1px grey;
   border-radius: 5px;
@@ -48,9 +55,8 @@
 }
 
 select {
-  width: 23em;
+  width: 350px;
   height: 15vh;
-  border: solid 1px grey;
   border-radius: 5px;
   padding: 20px;
 }

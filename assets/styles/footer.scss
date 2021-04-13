@@ -1,18 +1,16 @@
 $primaryColor: #fac31d;
 
 footer {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-around;
-  justify-items: center;
-  align-content: center;
-  padding: 0;
-
-  .trait {
-    width: 70%;
-    border-bottom: 2px solid $primaryColor;
-    position: absolute;
+  width: 100vw;
+  #traitFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    align-content: center;
+    padding: 0;
+    border-top: 2px solid $primaryColor;
+    margin-top: 100px;
   }
   ul {
     list-style: none;
@@ -33,7 +31,6 @@ footer {
   .logo {
     width: 240px;
     margin-right: 10px;
-
     position: relative;
   }
 }
