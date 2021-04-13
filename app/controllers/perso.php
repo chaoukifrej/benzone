@@ -11,13 +11,29 @@ namespace App\Controllers;
 
 
 use App\Controllers\Component\Menu;
-
+use App\Controllers\Component\AnnonceCard;
+use DateTime;
 
 
 class Perso
 {
+    protected $adverts;
+    protected $annonce;
 
     /* fonction modification base de données */
+
+
+
+    public function checkDate()
+    {
+        $now = new DateTime();
+        $date = new DateTime($this->annonce['final_date']);
+        if ($date > $now) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public function updatePerso()
     {
@@ -37,9 +53,23 @@ class Perso
 
 
     //fonction affichage annonce remporté par l'utilsateur
-    public function displayWinAdvert()
+    public function databaseGetAdverts()
     {
+        //. Connexion Base de données
         include  __DIR__ . "/../core/database.php";
+        $this->adverts = $dbh->query("SELECT
+        a.id,
+        a.actual_price,
+        a.final_date,
+        a.description,
+        a.picture,
+        c.brand,
+        c.model
+    FROM
+        adverts a
+    INNER JOIN 
+        car c
+    ON c.id = a.car_id")->fetchAll(\PDO::FETCH_ASSOC);
     }
 
 
@@ -73,6 +103,7 @@ class Perso
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="./assets/style.css">
+            <link rel="stylesheet" type="text/css" href="assets/styles/card.css">
             <link rel="stylesheet" href="./assets/styles/perso.css">
             <title>Document</title>
         </head>
@@ -110,6 +141,19 @@ class Perso
                         <input type="submit" value="deconnexion">
 
                 </div>
+
+                <?php
+                if ($this->checkdate()) {
+                    $this->databaseGetAdverts();
+
+                    include_once __DIR__ . "/Component/annonceCard.php";
+                    foreach ($this->adverts as $value) {
+                        new AnnonceCard($value);
+                    }
+                }
+
+                ?>
+
             </div>
         </body>
 
