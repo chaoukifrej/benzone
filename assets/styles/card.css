@@ -1,22 +1,30 @@
 .annonceCard {
   padding: 0;
-  height: 360px;
-  width: 380px;
+  height: 400px;
+  width: 400px;
   border-radius: 5px;
-  border: 1px solid #fac31d;
+  border: 1px solid rgba(128, 128, 128, 0.3);
   cursor: pointer;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   background-color: white;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   overflow: hidden;
 }
 
 .annonceCard h3 {
-  text-align: left;
-  margin: 5px 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 15px 15px 0;
   font-size: 1.2rem;
+}
+
+.annonceCard h3 span {
+  font-style: italic;
+  font-size: 1rem;
 }
 
 .annonceCard .pContainer {
@@ -27,6 +35,7 @@
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   font-size: 0.9rem;
+  margin: 5px 0;
 }
 
 .annonceCard .pContainer p {
@@ -40,13 +49,12 @@
 }
 
 .annonceCard img {
-  margin: 0px;
-  width: 380px;
-  height: 280px;
+  margin: 0;
+  width: 95%;
+  height: 282px;
+  border-radius: 5px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 0 0 5px 5px;
-  border: none;
 }
 
 .annonceCard:hover {
@@ -59,7 +67,7 @@
   margin: 30px;
   cursor: pointer;
   border: none;
-  padding: 0;
+  padding: none;
   background-color: unset;
   outline: none;
 }

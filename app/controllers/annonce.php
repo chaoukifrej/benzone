@@ -54,8 +54,8 @@ class Annonce
       $this->bidder = $this->bidder[0];
     } else {
       $this->bidder = [
-        'lastname' => 'null',
-        'firstname' => 'null'
+        'lastname' => 'Aucun',
+        'firstname' => 'gagnant'
       ];
     };
     //$this->advert['bidder_id'] ?? $this->advert['bidder_id'] = 1;
@@ -193,8 +193,10 @@ class Annonce
           </div>
 
           <!-- Encher DIV -->
-          <?php if ($this->checkDate()) { ?>
-            <?php if ($_SESSION['is_connected'] ?? false) { ?>
+          <?php if ($this->checkDate()) { //! annonce non terminé 
+          ?>
+            <?php if ($_SESSION['is_connected'] ?? false) { //? utilisateur connecté 
+            ?>
               <div class="descriptionContainer encherirContainer">
                 <h3 class="titreE">Enchérir</h3>
                 <form action="annonce" method="post">
@@ -205,21 +207,31 @@ class Annonce
                   <button type="submit">Valider</button>
                 </form>
               </div>
-            <?php } else { ?>
+            <?php } else { //? utilisateur NON connecté 
+            ?>
               <div class="descriptionContainer encherirContainer notConnected">
                 <h3 class="titreE">Enchérir</h3>
                 <p class="notConnectedP">Connectez-vous pour enchèrir</p>
                 <br /><a class="notConnectedA" href="login">Connexion</a>
               </div>
-            <?php }; ?>
-          <?php } else { ?>
+            <?php };
+          } elseif ($this->bidder['bidderln'] ?? false) { //! annonce terminé sans Bidder 
+            ?>
             <div class="descriptionContainer encherirContainer notConnected">
               <h3 class="titreE">Remporté par :</h3>
               <p style="font-size:1.1rem" class="notConnectedP"><?= ucfirst($this->bidder['bidderln']); ?> <?= $this->bidder['bidderfn']; ?></p>
             </div>
+
+          <?php } else { //!annonce terminé avec Bidder 
+          ?>
+            <div class="descriptionContainer encherirContainer notConnected">
+              <h3 class="titreE">Remporté par :</h3>
+              <p style="font-size:1.1rem" class="notConnectedP"> Aucune personne</p>
+            </div>
+          <?php }; ?>
         </div>
-      <?php }; ?>
       </div>
+
       <?php
         //var_dump($this->bidder);
       ; ?>
