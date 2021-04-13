@@ -36,10 +36,10 @@ $primaryColor: #fac31d;
 }
 
 #titleAddAnnonce {
-  color: $primaryColor;
+  color: #434343;
   font-size: 30px;
   padding: 10px;
-  border: 2px solid $primaryColor;
+  border: 2px solid #434343;
   border-radius: 5px;
   text-align: center;
   width: 25%;
@@ -100,8 +100,33 @@ select {
   height: 5vh;
   margin-top: 5px;
   border-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
   border: solid 1px grey;
   height: 133px;
+}
+
+/* width */
+select::-webkit-scrollbar {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 10px;
+  height: 25px;
+}
+
+/* Track */
+select::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+select::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+select::-webkit-scrollbar-thumb:hover {
+  background: $primaryColor;
 }
 select:focus,
 textarea:focus {
