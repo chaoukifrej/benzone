@@ -13,9 +13,9 @@ namespace App\Controllers;
 use App\Controllers\Component\Menu;
 
 
-
 class Perso
 {
+
 
     /* fonction modification base de données */
 
@@ -37,10 +37,7 @@ class Perso
 
 
     //fonction affichage annonce remporté par l'utilsateur
-    public function displayWinAdvert()
-    {
-        include  __DIR__ . "/../core/database.php";
-    }
+
 
 
     /* fonction deconexion  */
@@ -62,7 +59,6 @@ class Perso
 ?>
 
 
-
         <!-- affichage Modif Profil -->
 
         <!DOCTYPE html>
@@ -73,6 +69,7 @@ class Perso
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="./assets/style.css">
+            <link rel="stylesheet" type="text/css" href="assets/styles/card.css">
             <link rel="stylesheet" href="./assets/styles/perso.css">
             <title>Document</title>
         </head>
@@ -110,6 +107,10 @@ class Perso
                         <input type="submit" value="deconnexion">
 
                 </div>
+
+
+
+
             </div>
         </body>
 

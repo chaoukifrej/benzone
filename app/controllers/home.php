@@ -29,7 +29,8 @@ class Home
         a.description,
         a.picture,
         c.brand,
-        c.model
+        c.model,
+        c.vehicle_year
     FROM
         adverts a
     INNER JOIN 
@@ -38,6 +39,7 @@ class Home
     }
 
     //Affichage de la page d'accueil
+
     public function render()
     {
 
@@ -82,7 +84,7 @@ class Home
                     ?>
                 </div>
             </div>
-            <?php include_once __DIR__ . "/Component/footer.php";
+            <?php include __DIR__ . "/Component/footer.php";
             ?>
         </body>
 

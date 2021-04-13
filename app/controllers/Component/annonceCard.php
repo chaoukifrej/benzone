@@ -24,15 +24,21 @@ class AnnonceCard
       return false;
     }
   }
+  public function getDate()
+  {
+    $date = new DateTime($this->annonce['vehicle_year']);
+    return $date->format('Y');
+  }
 
   public function render()
   {
     if ($this->checkDate()) {
+      //donc annonce non terminé
       return <<<HTML
     <form action="annonce" method="get">
       <button id="btnSubmitAnnonce" type="submit">
       <div class="annonceCard">
-            <h3>{$this->annonce['brand']} {$this->annonce['model']}</h3>
+            <h3>{$this->annonce['brand']} {$this->annonce['model']} - {$this->getDate()}</h3>
             <div class="pContainer">
               <p><span>MEILLEURE ENCHERE : </span><br/>{$this->annonce['actual_price']} €</p>
               <p><span>TERMINE LE : </span><br/>{$this->annonce['final_date']}</p>
@@ -48,7 +54,7 @@ HTML;
       <form action="annonce" method="get">
         <button id="btnSubmitAnnonce" type="submit">
         <div class="annonceCard">
-              <h3>{$this->annonce['brand']} {$this->annonce['model']}</h3>
+              <h3>{$this->annonce['brand']} {$this->annonce['model']} - {$this->getDate()}</h3>
               <div class="pContainer">
                 <p><span>MEILLEURE ENCHERE : </span><br/>{$this->annonce['actual_price']} €</p>
                 <p><span style="color:red; font-size:0.9rem;">TERMINÉ !</span><br/></p>

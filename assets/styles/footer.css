@@ -1,4 +1,8 @@
 footer {
+  width: 100vw;
+}
+
+footer #traitFooter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6,19 +10,14 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 100%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   justify-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
   padding: 0;
-}
-
-footer .trait {
-  width: 70%;
-  border-bottom: 2px solid #fac31d;
-  position: absolute;
+  border-top: 2px solid #fac31d;
+  margin-top: 100px;
 }
 
 footer ul {

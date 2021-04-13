@@ -58,8 +58,6 @@ class Annonce
         'firstname' => 'null'
       ];
     };
-
-
     //$this->advert['bidder_id'] ?? $this->advert['bidder_id'] = 1;
   }
 
@@ -92,6 +90,17 @@ class Annonce
   public function createDateFrom($date)
   {
     return new \DateTime($date);
+  }
+
+  public function checkDate()
+  {
+    $now = new \DateTime();
+    $date = new \DateTime($this->advert['final_date']);
+    if ($date > $now) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   //Affichage de la page annonce
@@ -127,8 +136,11 @@ class Annonce
         </h1>
 
         <!-- Premier paragraphe -->
-        <p class="termineAndEnchere">
-          <span class="terminele">Termine le</span> <span class="termineDate"> <?= $this->createDateFrom($this->advert['final_date'])->format('d/m/Y'); ?></span>
+        <p class="termineAndEnchere"><?php if ($this->checkDate()) { ?>
+            <span class="terminele">Termine le</span> <span class="termineDate"> <?= $this->createDateFrom($this->advert['final_date'])->format('d/m/Y'); ?></span>
+          <?php } else { ?>
+            <span style="font-weight: 500;" class="terminele">TERMINÉ !</span>
+          <?php }; ?>
           <span class="enchere">Meilleure enchère : </span><span class="enchereNB"><?= (int)$this->advert['actual_price']; ?> €</span>
         </p>
 
@@ -181,32 +193,37 @@ class Annonce
           </div>
 
           <!-- Encher DIV -->
-          <?php if ($_SESSION['is_connected'] ?? false) { ?>
-
-            <div class="descriptionContainer encherirContainer">
-              <h3 class="titreE">Enchérir</h3>
-              <form action="annonce" method="post">
-                <label for="price">Montant</label>
-                <input type="number" name="new_price" id="price">
-                <input type="hidden" name="id" value="<?= $this->advert['id']; ?>">
-                <input type="hidden" name="actual_price" value="<?= $this->advert['actual_price']; ?>">
-                <button type="submit">Valider</button>
-              </form>
-            </div>
+          <?php if ($this->checkDate()) { ?>
+            <?php if ($_SESSION['is_connected'] ?? false) { ?>
+              <div class="descriptionContainer encherirContainer">
+                <h3 class="titreE">Enchérir</h3>
+                <form action="annonce" method="post">
+                  <label for="price">Montant</label>
+                  <input type="number" name="new_price" id="price">
+                  <input type="hidden" name="id" value="<?= $this->advert['id']; ?>">
+                  <input type="hidden" name="actual_price" value="<?= $this->advert['actual_price']; ?>">
+                  <button type="submit">Valider</button>
+                </form>
+              </div>
+            <?php } else { ?>
+              <div class="descriptionContainer encherirContainer notConnected">
+                <h3 class="titreE">Enchérir</h3>
+                <p class="notConnectedP">Connectez-vous pour enchèrir</p>
+                <br /><a class="notConnectedA" href="login">Connexion</a>
+              </div>
+            <?php }; ?>
           <?php } else { ?>
             <div class="descriptionContainer encherirContainer notConnected">
-              <h3 class="titreE">Enchérir</h3>
-              <p class="notConnectedP">Connectez-vous pour enchèrir</p>
-              <br /><a class="notConnectedA" href="login">Connexion</a>
+              <h3 class="titreE">Remporté par :</h3>
+              <p style="font-size:1.1rem" class="notConnectedP"><?= ucfirst($this->bidder['bidderln']); ?> <?= $this->bidder['bidderfn']; ?></p>
             </div>
-          <?php }; ?>
         </div>
-
+      <?php }; ?>
       </div>
       <?php
-      //var_dump($this->bidder);
-      ?>
-      <?php include_once __DIR__ . "/Component/footer.php"; ?>
+        //var_dump($this->bidder);
+      ; ?>
+      <?php include __DIR__ . "/Component/footer.php"; ?>
     </body>
 
     </html>
