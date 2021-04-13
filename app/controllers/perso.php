@@ -17,12 +17,12 @@ use App\Controllers\Component\Menu;
 class Perso
 {
 
+
     public function displayPerso()
     {
         include  __DIR__ . "/../core/database.php";
 
-        $query = $dbh->prepare("SELECT * FROM users WHERE id = ?");
-        $result = $query->execute($_SESSION['id']);
+        $query = $dbh->query("SELECT * FROM users WHERE id = 1")->fetchAll(\PDO::FETCH_ASSOC);
     }
 
 
@@ -38,7 +38,7 @@ class Perso
 
 
         $query = $dbh->prepare("UPDATE users SET `lastname`= ?, `firstname`= ?, `email`= ?, `password`= ? WHERE id = ?");
-        $result = $query->execute([$lastname, $firstname, $email, $password, $_SESSION['id']]);
+        $result = $query->execute([$lastname, $firstname, $email, $password, 1]);
     }
 
     public function disconnection()
@@ -72,9 +72,9 @@ class Perso
 
         <body>
             <?php
-            var_dump($this->displayPerso());
+            $this->displayPerso()
             ?>
-            <h1>Prénom</h1>
+            <h1>Prénom</h1><?php echo $this->displayPerso['firstname']; ?>
         </body>
 
         </html>
