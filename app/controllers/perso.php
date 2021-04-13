@@ -16,6 +16,16 @@ use App\Controllers\Component\Menu;
 class Perso
 {
 
+    protected $advert;
+
+    public function winAdvert()
+    {
+        //. Connexion Base de données
+        include  __DIR__ . "/../core/database.php";
+
+        $this->advert = $dbh->query("SELECT c.model , c.brand, a.actual_price FROM adverts a INNER JOIN car c ON c.id = a.car_id WHERE a.bidder_id = $_SESSION[id]")->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    // SELECT  a.id, a.actual_price, a.final_date, a.description, c.model, c.brand, c.power FROM adverts a INNER JOIN car c ON c.id = a.car_id WHERE a.bidder_id = 39
 
     /* fonction modification base de données */
 
@@ -78,37 +88,57 @@ class Perso
 
             <?php include_once __DIR__ . "/Component/header.php";
             new Menu();
-            var_dump($this->adverts);
-            var_dump($this->annonce);
+
             ?>
             <div class="mainContainer">
-
-                <form class="modif" action="perso" method="POST">
-                    <h1>modifier votre profil</h1>
-                    <label for="">modifier votre Nom</label>
-                    <input name="lastname" type="text">
-                    <label for="">modifier votre Prenom</label>
-                    <input name="firstname" type="text">
-                    <label for="">modifier votre Email</label>
-                    <input name="email" type="text">
-                    <label for="">modifier votre Mot de passe</label>
-                    <input name="password" type="password">
-                    <label for="">confirmer votre nouveau mot de passe</label>
-                    <input type="password">
-                    <input class="button" value="Modifier" name="send" type="submit">
-                </form>
-
-                <div class="persoInfo">
-
+                <div class="profil">
+                    <?php
+                    $this->winAdvert();
+                    ?>
+                    <form class="modif" action="perso" method="POST">
+                        <h1>modifier votre profil</h1>
+                        <label for="">modifier votre Nom</label>
+                        <input name="lastname" type="text">
+                        <label for="">modifier votre Prenom</label>
+                        <input name="firstname" type="text">
+                        <label for="">modifier votre Email</label>
+                        <input name="email" type="text">
+                        <label for="">modifier votre Mot de passe</label>
+                        <input name="password" type="password">
+                        <label for="">confirmer votre nouveau mot de passe</label>
+                        <input type="password">
+                        <input class="button" value="Modifier" name="send" type="submit">
                     </form>
-                    <h3>Prenom : <?php echo $_SESSION['firstname'] ?></h3>
-                    <h3>Nom : <?php echo $_SESSION['lastname'] ?></h3>
-                    <h3>E-mail : <?php echo $_SESSION['email'] ?></h3>
-                    <form action="perso" method="POST">
-                        <input type="hidden" value="0" name="is_connected">
-                        <input type="submit" value="deconnexion">
 
+                    <div class="persoInfo">
+
+                        </form>
+                        <h3>Prenom : <?php echo $_SESSION['firstname'] ?></h3>
+                        <h3>Nom : <?php echo $_SESSION['lastname'] ?></h3>
+                        <h3>E-mail : <?php echo $_SESSION['email'] ?></h3>
+                        <form action="perso" method="POST">
+                            <input type="hidden" value="0" name="is_connected">
+                            <input type="submit" value="deconnexion">
+
+                    </div>
                 </div>
+                <h3>Encheres en cours</h3>
+                <pre>
+                    <?php
+                    var_dump($this->advert);
+                    ?>
+                </pre>
+                <?php
+
+                foreach ($this->advert as $value) { ?>
+                    <form action="" method="GET">
+                        <button>
+                            <?php echo $value['brand'] . ' ' . $value['model'] . ' ' . $value['actual_price'] . '€<br />'; ?>
+                        </button>
+                    </form>
+                <?php  }
+
+                ?>
 
 
 

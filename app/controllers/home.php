@@ -38,7 +38,6 @@ class Home
     }
 
     //Affichage de la page d'accueil
-
     public function render()
     {
 
@@ -83,7 +82,7 @@ class Home
                     ?>
                 </div>
             </div>
-            <?php include __DIR__ . "/Component/footer.php";
+            <?php include_once __DIR__ . "/Component/footer.php";
             ?>
         </body>
 
