@@ -12,9 +12,19 @@
 }
 
 .annonceCard h3 {
-  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 15px 15px 0;
   font-size: 1.2rem;
+}
+
+.annonceCard h3 span {
+  font-style: italic;
+  font-size: 1rem;
 }
 
 .annonceCard .pContainer {

@@ -12,7 +12,7 @@ use App\Controllers\Component\Menu;
 use App\Controllers\Component\AnnonceCard;
 
 
-session_start();
+
 
 class Home
 {

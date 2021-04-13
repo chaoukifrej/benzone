@@ -91,8 +91,6 @@ class Login
         if (isset($_POST['formConnection'])) {
 
 
-            session_start();
-
             $mailConnect = filter_var($_POST['mailConnect'], FILTER_SANITIZE_STRING);
             $passwordConnect = filter_var($_POST['passwordConnect'], FILTER_SANITIZE_STRING);
 
