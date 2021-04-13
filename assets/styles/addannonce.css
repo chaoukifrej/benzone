@@ -4,14 +4,12 @@
   -ms-grid-columns: auto auto auto auto;
       grid-template-columns: auto auto auto auto;
   grid-gap: 1px;
-  background-color: #2196f3;
   padding: 10px;
   width: 80%;
   margin: auto;
 }
 
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
   margin: 0;
   padding: 5px;
   font-size: 30px;
@@ -124,8 +122,11 @@ label {
 
 select {
   width: 100%;
+  height: 5vh;
+  margin-top: 5px;
   border-radius: 5px;
-  padding: 20px;
+  border: solid 1px grey;
+  height: 76%;
 }
 
 select:focus {
@@ -136,5 +137,10 @@ select:focus {
 textarea {
   resize: none;
   width: 100%;
+  height: 5vh;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: solid 1px grey;
+  height: 68%;
 }
 /*# sourceMappingURL=addannonce.css.map */
