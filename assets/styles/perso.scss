@@ -3,6 +3,7 @@ $primaryColor: #fac31d;
 .mainContainer {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 
   .modif {
     display: flex;

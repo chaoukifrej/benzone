@@ -11,29 +11,13 @@ namespace App\Controllers;
 
 
 use App\Controllers\Component\Menu;
-use App\Controllers\Component\AnnonceCard;
-use DateTime;
 
 
 class Perso
 {
-    protected $adverts;
-    protected $annonce;
+
 
     /* fonction modification base de données */
-
-
-
-    public function checkDate()
-    {
-        $now = new DateTime();
-        $date = new DateTime($this->annonce['final_date']);
-        if ($date > $now) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     public function updatePerso()
     {
@@ -53,24 +37,7 @@ class Perso
 
 
     //fonction affichage annonce remporté par l'utilsateur
-    public function databaseGetAdverts()
-    {
-        //. Connexion Base de données
-        include  __DIR__ . "/../core/database.php";
-        $this->adverts = $dbh->query("SELECT
-        a.id,
-        a.actual_price,
-        a.final_date,
-        a.description,
-        a.picture,
-        c.brand,
-        c.model
-    FROM
-        adverts a
-    INNER JOIN 
-        car c
-    ON c.id = a.car_id")->fetchAll(\PDO::FETCH_ASSOC);
-    }
+
 
 
     /* fonction deconexion  */
@@ -90,7 +57,6 @@ class Perso
     public function render()
     {
 ?>
-
 
 
         <!-- affichage Modif Profil -->
@@ -144,17 +110,8 @@ class Perso
 
                 </div>
 
-                <?php
-                if ($this->checkdate()) {
-                    $this->databaseGetAdverts();
 
-                    include_once __DIR__ . "/Component/annonceCard.php";
-                    foreach ($this->adverts as $value) {
-                        new AnnonceCard($value);
-                    }
-                }
 
-                ?>
 
             </div>
         </body>
