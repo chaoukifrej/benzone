@@ -9,6 +9,7 @@
 namespace App\Controllers;
 
 use App\Controllers\Component\Menu;
+use DateTime;
 
 /* Class Name= AddAnnonce */
 
@@ -76,6 +77,12 @@ class AddAnnonce
    * 
    */
 
+  public function date($days)
+  {
+    $date =  new DateTime();
+    return date('Y-m-d', strtotime($days, date_timestamp_get($date)));
+  }
+
   public function render()
   {
 
@@ -121,7 +128,7 @@ class AddAnnonce
           <div class="item3">
             <!-- Label / Input durée de l'enchère -->
             <label for="">Fin de l'enchère</label><br>
-            <input id="inputTimeEnchere" type="date" name="finalDate">
+            <input id="inputTimeEnchere" type="date" name="finalDate" value="<?= $this->date('+15 days'); ?>" min="<?= $this->date('+7 days'); ?>">
           </div>
           <div class="item4">
             <!-- Label / Input photos -->
