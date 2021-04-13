@@ -1,4 +1,13 @@
-form {
+.mainContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainContainer .modif {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6,24 +15,21 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-form h1 {
+.mainContainer .modif h1 {
   color: #fac31d;
   font-size: 30px;
   padding: 10px;
   border: 2px solid #fac31d;
   text-align: center;
-  width: 25%;
+  width: 55%;
   margin: auto;
   margin-top: 2%;
   margin-bottom: 2%;
 }
 
-form input {
+.mainContainer .modif input {
   width: 23em;
   height: 5vh;
   border: solid 1px grey;
@@ -31,12 +37,22 @@ form input {
   padding-left: 20px;
 }
 
-form input:focus {
+.mainContainer .modif input:focus {
   outline: none;
   border: 1px solid #fac31d;
 }
 
-form .button {
+.mainContainer .modif .button {
   margin-top: 2%;
+  width: 100px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.mainContainer .persoInfo {
+  border-radius: 5px;
+  width: 20%;
+  margin-left: 20px;
 }
 /*# sourceMappingURL=perso.css.map */
