@@ -92,28 +92,20 @@ if (isset($_POST['firstname']) and isset($_POST['lastname'])) {
 }
 
 
-
-
-
-
 // GET / - Page annonce
 $router->get("/annonce",  [new Annonce(), 'render']);
 
 // POST / - Page annonce
 $router->post("/annonce",  [new Annonce(), 'databaseSetActualPrice']);
 
+
 // GET / - Page contact
 $router->get("/contact",  [new Contact(), 'render']);
 
 
 
-
-
-
 /* Route par défaut */
 $router->default([new DefaultPage(), 'render']);
-
-
 
 /**
  * Recherche de routes correspondantes
