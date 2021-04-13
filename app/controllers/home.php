@@ -38,6 +38,7 @@ class Home
     }
 
     //Affichage de la page d'accueil
+
     public function render()
     {
 
