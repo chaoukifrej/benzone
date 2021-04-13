@@ -15,7 +15,6 @@ class AnnonceCard
   public function render()
   {
     return <<<HTML
-    
     <form action="annonce" method="get">
       <button id="btnSubmitAnnonce" type="submit">
       <div class="annonceCard">
