@@ -29,7 +29,7 @@ class Perso
 
 
         $query = $dbh->prepare("UPDATE users SET `lastname`= ?, `firstname`= ?, `email`= ?, `password`= ? WHERE id = ?");
-        $result = $query->execute([$lastname, $firstname, $email, $password, $_SESSION['id']]);
+        $result = $query->execute([$lastname, $firstname, $email, $password, 1]);
     }
 
     public function disconnection()
