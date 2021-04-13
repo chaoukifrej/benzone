@@ -57,7 +57,7 @@ class Login
                             //. INSCRIPTION UTILISATEURS
                             if ($data_validated === true) {
                                 $query = $dbh->prepare('INSERT INTO users(lastname, firstname, email, password) VALUES (?, ?, ?, ?)');
-                                $result = $query->execute([ucfirst($lastname), $firstname, $email, $password]);
+                                $result = $query->execute([ucfirst($lastname), ucfirst($firstname), $email, $password]);
                                 header('location: login');
                             }
                         } else {

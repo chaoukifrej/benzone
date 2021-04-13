@@ -112,6 +112,8 @@ class Perso
 
             <?php include_once __DIR__ . "/Component/header.php";
             new Menu();
+            var_dump($this->adverts);
+            var_dump($this->annonce);
             ?>
             <div class="mainContainer">
 
