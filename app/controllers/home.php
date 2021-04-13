@@ -29,7 +29,8 @@ class Home
         a.description,
         a.picture,
         c.brand,
-        c.model
+        c.model,
+        c.vehicle_year
     FROM
         adverts a
     INNER JOIN 

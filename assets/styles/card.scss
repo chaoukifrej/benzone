@@ -2,26 +2,25 @@ $primaryColor: #fac31d;
 
 .annonceCard {
   padding: 0;
-  height: 360px;
-  width: 380px;
+  height: 400px;
+  width: 400px;
   border-radius: 5px;
-  border: 1px solid $primaryColor;
+  border: 1px solid rgba(128, 128, 128, 0.3);
   cursor: pointer;
   transition: 0.5s;
   background-color: rgb(255, 255, 255);
-  box-sizing: border-box;
   overflow: hidden;
-
   //box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   h3 {
     text-align: left;
-    margin: 5px 5px 0;
+    margin: 15px 15px 0;
     font-size: 1.2rem;
   }
   .pContainer {
     display: flex;
     justify-content: space-evenly;
     font-size: 0.9rem;
+    margin: 5px 0;
     p {
       text-align: left;
     }
@@ -32,12 +31,11 @@ $primaryColor: #fac31d;
     }
   }
   img {
-    margin: 0px;
-    width: 380px;
-    height: 280px;
+    margin: 0;
+    width: 95%;
+    height: 282px;
+    border-radius: 5px;
     object-fit: cover;
-    border-radius: 0 0 5px 5px;
-    border: none;
   }
   &:hover {
     opacity: 0.9;
@@ -48,7 +46,7 @@ $primaryColor: #fac31d;
   margin: 30px;
   cursor: pointer;
   border: none;
-  padding: 0;
+  padding: none;
   background-color: unset;
   outline: none;
 }
