@@ -212,17 +212,17 @@ class Annonce
                 <br /><a class="notConnectedA" href="login">Connexion</a>
               </div>
             <?php }; ?>
-        </div>
-      <?php } else { ?>
-        <div class="descriptionContainer encherirContainer notConnected">
-          <h3 class="titreE">Remporté par :</h3>
-          <p style="font-size:1.1rem" class="notConnectedP"><?= ucfirst($this->bidder['bidderln']); ?> <?= $this->bidder['bidderfn']; ?></p>
+          <?php } else { ?>
+            <div class="descriptionContainer encherirContainer notConnected">
+              <h3 class="titreE">Remporté par :</h3>
+              <p style="font-size:1.1rem" class="notConnectedP"><?= ucfirst($this->bidder['bidderln']); ?> <?= $this->bidder['bidderfn']; ?></p>
+            </div>
         </div>
       <?php }; ?>
       </div>
       <?php
-      //var_dump($this->bidder);
-      ?>
+        //var_dump($this->bidder);
+      ; ?>
       <?php include __DIR__ . "/Component/footer.php"; ?>
     </body>
 
