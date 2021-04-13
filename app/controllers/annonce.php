@@ -221,15 +221,15 @@ class Annonce
               <h3 class="titreE">Remporté par :</h3>
               <p style="font-size:1.1rem" class="notConnectedP"><?= ucfirst($this->bidder['bidderln']); ?> <?= $this->bidder['bidderfn']; ?></p>
             </div>
-        </div>
-      <?php } else { //!annonce terminé avec Bidder 
-      ?>
-        <div class="descriptionContainer encherirContainer notConnected">
-          <h3 class="titreE">Remporté par :</h3>
-          <p style="font-size:1.1rem" class="notConnectedP"> Aucune personne</p>
-        </div>
-      <?php }; ?>
 
+          <?php } else { //!annonce terminé avec Bidder 
+          ?>
+            <div class="descriptionContainer encherirContainer notConnected">
+              <h3 class="titreE">Remporté par :</h3>
+              <p style="font-size:1.1rem" class="notConnectedP"> Aucune personne</p>
+            </div>
+          <?php }; ?>
+        </div>
       </div>
 
       <?php
