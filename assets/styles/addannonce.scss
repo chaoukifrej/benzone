@@ -45,6 +45,7 @@ $primaryColor: #fac31d;
   width: 25%;
   margin: auto;
   margin-top: 2%;
+  margin-bottom: 10px;
 }
 
 label {
@@ -94,14 +95,16 @@ label {
   transform: scale(1.05);
 }
 select {
+  padding: 10px;
   width: 100%;
   height: 5vh;
   margin-top: 5px;
   border-radius: 5px;
   border: solid 1px grey;
-  height: 76%;
+  height: 133px;
 }
-select:focus {
+select:focus,
+textarea:focus {
   outline: none;
   border: 1px solid $primaryColor;
 }
@@ -112,5 +115,14 @@ textarea {
   margin-top: 5px;
   border-radius: 5px;
   border: solid 1px grey;
-  height: 68%;
+  height: 114px;
+  padding: 10px;
+}
+body {
+  background-image: url(https://www.ouestfrance-auto.com/sites/default/files/styles/620x420lock/public/vendre-voiture.jpg?itok=MbE-GgEyhttps://.com/full/166650.jpg);
+  background-size: cover;
+  backdrop-filter: brightness(110%) saturate(0%) blur(10px);
+}
+footer {
+  background-color: white;
 }
