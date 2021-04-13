@@ -34,6 +34,8 @@ use App\Controllers\Annonce;
 //controller contact class Contact
 use App\Controllers\Contact;
 
+//& Début de la session
+session_start();
 
 /**
  * Requête
