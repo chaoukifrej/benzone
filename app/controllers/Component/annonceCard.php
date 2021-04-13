@@ -2,6 +2,8 @@
 
 namespace App\Controllers\Component;
 
+use DateTime;
+
 class AnnonceCard
 {
   protected $annonce;
@@ -12,10 +14,21 @@ class AnnonceCard
     echo $this->render();
   }
 
+  public function checkDate()
+  {
+    $now = new DateTime();
+    $date = new DateTime($this->annonce['final_date']);
+    if ($date > $now) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   public function render()
   {
-    return <<<HTML
-    
+    if ($this->checkDate()) {
+      return <<<HTML
     <form action="annonce" method="get">
       <button id="btnSubmitAnnonce" type="submit">
       <div class="annonceCard">
@@ -30,5 +43,22 @@ class AnnonceCard
         </button>
     </form>
 HTML;
+    } else {
+      return <<<HTML
+      <form action="annonce" method="get">
+        <button id="btnSubmitAnnonce" type="submit">
+        <div class="annonceCard">
+              <h3>{$this->annonce['brand']} {$this->annonce['model']}</h3>
+              <div class="pContainer">
+                <p><span>MEILLEURE ENCHERE : </span><br/>{$this->annonce['actual_price']} €</p>
+                <p><span style="color:red; font-size:0.9rem;">TERMINÉ !</span><br/></p>
+              </div>
+              <img src="{$this->annonce['picture']}" alt="image véhicule">
+              <input type="hidden" name="id" value="{$this->annonce['id']}">
+            </div>
+          </button>
+      </form>
+  HTML;
+    };
   }
 }
