@@ -86,16 +86,20 @@ body {
   background-color: #f4bd33;
   border: solid 1px grey;
   border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#formConnection .submitInput:hover,
+#formRegistration .submitInput:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 #formConnection .conSubmit,
 #formRegistration .conSubmit {
   margin-top: 5vh;
-}
-
-#formConnection .submitInput:hover,
-#formRegistration .submitInput:hover {
-  background-color: #e9b634;
 }
 
 #btnConnectionToRegistration,
@@ -104,5 +108,6 @@ body {
   background-color: transparent;
   color: #f4bd33;
   font-size: 2.5vh;
+  cursor: pointer;
 }
 /*# sourceMappingURL=login.css.map */
