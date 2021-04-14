@@ -130,9 +130,9 @@ class Users
         $password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
 
 
-        $query = $dbh->prepare("UPDATE users SET `lastname`= ?, `firstname`= ?, `email`= ?, `password`= ? WHERE id = ?");
-        $result = $query->execute([$lastname, $firstname, $email, $password, 1]);
-        header('location: perso');
+        $query = $dbh->prepare(" UPDATE users SET lastname = ?, firstname = ?, email = ?, password = ? WHERE id = ? ");
+        $query->execute([$lastname, $firstname, $email, $password, $_SESSION['id']]);
+        header('location: accueil');
     }
 
 

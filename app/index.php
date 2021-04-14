@@ -72,11 +72,13 @@ $router->post("/addAnnonce", [new AddAnnonce(), 'addCar']);
 $router->get("/perso", [new Perso(), 'render']);
 
 //POST - Page Perso 
-if (isset($_POST['is_connected'])) {
-    $router->post("/perso", [new Perso(), 'disconnection']);
-} else {
+if (isset($_POST['lastname']) or isset($_POST['firstname']) or isset($_POST['email']) or isset($_POST['password'])) {
     $router->post("/perso", [new Perso(), 'updatePerso']);
+} else if (isset($_POST['is_connected'])) {
+    $router->post("/perso", [new Perso(), 'disconnection']);
 }
+
+
 
 
 /* GET / - Page de connexion */
