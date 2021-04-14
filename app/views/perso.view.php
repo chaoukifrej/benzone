@@ -9,8 +9,6 @@
 
 namespace App\Views;
 
-// include __DIR__ . "/../controllers/Component/header.php";
-
 
 
 // use App\Controllers\Component\Menu;
@@ -66,9 +64,7 @@ class Perso
             ?>
             <div class="mainContainer">
                 <div class="profil">
-                    <?php
-                    $this->winAdvert();
-                    ?>
+
                     <form class="modif" action="perso" method="POST">
                         <h1>modifier votre profil</h1>
                         <label for="">modifier votre Nom</label>
