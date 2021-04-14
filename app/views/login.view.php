@@ -1,9 +1,5 @@
 <?php
 
-/**
- * controllers/login.php - Controleur accueil pour la page de connexion
- */
-
 /* Namespace */
 
 namespace App\Views;

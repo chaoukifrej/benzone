@@ -17,14 +17,23 @@ use App\Models\Users;
 
 class Login
 {
+    public function registration()
+    {
+        $Users = new Users();
+        $Users->registration();
+    }
+
+    public function connection()
+    {
+        $Users = new Users();
+        $Users->connection();
+    }
+
     /**
      * Affichage de la page de connexion
      */
     public function render()
     {
-        $Users = new Users();
-        $Users->registration();
-        $Users->connection();
         $userView = new LoginView;
         $userView->render();
     }

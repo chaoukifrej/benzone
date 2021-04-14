@@ -11,7 +11,7 @@ namespace App\Views;
 
 
 
-// use App\Controllers\Component\Menu;
+use App\Controllers\Component\Menu;
 
 
 
