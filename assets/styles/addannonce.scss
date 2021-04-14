@@ -4,14 +4,12 @@ $primaryColor: #fac31d;
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 1px;
-  background-color: #2196f3;
   padding: 10px;
   width: 80%;
   margin: auto;
 }
 
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
   margin: 0;
   padding: 5px;
   font-size: 30px;
@@ -38,15 +36,16 @@ $primaryColor: #fac31d;
 }
 
 #titleAddAnnonce {
-  color: $primaryColor;
+  color: #434343;
   font-size: 30px;
   padding: 10px;
-  border: 2px solid $primaryColor;
+  border: 2px solid #434343;
   border-radius: 5px;
   text-align: center;
   width: 25%;
   margin: auto;
   margin-top: 2%;
+  margin-bottom: 10px;
 }
 
 label {
@@ -62,7 +61,7 @@ label {
 #inputStartPrice,
 #inputPicture {
   width: 100%;
-  height: 5vh;
+  height: 45px;
   margin-top: 5px;
   border-radius: 5px;
   border: solid 1px grey;
@@ -96,15 +95,57 @@ label {
   transform: scale(1.05);
 }
 select {
+  padding: 10px;
   width: 100%;
+  height: 150px;
+  margin-top: 5px;
   border-radius: 5px;
-  padding: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border: solid 1px grey;
 }
-select:focus {
+
+/* width */
+select::-webkit-scrollbar {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 10px;
+  height: 25px;
+}
+
+/* Track */
+select::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+select::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+select::-webkit-scrollbar-thumb:hover {
+  background: $primaryColor;
+}
+select:focus,
+textarea:focus {
   outline: none;
   border: 1px solid $primaryColor;
 }
 textarea {
   resize: none;
   width: 100%;
+  height: 130px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: solid 1px grey;
+  padding: 10px;
+}
+body {
+  background-image: url(https://www.ouestfrance-auto.com/sites/default/files/styles/620x420lock/public/vendre-voiture.jpg?itok=MbE-GgEyhttps://.com/full/166650.jpg);
+  background-size: cover;
+  backdrop-filter: brightness(110%) saturate(0%) blur(10px);
+}
+footer {
+  background-color: white;
 }
