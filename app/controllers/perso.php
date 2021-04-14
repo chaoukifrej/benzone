@@ -15,7 +15,6 @@ include_once __DIR__ . "/../models/Adverts.model.php";
 
 
 use App\Views\Perso as PersoView;
-use App\Controllers\Component\Menu;
 use App\Models\Users;
 use App\Models\Adverts;
 
@@ -39,7 +38,10 @@ class Perso
 
     public function render()
     {
-        $pagePerso = new PersoView();
+        $advert = new Adverts();
+        $advert->winAdvert();
+        $this->advert = $advert->getAdvert();
+        $pagePerso = new PersoView($this->advert);
         $pagePerso->render();
     }
 }
