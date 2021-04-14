@@ -9,9 +9,9 @@
 
 namespace App\Controllers;
 
-include __DIR__ . '/../views/perso.view.php';
-include __DIR__ . "/../models/Users.model.php";
-include __DIR__ . "/../models/Adverts.model.php";
+include_once __DIR__ . '/../views/perso.view.php';
+include_once __DIR__ . "/../models/Users.model.php";
+include_once __DIR__ . "/../models/Adverts.model.php";
 
 
 use App\Views\Perso as PersoView;

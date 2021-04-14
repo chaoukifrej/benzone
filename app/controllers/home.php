@@ -10,8 +10,8 @@ namespace App\Controllers;
 
 /* Includes */
 
-include __DIR__ . "/../views/home.view.php";
-include __DIR__ . "/../models/Adverts.model.php";
+include_once __DIR__ . "/../views/home.view.php";
+include_once __DIR__ . "/../models/Adverts.model.php";
 
 
 /* Uses */

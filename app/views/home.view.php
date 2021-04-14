@@ -4,8 +4,8 @@
 
 namespace App\Views;
 
-include __DIR__ . "/../controllers/Component/header.php";
-include __DIR__ . "/../controllers/Component/annonceCard.php";
+include_once __DIR__ . "/../controllers/Component/header.php";
+include_once __DIR__ . "/../controllers/Component/annonceCard.php";
 
 use App\Controllers\Component\Menu;
 use App\Controllers\Component\AnnonceCard;

@@ -8,8 +8,8 @@
 
 namespace App\Controllers;
 
-include __DIR__ . '/../views/login.view.php';
-include __DIR__ . "/../models/Users.model.php";
+include_once __DIR__ . '/../views/login.view.php';
+include_once __DIR__ . "/../models/Users.model.php";
 
 
 use App\Views\Login as LoginView;
