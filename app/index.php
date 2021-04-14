@@ -76,7 +76,6 @@ if (isset($_POST['is_connected'])) {
     $router->post("/perso", [new Perso(), 'disconnection']);
 } else {
     $router->post("/perso", [new Perso(), 'updatePerso']);
-    $router->post("/perso", [new Perso(), 'displayPerso']);
 }
 
 

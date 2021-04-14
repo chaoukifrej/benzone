@@ -20,6 +20,11 @@ class Perso
 
     protected $advert;
 
+    public function __construct($advert)
+    {
+        $this->advert = $advert;
+    }
+
     public function countTotal()
     {
         $stock = 0;
