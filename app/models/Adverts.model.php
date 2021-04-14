@@ -11,6 +11,15 @@ class Adverts
   protected $advert;
   protected $bidder;
 
+  /* page perso */
+  public function winAdvert()
+  {
+
+    include  __DIR__ . "/../core/database.php";
+
+    $this->advert = $dbh->query("SELECT c.model , c.brand, a.actual_price , a.id FROM adverts a INNER JOIN car c ON c.id = a.car_id WHERE a.bidder_id = $_SESSION[id]")->fetchAll(\PDO::FETCH_ASSOC);
+  }
+
   public function databaseGetAdverts()
   {
     //. Connexion Base de données
