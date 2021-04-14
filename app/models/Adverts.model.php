@@ -108,6 +108,55 @@ class Adverts
     }
   }
 
+  //Post add Car / Adverts
+  public function addCar()
+  {
+    //! Connexion Base de données
+    include  __DIR__ . "/../core/database.php";
+
+    //. Déclaration données
+    $brand = strtoupper($_POST["brand"]);
+    $model = ucfirst($_POST["model"]);
+    $power = $_POST["power"];
+    $km = $_POST["km"];
+    $vehicleYear = $_POST["vehicleYear"];
+
+    //? Préparation de la requête
+    $query = $dbh->prepare("INSERT INTO car (model, brand ,power , vehicle_year, vehicle_km) VALUES (?,?,?,?,?)");
+
+    //? Execution de la requête 
+    $result = $query->execute([$model, $brand, $power, $vehicleYear, $km]);
+
+    if ($result === true) {
+      $car_id = $dbh->lastInsertId();
+      $this->addAdverts($car_id);
+    }
+  }
+
+
+  // FONCTION AJOUTER UNE ANNONCE
+  private function addAdverts($car_id)
+  {
+    include  __DIR__ . "/../core/database.php";
+
+    $firstPrice = $_POST["firstPrice"];
+    $actualPrice = $firstPrice;
+    $finalDate = $_POST["finalDate"];
+    $descriptionAnnonce = $_POST["descriptionAnnonce"];
+    $picture = $_POST["picture"];
+    $startDate = date("Y-m-d");
+    $user_id = $_SESSION['id'];
+    $user_car = intval($car_id);
+
+    //? Préparation de la requête
+    $query = $dbh->prepare("INSERT INTO adverts (first_price,actual_Price,start_date, final_date, description, picture,owner_id,car_id) VALUES (?,?,?,?,?,?,?,?)");
+
+    //? Execution de la requête 
+    $result = $query->execute([$firstPrice, $actualPrice, $startDate, $finalDate, $descriptionAnnonce, $picture, $user_id, $user_car]);
+
+    header('location: accueil');
+  }
+
   //Get the value of adverts
   public function getAdverts()
   {
