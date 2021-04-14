@@ -9,11 +9,11 @@
 
 namespace App\Views;
 
-include __DIR__ . "/../controllers/Component/header.php";
+// include __DIR__ . "/../controllers/Component/header.php";
 
 
 
-use App\Controllers\Component\Menu;
+// use App\Controllers\Component\Menu;
 
 
 

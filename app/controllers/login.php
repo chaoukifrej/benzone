@@ -11,8 +11,8 @@ namespace App\Controllers;
 include __DIR__ . '/../views/login.view.php';
 include __DIR__ . "/../models/Users.model.php";
 
+
 use App\Views\Login as LoginView;
-use App\Controllers\Component\Menu;
 use App\Models\Users;
 
 class Login
