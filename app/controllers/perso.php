@@ -46,6 +46,7 @@ class Perso
         include  __DIR__ . "/../core/database.php";
 
         // passage isConnected a 0
+
         $userRequest = $dbh->prepare('UPDATE users SET is_connected = ? WHERE id = ?');
         $userRequest->execute([0, $_SESSION['id']]);
 
