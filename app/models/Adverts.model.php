@@ -124,11 +124,11 @@ class Adverts
     include  __DIR__ . "/../core/database.php";
 
     //. Déclaration données
-    $brand = strtoupper($_POST["brand"]);
-    $model = ucfirst($_POST["model"]);
-    $power = $_POST["power"];
-    $km = $_POST["km"];
-    $vehicleYear = $_POST["vehicleYear"];
+    $brand = filter_var(strtoupper($_POST["brand"]), FILTER_SANITIZE_STRING);
+    $model = filter_var(ucfirst($_POST["model"]), FILTER_SANITIZE_STRING);
+    $power = filter_var($_POST["power"], FILTER_SANITIZE_NUMBER_INT);
+    $km = filter_var($_POST["km"], FILTER_SANITIZE_NUMBER_INT);
+    $vehicleYear = filter_var($_POST["vehicleYear"], FILTER_SANITIZE_STRING);
 
     //? Préparation de la requête
     $query = $dbh->prepare("INSERT INTO car (model, brand ,power , vehicle_year, vehicle_km) VALUES (?,?,?,?,?)");
@@ -148,14 +148,14 @@ class Adverts
   {
     include  __DIR__ . "/../core/database.php";
 
-    $firstPrice = $_POST["firstPrice"];
-    $actualPrice = $firstPrice;
-    $finalDate = $_POST["finalDate"];
-    $descriptionAnnonce = $_POST["descriptionAnnonce"];
-    $picture = $_POST["picture"];
-    $startDate = date("Y-m-d");
-    $user_id = $_SESSION['id'];
-    $user_car = intval($car_id);
+    $firstPrice = filter_var($_POST["firstPrice"]);
+    $actualPrice = filter_var($firstPrice, FILTER_SANITIZE_NUMBER_FLOAT);
+    $finalDate = filter_var($_POST["finalDate"], FILTER_SANITIZE_STRING);
+    $descriptionAnnonce = filter_var($_POST["descriptionAnnonce"], FILTER_SANITIZE_STRING);
+    $picture = filter_var($_POST["picture"], FILTER_SANITIZE_URL);
+    $startDate = filter_var(date("Y-m-d"), FILTER_SANITIZE_STRING);
+    $user_id = filter_var($_SESSION['id'], FILTER_SANITIZE_NUMBER_INT);
+    $user_car = filter_var(intval($car_id), FILTER_SANITIZE_NUMBER_INT);
 
     //? Préparation de la requête
     $query = $dbh->prepare("INSERT INTO adverts (first_price,actual_Price,start_date, final_date, description, picture,owner_id,car_id) VALUES (?,?,?,?,?,?,?,?)");
