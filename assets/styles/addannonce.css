@@ -1,3 +1,10 @@
+body {
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Fvecteurs-libre%2Fvoiture-realiste-allume-composition-realiste-silhouette-sombre-automobile-illustration-phares-ombres-grisees_1284-28532.jpg&f=1&nofb=1);
+  background-size: cover;
+  -webkit-backdrop-filter: brightness(100%) saturate(0%) blur(2px);
+          backdrop-filter: brightness(100%) saturate(0%) blur(2px);
+}
+
 .grid-container {
   display: -ms-grid;
   display: grid;
@@ -172,13 +179,6 @@ textarea {
   border: solid 1px grey;
   height: 114px;
   padding: 10px;
-}
-
-body {
-  background-image: url(https://i.pinimg.com/originals/93/9c/b2/939cb2c3d9eb35896b75bedf2f1036d4.jpg);
-  background-size: cover;
-  -webkit-backdrop-filter: brightness(100%) saturate(0%) blur(5px);
-          backdrop-filter: brightness(100%) saturate(0%) blur(5px);
 }
 
 footer {
