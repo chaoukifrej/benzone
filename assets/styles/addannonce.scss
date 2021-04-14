@@ -36,10 +36,10 @@ $primaryColor: #fac31d;
 }
 
 #titleAddAnnonce {
-  color: #434343;
+  color: $primaryColor;
   font-size: 30px;
   padding: 10px;
-  border: 2px solid #434343;
+  border: 2px solid$primaryColor;
   border-radius: 5px;
   text-align: center;
   width: 25%;
@@ -51,6 +51,7 @@ $primaryColor: #fac31d;
 label {
   font-size: 20px;
   font-weight: 400;
+  color: $primaryColor;
 }
 
 #inputModel,
@@ -144,9 +145,9 @@ textarea {
   padding: 10px;
 }
 body {
-  background-image: url(https://www.ouestfrance-auto.com/sites/default/files/styles/620x420lock/public/vendre-voiture.jpg?itok=MbE-GgEyhttps://.com/full/166650.jpg);
+  background-image: url(https://i.pinimg.com/originals/93/9c/b2/939cb2c3d9eb35896b75bedf2f1036d4.jpg);
   background-size: cover;
-  backdrop-filter: brightness(110%) saturate(0%) blur(10px);
+  backdrop-filter: brightness(100%) saturate(0%) blur(5px);
 }
 footer {
   background-color: white;
