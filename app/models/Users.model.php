@@ -132,6 +132,14 @@ class Users
 
         $query = $dbh->prepare(" UPDATE users SET lastname = ?, firstname = ?, email = ?, password = ? WHERE id = ? ");
         $query->execute([$lastname, $firstname, $email, $password, $_SESSION['id']]);
+
+        $_SESSION['lastname'] = $lastname;
+        $_SESSION['firstname'] = $firstname;
+        $_SESSION['email'] = $email;
+        $_SESSION['password'] = $password;
+
+
+
         header('location: accueil');
     }
 
