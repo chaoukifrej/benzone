@@ -4,8 +4,8 @@
 
 ## développement d'un site de vente aux enchères de voitures d'occasions :
 
-** Server side rendering
-** Php
-** MariaDB
-** Routages dynamique fait maison
-** Modèle MVC
+* Server side rendering
+* Php
+* MariaDB
+* Routages dynamique fait maison
+* Modèle MVC
