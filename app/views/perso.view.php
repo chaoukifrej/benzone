@@ -84,9 +84,9 @@ class Perso
                             <label for="">modifier votre Email</label>
                             <input name="email" type="text" value="<?= $_SESSION['email'] ?>">
                             <label for="">modifier votre Mot de passe</label>
-                            <input name="password" type="password" value="<?= $_SESSION['password'] ?>">
+                            <input name="password" type="password">
                             <label for="">confirmer votre nouveau mot de passe</label>
-                            <input type="password" value="<?= $_SESSION['password'] ?>">
+                            <input type="password">
                             <input class="button" value="Modifier" name="send" type="submit">
                         </form>
                     </div>
