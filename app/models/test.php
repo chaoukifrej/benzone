@@ -19,40 +19,61 @@ class Users
             $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
             $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
             $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
-            $passHash = password_hash($password, PASSWORD_DEFAULT);
 
-
+            $lastnameLenght = strlen($lastname);
+            $firstnameLenght = strlen($firstname);
+            $emailLenght = strlen($email);
+            $passwordLenght = strlen($password);
 
             $data_validated = true;
 
+            if ($lastnameLenght < 64) {
+                if ($firstnameLenght < 64) {
+                    if ($emailLenght < 64) {
+                        if ($passwordLenght < 64) {
+                            //. VERIFICATION
+                            if (filter_var($_POST["lastname"], FILTER_SANITIZE_STRING) === false) {
+                                $data_validated = false;
+                            } elseif (filter_var($_POST["firstname"], FILTER_SANITIZE_STRING) === false) {
+                                $data_validated = false;
+                            } elseif (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) === false) {
+                                $data_validated = false;
+                            } elseif (filter_var($_POST["password"], FILTER_SANITIZE_STRING) === false) {
+                                $data_validated = false;
+                            }
 
-            //. VERIFICATION
-            if (filter_var($_POST["lastname"], FILTER_SANITIZE_STRING) === false) {
-                $data_validated = false;
-            } elseif (filter_var($_POST["firstname"], FILTER_SANITIZE_STRING) === false) {
-                $data_validated = false;
-            } elseif (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) === false) {
-                $data_validated = false;
-            } elseif (filter_var($_POST["password"], FILTER_SANITIZE_STRING) === false) {
-                $data_validated = false;
+                            //. Connexion Base de données
+                            include  __DIR__ . "/../core/database.php";
+
+
+                            //. INSCRIPTION UTILISATEURS
+                            if ($data_validated === true) {
+                                $query = $dbh->prepare('INSERT INTO users(lastname, firstname, email, password) VALUES (?, ?, ?, ?)');
+                                $result = $query->execute([ucfirst($lastname), ucfirst($firstname), $email, $password]);
+                                header('location: login');
+                            }
+                        } else {
+                            $erreur = "Mot de passe trop long";
+                        }
+                    } else {
+                        $erreur = "Email trop long";
+                    }
+                } else {
+                    $erreur = "Prénom trop long";
+                }
+            } else {
+                $erreur = "Nom de famille trop long";
             }
-
-            //. Connexion Base de données
-            include  __DIR__ . "/../core/database.php";
-
-
-            //. INSCRIPTION UTILISATEURS
-            if ($data_validated === true) {
-                $query = $dbh->prepare('INSERT INTO users(lastname, firstname, email, password) VALUES (?, ?, ?, ?)');
-                $result = $query->execute([ucfirst($lastname), ucfirst($firstname), $email, $passHash]);
-                echo $passHash;
+            if (isset($erreur)) {
+                echo $erreur;
             }
+            header('location: login');
         }
     }
 
 
     /**
-     * .fonction connexion verif
+     * .fonction inscription verif
      */
     public function connection()
     {
@@ -64,18 +85,14 @@ class Users
 
             $mailConnect = filter_var($_POST['mailConnect'], FILTER_SANITIZE_STRING);
             $passwordConnect = filter_var($_POST['passwordConnect'], FILTER_SANITIZE_STRING);
-            $passConnectHash = password_verify($passwordConnect, '$2y$10$teCcsm4.LEzHNZwGU6kvdOay2MDcjGVEJaJmm0JweY6qvQXcjFvXG');
-
-            var_dump($passConnectHash);
-
 
             if (!empty($mailConnect) && !empty($passwordConnect)) {
                 $userRequest = $dbh->prepare('SELECT * FROM users WHERE email = ? AND password = ?');
-                $userRequest->execute(array($mailConnect, $passConnectHash));
-                $userRequest->rowCount();
+                $userRequest->execute(array($mailConnect, $passwordConnect));
+                $userExist = $userRequest->rowCount();
 
 
-                if ($passConnectHash == true) {
+                if ($userExist == 1) {
                     $userInfo = $userRequest->fetch();
                     $id = $_SESSION['id'] = $userInfo['id'];
                     $_SESSION['lastname'] = $userInfo['lastname'];
@@ -83,7 +100,7 @@ class Users
                     $_SESSION['email'] = $userInfo['email'];
                     $_SESSION['password'] = $userInfo['password'];
                     $_SESSION['is_connected'] = 1;
-
+                    $error = "Connection réussi";
 
                     // passage isConnected a 1
                     $userRequest = $dbh->prepare('UPDATE users SET is_connected = ? WHERE id = ?');
@@ -91,8 +108,14 @@ class Users
 
                     header('Location: accueil?id=' . $id);
                 } else {
-                    header('location: accueil');
+                    $error = "Utilisateurs non trouvé";
+                    header('Location: login');
                 }
+            }
+
+            //. CONNEXION UTILISATEURS
+            if (isset($error)) {
+                echo $error;
             }
         }
     }
