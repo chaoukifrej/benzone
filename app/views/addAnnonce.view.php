@@ -32,7 +32,8 @@ class AddAnnonce
 
         <head>
             <meta charset="utf-8">
-            <title>AddAnnonce</title>
+            <title>Créer une Annone - Benzone</title>
+            <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
             <link rel="stylesheet" href="./assets/styles/style.css" />
             <link rel="stylesheet" href="./assets/styles/addannonce.css" />
         </head>

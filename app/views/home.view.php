@@ -32,7 +32,7 @@ class Home
 
     <head>
       <meta charset="utf-8">
-      <title>Démo routeur V1</title>
+      <title>Accueil - Benzone</title>
       <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
       <link rel="stylesheet" type="text/css" href="assets/styles/style.css" />
       <link rel="stylesheet" type="text/css" href="assets/styles/home.css">

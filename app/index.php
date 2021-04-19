@@ -16,7 +16,9 @@ include_once __DIR__ . "/controllers/annonce.php";
 include_once __DIR__ . "/controllers/contact.php";
 include_once __DIR__ . "/controllers/addAnnonce.php";
 
-
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 
 
 use App\Router\Router;

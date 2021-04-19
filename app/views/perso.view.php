@@ -57,7 +57,8 @@ class Perso
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="./assets/style.css">
             <link rel="stylesheet" href="./assets/styles/perso.css">
-            <title>Document</title>
+            <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+            <title><?= $_SESSION['lastname'] ?> <?= $_SESSION['firstname'] ?></title>
         </head>
 
         <body>

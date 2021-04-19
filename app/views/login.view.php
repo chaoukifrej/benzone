@@ -22,8 +22,8 @@ class Login
 
         <head>
             <meta charset="utf-8">
-            <title>Démo routeur V1</title>
-
+            <title>Connexion - Benzone</title>
+            <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
             <link rel="stylesheet" href="./assets/styles/style.css" />
             <link rel="stylesheet" href="./assets/styles/login.css" />
         </head>

@@ -45,7 +45,9 @@ class Annonce
 
     <head>
       <meta charset="utf-8">
-      <title>Annonce</title>
+      <title><?= $this->advert['brand']; ?>
+        <?= $this->advert['model']; ?> - Benzone</title>
+      <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
       <link rel="stylesheet" href="assets/styles/style.css" />
       <link rel="stylesheet" href="assets/styles/annonce.css" />
     </head>
