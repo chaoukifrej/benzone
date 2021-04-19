@@ -9,5 +9,5 @@
 * MariaDB
 * Routages dynamique fait maison
 * Modèle MVC
-
+* Utilisation de $_SESSION et hachage du mot de passe avec l'algorythme BCRYPT
 ```
